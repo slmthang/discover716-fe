@@ -3,13 +3,12 @@
 import axios from 'axios';
 
 // baseURL
-const baseURL = '/api/events';
+const baseURL = 'https://discover716-be.onrender.com/api/events/';
 
 
 // fetch all events
 const fetchAll = () => {
     const request = axios.get(baseURL);
-    console.log("Fetchall");
     return request.then(response => response.data);
 }
 
