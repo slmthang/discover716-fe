@@ -1,0 +1,24 @@
+{
+  "name": "discovery716",
+  "version": "0.1.0",
+  "author": "thangs",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.6.8",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "gh-pages": "^6.1.1",
+    "react-router-dom": "^6.22.3",
+    "sass": "^1.77.1",
+    "vite": "^4.3.9"
+  },
+  "keywords": [],
+  "description": ""
+}

@@ -1,0 +1,59 @@
+
+/********************************* default.css  *********************************/
+
+
+
+/********************************* defaults  *********************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+  
+
+:root {
+    --color-primary: #323b8c; /* blue color */
+    --color-primary-dark: #0a0b1b;
+    --color-secondary: #e5003d; /* red color */
+    --light-text: #a2a6cf; /* light text color */
+    --white: #fff;
+    --white-y: #efefef;
+    --black: #000;
+    --dark-grey-bg: #383838; /* dark grey color */
+    --shadow-line-w: rgba(255, 255, 255, 0.4);
+    --shadow-line-b: rgba(0,0,0,.2);
+    --box-shadow-1: 0 3px 15px rgba(0,0,0,.2);
+}
+
+
+html {
+    font-family: "Roboto", sans-serif, serif;
+}
+
+#main-layout {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+}
+
+
+/********************************* decor classes  *********************************/
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.textlight {
+    color: var(--color-primary);
+    font-weight: bolder;
+    font-style: italic;
+}
+
+

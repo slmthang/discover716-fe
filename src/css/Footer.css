@@ -1,0 +1,153 @@
+/******************** footer ********************/
+footer {
+  padding: 1rem;
+  min-height: 20rem;
+  background-color: var(--color-primary);
+  color: var(--light-text);
+  position: relative;
+  z-index: 3;
+  width: 100vw;
+  border-top: 0.5px solid var(--shadow-line-w);
+  border-left: 0.5px solid var(--shadow-line-b);
+  border-right: 0.5px solid var(--shadow-line-b);
+}
+footer #footer-navs {
+  width: 100%;
+  min-height: 3rem;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+footer #footer-navs #apps {
+  height: 100%;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  margin-left: 1rem;
+}
+footer #footer-navs #apps .download {
+  background-color: bg1;
+  text-decoration: none;
+  color: var(--light-text);
+}
+footer #footer-navs #apps .download i {
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+footer #footer-navs #apps .download > div {
+  display: none;
+}
+footer #footer-navs #apps .download > div p {
+  font-size: 0.8rem;
+}
+footer #footer-navs #apps .download > div h3 {
+  font-size: 1rem;
+}
+footer #footer-navs #socials {
+  height: 100%;
+  margin-right: 1rem;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+footer #footer-navs #socials a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: var(--light-text);
+}
+footer #footer-menus {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  width: 100%;
+  min-height: 10rem;
+  margin-bottom: 2rem;
+  justify-items: center;
+}
+footer #footer-menus .menu {
+  padding: 0.5rem;
+  min-height: 80%;
+  width: 20rem;
+  margin: 0.5rem;
+}
+footer #footer-menus .menu .menu-name {
+  border-bottom: 1px solid var(--light-text);
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+footer #footer-menus .menu .menu-name h3 {
+  font-size: 0.9rem;
+  color: var(--light-text);
+}
+footer #footer-menus .menu .options .option {
+  margin-bottom: 0.75rem;
+  padding-left: 0.25rem;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+}
+footer #footer-menus .menu .options .option p {
+  font-size: 0.9rem;
+}
+footer #footer-info {
+  width: 100%;
+  min-height: 3rem;
+  padding: 1rem;
+  text-decoration: none;
+  flex-direction: column;
+}
+footer #footer-info .logo {
+  width: 5rem;
+  height: 5rem;
+  margin-right: 2rem;
+}
+footer #footer-info .logo img {
+  width: 100%;
+}
+footer #footer-info #details ul {
+  flex-direction: column;
+}
+footer #footer-info #details ul li {
+  padding: 0.25rem 0.75rem;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+@media only screen and (min-width: 768px) { /* 48rem */
+  footer {
+    padding: 2rem;
+  }
+  footer #footer-navs #apps .download {
+    border: 0.5px solid var(--light-text);
+    border-radius: 1rem;
+    padding: 0.5rem 0.75rem;
+  }
+  footer #footer-navs #apps .download:hover {
+    cursor: pointer;
+    color: var(--color-secondary);
+    border: 0.5px solid var(--color-secondary);
+  }
+  footer #footer-navs #apps .download > div {
+    display: block;
+  }
+  footer #footer-navs #socials {
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+  }
+}
+@media only screen and (min-width: 1200px) { /* 75rem */
+  footer {
+    width: 75rem;
+  }
+  footer #footer-navs #socials a:hover {
+    cursor: pointer;
+    color: var(--color-secondary);
+  }
+  footer #footer-menus .menu .menu-name h3:hover {
+    cursor: pointer;
+  }
+  footer #footer-menus .menu .options .option p:hover {
+    cursor: pointer;
+    color: var(--color-secondary);
+  }
+  footer #footer-info .logo:hover {
+    cursor: pointer;
+  }
+}
