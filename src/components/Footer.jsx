@@ -3,8 +3,9 @@
 import "../scss/Footer.scss";
 import { discover716, icons } from "../data.js";
 import { Logo, Icons } from "./mini-components";
-
-
+import { useState, useEffect } from "react";
+import eventService from "../services/eventService";
+import { Link } from "react-router-dom";
 // mini components
 
 function DownloadApp({name, fontAwesome, href}) {
@@ -17,6 +18,17 @@ function DownloadApp({name, fontAwesome, href}) {
             </div>
         </a>
     );
+}
+
+function EventElement ({eventObj}) {
+    return (
+        <Link to="/about-us" className="link">
+            <li className="option">
+                <p>{eventObj.title}</p>
+            </li>
+        </Link>
+        
+    )
 }
 
 // components
@@ -45,6 +57,18 @@ function FooterNav() {
 
 function FooterMenus({isMobile}) {
 
+    // menus
+    const [events, setEvents] = useState([]);
+
+
+    // useEffect()
+    useEffect(() => {
+        eventService.fetchAll()
+            .then(eventsData => {
+                setEvents(eventsData);
+            });
+    }, [])
+
     // return !isMobile ? (
     return (
         <div id="footer-menus">
@@ -55,12 +79,11 @@ function FooterMenus({isMobile}) {
                     <h3>Events</h3>
                 </div>
                 <ul className="options">
-                    <li className="option">
-                        <p>Event 1</p>
-                    </li>
-                    <li className="option">
-                        <p>Event 2</p>
-                    </li>
+                    {events ? 
+                        events.map((event) => {
+                            return <EventElement key={event._id} eventObj={event} />
+                        }) 
+                    : null}
                 </ul>
             </div>
 
@@ -70,11 +93,23 @@ function FooterMenus({isMobile}) {
                     <h3>Things To Dos</h3>
                 </div>
                 <ul className="options">
-                    <li className="option">
-                        <p>Things To Do 1</p>
+                <li className="option">
+                        <p>Niagara Falls</p>
                     </li>
                     <li className="option">
-                        <p>Things To Do 2</p>
+                        <p>Buffalo Zoo</p>
+                    </li>
+                    <li className="option">
+                        <p>Buffalo RiverWorks</p>
+                    </li>
+                    <li className="option">
+                        <p>Ales & Axes</p>
+                    </li>
+                    <li className="option">
+                        <p>Nightmare Hayride</p>
+                    </li>
+                    <li className="option">
+                        <p>More...</p>
                     </li>
                 </ul>
             </div>
@@ -86,10 +121,25 @@ function FooterMenus({isMobile}) {
                 </div>
                 <ul className="options">
                     <li className="option">
-                        <p>Restaurant 1</p>
+                        <p>Vice Restaurant</p>
                     </li>
                     <li className="option">
-                        <p>Restaurant 2</p>
+                        <p>Toutant</p>
+                    </li>
+                    <li className="option">
+                        <p>Mothers Restaurant</p>
+                    </li>
+                    <li className="option">
+                        <p>Osteria 166</p>
+                    </li>
+                    <li className="option">
+                        <p>Tappo Restaurant</p>
+                    </li>
+                    <li className="option">
+                        <p>Sophia's Restaurant</p>
+                    </li>
+                    <li className="option">
+                        <p>More...</p>
                     </li>
                 </ul>
             </div>
@@ -101,10 +151,22 @@ function FooterMenus({isMobile}) {
                 </div>
                 <ul className="options">
                     <li className="option">
-                        <p>Hotel 1</p>
+                        <p>Garden Place Hotel</p>
                     </li>
                     <li className="option">
-                        <p>Hotel 2</p>
+                        <p>Holiday Inn</p>
+                    </li>
+                    <li className="option">
+                        <p>Embassy Suites</p>
+                    </li>
+                    <li className="option">
+                        <p>The Delavan Hotel</p>
+                    </li>
+                    <li className="option">
+                        <p>Lenox Hotel</p>
+                    </li>
+                    <li className="option">
+                        <p>More...</p>
                     </li>
                 </ul>
             </div>
@@ -116,10 +178,10 @@ function FooterMenus({isMobile}) {
                 </div>
                 <ul className="options">
                     <li className="option">
-                        <p>Special 1</p>
+                        <p>Tasting Tables</p>
                     </li>
                     <li className="option">
-                        <p>Special 2</p>
+                        <p>12 Businesses of Christmas</p>
                     </li>
                 </ul>
             </div>
@@ -131,10 +193,22 @@ function FooterMenus({isMobile}) {
                 </div>
                 <ul className="options">
                     <li className="option">
-                        <p>Resource 1</p>
+                        <p>interns/volunteers</p>
                     </li>
                     <li className="option">
-                        <p>Resource 2</p>
+                        <p>partners</p>
+                    </li>
+                    <li className="option">
+                        <p>sponsors</p>
+                    </li>
+                    <li className="option">
+                        <p>donate</p>
+                    </li>
+                    <li className="option">
+                        <p>contact</p>
+                    </li>
+                    <li className="option">
+                        <p>about us</p>
                     </li>
                 </ul>
             </div>
@@ -160,7 +234,6 @@ function FooterInfo() {
 
 // MAIN
 export default function Footer({isMobile}) {
-
 
     return (
 

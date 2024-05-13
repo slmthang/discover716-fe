@@ -43,7 +43,6 @@ function App() {
       
       window.addEventListener("resize", screenResizeHandler);
   })
-  
 
   // return
   return (
@@ -51,10 +50,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout isMobile={isMobile}/>} >
           <Route index element={<Homepage/>} />
-          <Route path="event" element={<Event/>} />
-          <Route path="add-event" element={<AddEvent />} />
-          <Route path="about-us" element={<AboutUs />} />
-          <Route path="contact-us" element={<ContactUs />} />
+          <Route path="/event/:eventId" element={<Event/>} />
+          <Route path="/add-event" element={<AddEvent />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/contact-us" element={<ContactUs />} />
         </Route>
       </Routes>
     </BrowserRouter>

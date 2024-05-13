@@ -2,12 +2,38 @@
 
 // IMPORTS
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../scss/NavBar.scss";
 import { Logo, Socials, Resources } from "./mini-components";
 
+import eventService from "../services/eventService";
+
+
+function EventElement({eventObj}) {
+    return (
+        <Link to={`/event/${eventObj._id}`} className="link">
+            <div className="nav-bar2-drpdwn-menu-option">
+                    <p>{eventObj.title}</p>
+            </div>
+        </Link>
+    )
+}
+
+
 // components
 function Nav() {
+
+    const [events, setEvents] = useState([]);
+
+
+    useEffect(() => {
+        eventService.fetchAll()
+            .then(eventsData => {
+                setEvents(eventsData);
+            });
+    }, [])
+
+
     return (
         <div id="nav-bar">
             <div id="nav-bar1" className="center">
@@ -29,12 +55,11 @@ function Nav() {
                         <h3>Events</h3>
                     </div>
                     <div className="nav-bar2-drpdwn-menu-options">
-                        <div className="nav-bar2-drpdwn-menu-option">
-                            <p>Event</p>
-                        </div>
-                        <div className="nav-bar2-drpdwn-menu-option">
-                            <p>Event</p>
-                        </div>
+                        {events ? 
+                            events.map((event) => {
+                                return <EventElement key={event._id} eventObj={event} />
+                            }) 
+                        : null}
                     </div>
                 </div>
                 <div className="nav-bar2-drpdwn">

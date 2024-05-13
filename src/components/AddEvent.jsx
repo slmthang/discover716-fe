@@ -38,6 +38,8 @@ function AddEvent() {
     // prevent default
     e.preventDefault();
 
+    console.log("flsjdf: ", eventInfo);
+
     // create a new event
     eventService
       .create(eventInfo)
@@ -56,32 +58,32 @@ function AddEvent() {
             <input type="text" id='title' name='title' onChange={eventInfoFormHandler}/>
           </p>
           <p>
-            <label htmlFor="date">Date:</label> 
-            <input type="text" id='date' name='date' onChange={eventInfoFormHandler}/>
+            <label htmlFor="date">Date: </label> 
+            <input type="date" id='date' name='date' onChange={eventInfoFormHandler}/>
           </p>
           <p>
             <label htmlFor="startTime">Start Time: </label>
-            <input type="text" id='startTime' name='startTime' onChange={eventInfoFormHandler}/>
+            <input type="time" id='startTime' name='startTime' onChange={eventInfoFormHandler}/>
           </p>
           <p>
             <label htmlFor="endTime">End Time: </label>
-            <input type="text" id='endTime' name='endTime' onChange={eventInfoFormHandler}/>
+            <input type="time" id='endTime' name='endTime' onChange={eventInfoFormHandler}/>
           </p>
           <p>
             <label htmlFor="address">Address: </label>
-            <input type="text" id='address' name='address' onChange={eventInfoFormHandler}/>
+            <input type="location" id='address' name='address' onChange={eventInfoFormHandler}/>
           </p>
           <p>
             <label htmlFor="email">Email: </label>
-            <input type="text" id='email' name='email' onChange={eventInfoFormHandler}/>
+            <input type="email" id='email' name='email' onChange={eventInfoFormHandler}/>
           </p>
           <p>
             <label htmlFor="phone">Phone: </label>
-            <input type="text" id='phone' name='phone' onChange={eventInfoFormHandler}/>
+            <input type="tel" id='phone' name='phone' onChange={eventInfoFormHandler}/>
           </p>
           <p>
             <label htmlFor="website">Website: </label>
-            <input type="text" id='website' name='website' onChange={eventInfoFormHandler}/>
+            <input type="url" id='website' name='website' onChange={eventInfoFormHandler}/>
           </p>
           <p>
             <label htmlFor="thumbnail">Thumbnail: </label>

@@ -2,146 +2,56 @@
 
 #event-cont {
     width: 100vw;
-    min-height: 48rem;
     padding: 0.75rem;
     border-left: 0.5px solid var(--shadow-line-b);
 	border-right: 0.5px solid var(--shadow-line-b);
     background-color: var(--white-y);
-    
-    #event-summary {
-        min-height: 10rem;
-        margin-bottom: 2rem;
-        > * {
-            padding: 0.5rem;
-            justify-content: flex-start;
+    flex-direction: column;
 
-            .label {
-                width: fit-content;
-                height: 2rem;
-            }
-        }
-
-        #title {
-            height: 3rem;
-            color: var(--color-primary);
-            font-weight: 1000;
-            margin-bottom: 1.5rem;
-        }
-
-        #datetime-cont {
-            height: 2rem;
-            font-size: 0.8rem;
-            margin-bottom: 0.25rem;
-
-            #datetime {
-                height: 2rem;
-                text-wrap: wrap;
-                margin-left: 0.25rem;
-                font-style: italic;
-
-                #date {
-                    margin-right: 0.5rem;
-                }
-
-                #from-time {
-                    margin-right: 2px;
-                }
-
-                #to-time {
-                    margin-left: 2px;
-                }
-            } 
-        }
-
-        #location-cont {
-            height: 2rem;
-            font-size: 0.8rem;
-            font-style: italic;
-            margin-bottom: 0.25rem;
-
-            #location {
-                height: 2rem;
-                text-wrap: wrap;
-                margin-left: 0.25rem;
-            }
-        }
-
-        #website-cont {
-            height: 2rem;
-            font-size: 0.8rem;
-            font-style: italic;
-            margin-bottom: 0.25rem;
-
-            #website {
-                text-wrap: wrap;
-                margin-left: 0.25rem;
-                height: 2rem;
-            }
-        }
-    }
-
-    #event-more {
-        display: flex;
+    #event-details{
+        flex-direction: column;
         width: 100%;
-        min-height: 35rem;
-        flex-direction: column;
+        margin-bottom: 2rem;
 
-        #thumb {
-            width: 100%;
-            height: 100%;
-
-            img {
-                max-width: 100%;
-                height: auto;
-            }
+        > h1 {
+            margin: 1.5rem 0;
         }
 
-        #event-description {
+        > div {
             width: 100%;
-            min-height: 15rem;
-            padding: 1rem 0.75rem;
-            margin-top: 2rem;
-            overflow: scroll;
+            font-size: 0.9rem;
+            > div {
+                width: 70%;
+                line-height: 1.6;
 
-            #description {
-                font-size: 1rem;
-            }
+                > span {
 
-            -ms-overflow-style: none;  /* Internet Explorer 10+ */
-            scrollbar-width: none;  /* Firefox */
-
-            &::-webkit-scrollbar { 
-                display: none;  /* Safari and Chrome */
+                    > a {
+                        text-decoration: underline;
+                    }
+                }
             }
         }
     }
-
-    #contacts {
-        min-height: 3rem;
-        margin-top: 2rem;
+    
+    #event-info {
+        width: 100%;
         flex-direction: column;
-        row-gap: 1rem;
-        padding: .75rem;
-        font-size: 1rem;
+        margin-bottom: 2rem;
+        font-size: 0.9rem;
+    }
+
+    #event-contacts {
+        height: 2rem;
+        width: 100%;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
     }
 }
     
 
 @media only screen and (min-width: 760px ) {
 
-    #event-cont {
-
-        #event-more {
-
-            #thumb {
-
-                img {
-
-                    max-width: 65%;
-                }
-            }
-        }
-    }
 }
 
 
@@ -150,57 +60,25 @@
 
     #event-cont {
         width: 75rem;
-        padding: 1rem;
+        padding: 2rem;
 
-        #event-summary {
+        #event-details {
 
-            > * {
-                padding: 1.5rem;
-            }
-
-            #datetime-cont {
-
+            > div {
                 font-size: 1.1rem;
-            }
 
-            #location-cont {
-                font-size: 1.1rem;
-            }
-
-            #website-cont {
-                font-size: 1.1rem;
-            }
-        }
-
-        #event-more {
-
-            margin-top: 5rem;
-
-            #thumb {
-
-                img {
-
-                    max-width: 50%;
-                }
-            }
-
-            #event-description {
-                
-                #description {
+                > div {
                     width: 80%;
-                    font-size: 1.1rem;
                 }
             }
         }
 
-        #contacts {
-            margin-top: 4rem;
-            flex-direction: row;
+        #event-info {
+            font-size: 1.1rem;
+        }
 
-            #phone {
-                margin-right: 5rem;
-                margin-left: 1rem;
-            }
+        #event-contacts {
+            font-size: 1.1rem;
         }
     }
 }

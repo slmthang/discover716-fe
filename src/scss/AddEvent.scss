@@ -34,8 +34,10 @@
 
             input, textarea {
                 width: 100%;
-                border-radius: 0.25rem;
+                border-radius: 0.5rem;
                 padding-left: 0.5rem;
+                border: none;
+                outline: none;
             }
 
             input {
@@ -43,7 +45,7 @@
             }
 
             textarea {
-                height: 8rem;
+                height: 20rem;
                 padding-top: 0.5rem;
             }
 
