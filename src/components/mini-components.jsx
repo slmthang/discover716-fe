@@ -1,7 +1,8 @@
 
 // IMPORTS
+import { Link } from "react-router-dom";
 import logo716 from "../assets/logo-716.png";
-import {icons} from "../data.js"
+import {icons} from "../data.js";
 
 // MINI-COMPONENTS
 
@@ -9,7 +10,7 @@ import {icons} from "../data.js"
 export function Logo() {
     return (
         <div className="center logo">
-            <a href=""><img src={logo716} alt="Discover716 Logo" /></a>
+            <img src={logo716} alt="Discover716 Logo" />
         </div>
     );
 }
@@ -48,14 +49,10 @@ export function Resources() {
                 </a>
             </li>
             <li>
-                <a className="center" href="/views/contact.html">
-                    <p>contact</p>
-                </a>
+                <Link to="/contact-us"><p>contact</p></Link>
             </li>
             <li>
-                <a className="center" href="https://www.discover716.com/">
-                    <p>about us</p>
-                </a>
+                <Link to="/about-us"><p>about us</p></Link>
             </li>    
         </ul>
     );

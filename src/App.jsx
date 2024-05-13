@@ -2,8 +2,6 @@
 // components
 import {useState, useEffect} from "react";
 import {
-  createBrowserRouter,
-  RouterProvider,
   BrowserRouter,
   Route,
   Routes
@@ -13,31 +11,8 @@ import Layout from "./components/Layout";
 import Homepage from "./components/Homepage";
 import Event from "./components/Event";
 import AddEvent from "./components/AddEvent";
-
-
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        path: "/",
-        element: <div>Hello</div>,
-      },
-      {
-        path: '/foo',
-        element: <div>foo</div>,
-      },
-      {
-        path: '/bar',
-        element: <div>foo</div>,
-      }
-    ],
-  },
-]);
-
-
+import AboutUs from "./components/AboutUs";
+import ContactUs from "./components/ContactUs";
 
 function App() {
 
@@ -77,7 +52,9 @@ function App() {
         <Route path="/" element={<Layout isMobile={isMobile}/>} >
           <Route index element={<Homepage/>} />
           <Route path="event" element={<Event/>} />
-          <Route path="addEvent" element={<AddEvent />} />
+          <Route path="add-event" element={<AddEvent />} />
+          <Route path="about-us" element={<AboutUs />} />
+          <Route path="contact-us" element={<ContactUs />} />
         </Route>
       </Routes>
     </BrowserRouter>

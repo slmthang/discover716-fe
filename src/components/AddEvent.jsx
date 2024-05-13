@@ -24,8 +24,6 @@ function AddEvent() {
     const name = e.target.name;
     const value = e.target.value;
 
-    console.log(name, " : ", value);
-
     setEventInfo((eventInfo) => {
       return {
         ...eventInfo,

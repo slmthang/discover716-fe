@@ -19,7 +19,10 @@ function Nav() {
                 </div>
             </div>
             <div id="nav-bar2">
-            <Logo />
+            <Link to="/">
+                <Logo />
+            </Link>
+            
             <div id="nav-bar2-drpdwns" className="center">
                 <div className="nav-bar2-drpdwn">
                     <div className="nav-bar2-drpdwn-menu center">
