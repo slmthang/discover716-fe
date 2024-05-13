@@ -16,11 +16,11 @@
 		position: relative;
 		width: 90%;
 		min-height: 35rem;
-		background-color: var(--color-primary-dark);
+		background-color: var(--white-y);
 		flex-direction: column;
-		color: var(--light-text);
+		color: var(--black);
 		padding: 1rem;
-		border: 0.5px solid var(--color-secondary);
+		border: 0.5px solid var(--black);
 		border-radius: 0.5rem;
 
 		.close {
@@ -31,7 +31,7 @@
 
 			& :hover {
 				cursor: pointer;
-				color: var(--color-secondary);
+				color: var(--color-primary);
 			}
 		}
 
@@ -49,13 +49,13 @@
 			h1 {
 				margin-bottom: 1rem;
 				font-size: 1.75rem;
-				color: var(--color-secondary);
+				color: var(--color-primary);
 			}
 
 			h2 {
 				margin-bottom: 1rem;
 				font-size: 1.25rem;
-				color: var(--color-secondary);
+				color: var(--color-primary);
 			}
 	
 			p {
@@ -67,7 +67,7 @@
 		}	
 
 		.donate-btn {
-			border: 0.5px solid var(--light-text);
+			border: 0.5px solid var(--black);
 			padding: 0.2rem 0.7rem;
 			border-radius: 1rem;
 			text-decoration: none;
@@ -75,8 +75,8 @@
 			
 			&:hover {
 				cursor: pointer;
-				color: var(--color-secondary);
-				border: 0.5px solid var(--color-secondary);
+				color: var(--color-primary);
+				border: 0.5px solid var(--color-primary);
 			}
 
 			> i {

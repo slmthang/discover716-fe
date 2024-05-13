@@ -45,7 +45,8 @@ function FooterNav() {
 
 function FooterMenus({isMobile}) {
 
-    return !isMobile ? (
+    // return !isMobile ? (
+    return (
         <div id="footer-menus">
             
             {/* Events */}
@@ -138,7 +139,8 @@ function FooterMenus({isMobile}) {
                 </ul>
             </div>
         </div>
-    ) : null;
+    );
+    //  : null;
 }
 
 function FooterInfo() {

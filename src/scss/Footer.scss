@@ -28,7 +28,7 @@ footer {
 			.download {
 				background-color: bg1;
 				text-decoration: none;
-				color: var(--black);
+				color: var(--color-primary);
 
 				i {
 					font-size: 2rem;
@@ -58,7 +58,7 @@ footer {
 			a {
 				font-size: 2rem;
 				text-decoration: none;
-				color: var(--black);
+				color: var(--color-primary);
 			}
 		}
 	}
@@ -148,7 +148,7 @@ footer {
 					border: 0.5px solid var(--light-text);
 					border-radius: 1rem;
 					padding: 0.5rem 0.75rem;
-
+					color: var(--black);
 					&:hover {
 						cursor: pointer;
 						color: var(--color-primary);
@@ -163,6 +163,10 @@ footer {
 
 			#socials {
 				column-gap: 2rem;
+				
+				a {
+					color: var(--black);
+				}
 			}
 		}
 	}
