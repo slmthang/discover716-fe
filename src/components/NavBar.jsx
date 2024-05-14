@@ -56,9 +56,10 @@ function Nav() {
                     </div>
                     <div className="nav-bar2-drpdwn-menu-options">
                         {events.length > 0 ? 
-                            events.map((event) => {
-                                return <EventElement key={event._id} eventObj={event} />
-                            }) 
+                            console.log("Nav: ", events)
+                            // events.map((event) => {
+                            //     return <EventElement key={event._id} eventObj={event} />
+                            // }) 
                         : null}
                     </div>
                 </div>

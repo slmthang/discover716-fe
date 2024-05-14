@@ -80,9 +80,10 @@ function FooterMenus({isMobile}) {
                 </div>
                 <ul className="options">
                     {events.length > 0 ? 
-                        events.map((event) => {
-                            return <EventElement key={event._id} eventObj={event} />
-                        }) 
+                        console.log("Footer: ", events)
+                        // events.map((event) => {
+                        //     return <EventElement key={event._id} eventObj={event} />
+                        // }) 
                     : null}
                 </ul>
             </div>
