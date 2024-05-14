@@ -7,12 +7,11 @@ export default defineConfig({
   // base: "",
 
   server: {
-    // proxy: {
-    //   '/api': {
-    //     target: 'https://discover716-be.onrender.com',
-    //     // target: 'http://localhost:3001',
-    //     changeOrigin: true
-    //   }
-    // }
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3001',
+        changeOrigin: true
+      }
+    }
   }
 });

@@ -55,11 +55,10 @@ function Nav() {
                         <h3>Events</h3>
                     </div>
                     <div className="nav-bar2-drpdwn-menu-options">
-                        {events.length > 0 ? 
-                            console.log("Nav: ", events)
-                            // events.map((event) => {
-                            //     return <EventElement key={event._id} eventObj={event} />
-                            // }) 
+                        {events.length > 0 ?
+                            events.map((event) => {
+                                return <EventElement key={event._id} eventObj={event} />
+                            }) 
                         : null}
                     </div>
                 </div>
