@@ -79,7 +79,7 @@ function FooterMenus({isMobile}) {
                     <h3>Events</h3>
                 </div>
                 <ul className="options">
-                    {events ? 
+                    {events.length > 0 ? 
                         events.map((event) => {
                             return <EventElement key={event._id} eventObj={event} />
                         }) 
