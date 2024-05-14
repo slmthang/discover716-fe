@@ -1,14 +1,16 @@
 
 
 import "../scss/Event.scss";
-import eventImg from "../assets/event-test.jpg";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import eventService from "../services/eventService";
+import { useLoaderData } from "react-router-dom";
 
 
 
 export default function Event() {
+    
+    const params = useParams();
 
     // event state
     const [event, setEvent] = useState({
@@ -25,17 +27,14 @@ export default function Event() {
         "goingCount": 0,
     });
 
-    // eventId
-    const {eventId} = useParams();
-
+    // fetch an event
     useEffect(() => {
-
         eventService
-            .fetch(eventId)
-                .then(eventData => {
-                    setEvent(eventData);
-                })
-    }, [])
+        .fetch(params.eventId)
+            .then(eventData => {
+                setEvent(eventData);
+            })
+    }, [params.eventId])
 
     return (
         <div id="event-cont" className="center">

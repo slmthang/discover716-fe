@@ -9,6 +9,7 @@ import {moments} from "../data.js";
 import WelcomePopUp from "./WelcomePopUp.jsx";
 
 
+
 // array of images
 const images = [sportImg, cityImg, buildingImg];
 
@@ -111,9 +112,13 @@ function AboutUs({isMobile}) {
     );
 }
 
+export function HomepageLoader() {
+    return "May Thu Aung";
+}
+
 // MAIN
 export default function Homepage({isMobile}) {
-    
+
     return (
         <section id="homepage">
             <WelcomePopUp />
