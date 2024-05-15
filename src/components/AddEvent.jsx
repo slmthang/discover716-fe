@@ -32,20 +32,40 @@ function AddEvent() {
     })
   }
 
+  const imageHandler = async (e) => {
+    let x = await e.target.files[0].arrayBuffer();
+    console.log(x);
+    console.log(URL.createObjectURL(e.target.files[0]));
+  }
+
   // upoload Event
-  const uploadEvent = (e) => {
+  const uploadEvent = async (e) => {
 
     // prevent default
     e.preventDefault();
 
     console.log("flsjdf: ", eventInfo);
 
-    // create a new event
-    eventService
-      .create(eventInfo)
-      .then(data => {
-        console.log("event added: ", data);
-      })
+    const fd = new FormData();
+
+    for (const key in eventInfo) {
+        fd.append(key, eventInfo[key]);
+    }
+
+    // let response = await fetch('http://localhost:3001/upload', {
+    //   method: 'POST',
+    //   body: fd
+    // }).then(() => {
+    //   console.log("form data submited");
+    // });
+
+
+    // // create a new event
+    // eventService
+    //   .create(eventInfo)
+    //   .then(data => {
+    //     console.log("event added: ", data);
+    //   })
   }
 
   return (
@@ -87,7 +107,7 @@ function AddEvent() {
           </p>
           <p>
             <label htmlFor="thumbnail">Thumbnail: </label>
-            <input type="text" id='thumbnail' name='thumbnail' onChange={eventInfoFormHandler}/>
+            <input type="file" id='thumbnail' name='thumbnail' onChange={imageHandler}/>
           </p>
           <p>
             <label htmlFor="description">Description: </label>
