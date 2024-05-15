@@ -76,7 +76,7 @@ function AboutUs({isMobile}) {
             <div id="about-us-cont">
                 <div id="about-us-intro" className="center">
                         <div className="center description">
-                            <div className="center description-cont">
+                            <div className="center description-cont glass">
                                 <h1 >About Us</h1>
                                 <h3 className="textlight">We are Local Supporting Local!</h3>
                                 <p>Discover716 is <span className="textlight">non-profit organization</span> with a two-pronged mission. First, we want to help small businesses and the non-profit community thrive by helping them market themselves and building their brand recognition, knowing that many are resource-constrained, especially due to the pandemic. Second, we are creating internships for college students in a collaborative work environment to help these small businesses and non-profits.</p>
@@ -86,26 +86,26 @@ function AboutUs({isMobile}) {
                         </div>
                 </div>
                 <div id="about-us-more" className="center">
-                    <h3>We are here for the people and the community.</h3>
+                    <div className="glass">
+                        <h3 >We are here for the people and the community.</h3>
 
-                    <div id="moments-cont">
-                        <div id="moments" className="center">
-                            <Moment id="momentDisplay0" className="center moment" src={moments[checkMomentsBound(isMoment - 2)]["src"]} alt="alt"/>
-                            <Moment id="momentDisplay1" className="center moment" src={moments[checkMomentsBound(isMoment - 1)]["src"]} alt="alt"/>
-                            <Moment id="momentDisplay2" className="center moment" src={moments[checkMomentsBound(isMoment)]["src"]} alt="alt">
-                                <div id="prevBtn" className="center" onClick={prevPic}>
-                                    <i className="fa-solid fa-chevron-left"></i>
-                                </div>
-                                <div id="nextBtn" className="center" onClick={nextPic}>
-                                    <i className="fa-solid fa-chevron-right"></i>
-                                </div> 
-                            </ Moment>
-                            <Moment id="momentDisplay3" className="center moment" src={moments[checkMomentsBound(isMoment + 1)]["src"]} alt="alt"/>
-                            <Moment id="momentDisplay4" className="center moment" src={moments[checkMomentsBound(isMoment + 2)]["src"]} alt="alt"/>
+                        <div id="moments-cont">
+                            <div id="moments" className="center">
+                                <Moment id="momentDisplay0" className="center moment" src={moments[checkMomentsBound(isMoment - 2)]["src"]} alt="alt"/>
+                                <Moment id="momentDisplay1" className="center moment" src={moments[checkMomentsBound(isMoment - 1)]["src"]} alt="alt"/>
+                                <Moment id="momentDisplay2" className="center moment" src={moments[checkMomentsBound(isMoment)]["src"]} alt="alt">
+                                    <div id="prevBtn" className="center" onClick={prevPic}>
+                                        <i className="fa-solid fa-chevron-left"></i>
+                                    </div>
+                                    <div id="nextBtn" className="center" onClick={nextPic}>
+                                        <i className="fa-solid fa-chevron-right"></i>
+                                    </div> 
+                                </ Moment>
+                                <Moment id="momentDisplay3" className="center moment" src={moments[checkMomentsBound(isMoment + 1)]["src"]} alt="alt"/>
+                                <Moment id="momentDisplay4" className="center moment" src={moments[checkMomentsBound(isMoment + 2)]["src"]} alt="alt"/>
+                            </div>
                         </div>
                     </div>
-                        
-
                 </div>
             </div>
         </section>

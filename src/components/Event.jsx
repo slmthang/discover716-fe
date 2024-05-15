@@ -7,6 +7,23 @@ import eventService from "../services/eventService";
 import { useLoaderData } from "react-router-dom";
 
 
+function formatTime(time) {
+
+    let meridiem = "";
+    time = time.split(':');
+
+    if (Number(time[0]) > 12) {
+        time[0] = Number(time[0]) - 12;
+        meridiem = "P.M";
+    } else if (Number(time[0]) == 0) {
+        time[0] = 12;
+        meridiem = "A.M";
+    } else {
+        meridiem = "A.M";
+    }
+
+    return time[0] + ":" + time[1] + " " + meridiem;
+}
 
 export default function Event() {
     
@@ -43,14 +60,14 @@ export default function Event() {
                 <div className="center">
                     <div>
                         <span>Date: {event.date}  &nbsp;&nbsp;|&nbsp;&nbsp;  </span>
-                        <span>Time: {event.startTime} - {event.endTime}  &nbsp;&nbsp;|&nbsp;&nbsp;  </span>
+                        <span>Time: {formatTime(event.startTime)} - {formatTime(event.endTime)}  &nbsp;&nbsp;|&nbsp;&nbsp;  </span>
                         <span>Address: {event.address}  &nbsp;&nbsp;|&nbsp;&nbsp;  </span>
                         <span>Website: <a href={event.website} className="link">Visit Here</a> </span>
                     </div>
                 </div>
             </div>
             <div id="event-info" className="center">
-                <img src="" alt="event thumbnail" />
+                <img src={event.thumbnail} alt="event thumbnail" />
                 <p id="description">
                     {event.description}
                 </p>

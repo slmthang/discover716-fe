@@ -1,32 +1,37 @@
 
-
-#about-us {
+#aboutUs-cont {
     width: 100vw;
-    background-color: var(--white-y);
     padding: 2rem 1.5rem;
 
-    > h1 {
-        color: var(--color-primary);
-        font-weight: 1000;
-        font-style: italic;
-        margin: 1rem 0 2rem 0;
-    }
 
-    > h2 {
-        font-size: 1.25rem;
-        font-weight: 700;
-        margin: 1rem 0 3rem 0;
-    }
-
-    > p {
-        font-size: 1.1rem;
-        line-height: 1.4;
+    #aboutUs {
+    
+        > h1 {
+            color: var(--color-primary);
+            font-weight: 1000;
+            font-style: italic;
+            margin: 1rem 0 2rem 0;
+        }
+    
+        > h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 1rem 0 3rem 0;
+            height: 4rem;
+            
+        }
+    
+        > p {
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
     }
 }
 
 
+
 @media only screen and (min-width: 768px) {
-    #about-us {
+    #aboutUs {
         padding: 4rem 1.5rem;
 
         > p {
@@ -37,10 +42,13 @@
 
 
 @media only screen and (min-width: 1200px) {
-    #about-us {
+
+    #aboutUs-cont {
         width: 75rem;
-        padding: 4rem;
+        padding: 2rem 1.5rem;
+
         border-left: 0.5px solid var(--shadow-line-b);
 		border-right: 0.5px solid var(--shadow-line-b);
+    
     }
 }

@@ -7,7 +7,6 @@
 #homepage {
 
 	width: 100vw;
-	background-color: var(--white-y);
 
 	#intro {	
 		border-left: 0.5px solid var(--shadow-line-b);
@@ -62,10 +61,11 @@
 					flex-direction: column;
 					
 					.description-cont {
-						width: 85%;
+						width: 95%;
 						height: 65%;
 						flex-direction: column;
 						justify-content: space-around;
+						padding: 2rem;
 						
 						h1 {
 							font-size: 1.75rem;
@@ -95,72 +95,77 @@
 			}
 
 			#about-us-more {
+				width: 100%;
 				min-height: 50rem;
 				flex-direction: column;
-				padding: 1rem;
 
-				h3 {
-					font-size: 1.25rem;
-					color: var(--color-primary);
-					margin: 2rem 0 4rem 0;
-					text-align: center;
-				}
-				
+				> div {
 
-				#moments-cont {
-					width: 100%;
-					position: relative;
-					overflow: hidden;
-
-					#moments {
-						height: 100%;
-						margin-bottom: 1rem;
-
-						.moment {
-							min-width: 15rem;
-							height: 22rem;
-	
-							img {
-								width: 90%;
-								height: 80%;
-							}
-						}
-
-						#momentDisplay2 {
-					
-							#prevBtn, #nextBtn {
-								position: absolute;
-								font-size: 2.75rem;
-								color: rgba(255, 255, 255, 0.726);
-								height: 85%;
-								width: 6rem;
-							}
-		
-							#nextBtn {
-								right: 0;
-								justify-content: flex-end;
-								background: linear-gradient(to left, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
-
-								i {
-									margin-right: 1rem;
-								}
-							}
-		
-							#prevBtn {
-								left: 0;
-								justify-content: flex-start;
-								background: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
-
-								i {
-									margin-left: 1rem;
-								}
-							}
-						}
-	
+					width: 95%;
+					padding: 2rem;
+					h3 {
+						font-size: 1.25rem;
+						color: var(--color-primary);
+						margin: 2rem 0 4rem 0;
+						text-align: center;
 					}
-
-
+					
+	
+					#moments-cont {
+						width: 100%;
+						position: relative;
+						overflow: hidden;
+	
+						#moments {
+							height: 100%;
+							margin-bottom: 1rem;
+	
+							.moment {
+								min-width: 15rem;
+								height: 22rem;
+		
+								img {
+									width: 90%;
+									height: 80%;
+								}
+							}
+	
+							#momentDisplay2 {
+						
+								#prevBtn, #nextBtn {
+									position: absolute;
+									font-size: 2.75rem;
+									color: #323b8cc4;
+									height: 85%;
+									width: 6rem;
+								}
+			
+								#nextBtn {
+									right: 0;
+									justify-content: flex-end;
+									background: linear-gradient(to left, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+	
+									i {
+										margin-right: 1rem;
+									}
+								}
+			
+								#prevBtn {
+									left: 0;
+									justify-content: flex-start;
+									background: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+	
+									i {
+										margin-left: 1rem;
+									}
+								}
+							}
+		
+						}
+					}
 				}
+
+				
 				
 			}
 		}
@@ -216,10 +221,13 @@
 
 				#about-us-more {
 
-					h3 {
-						font-weight: 1000;
-						font-size: 2.5rem;
+					> div {
+						h3 {
+							font-weight: 1000;
+							font-size: 2.5rem;
+						}
 					}
+					
 				}
 			}
 		}
@@ -240,58 +248,62 @@
 
 				#about-us-more {
 
-					#moments-cont {
+					> div {
+						#moments-cont {
 	
-						#moments {
-	
-							.moment {
-								min-width: 20rem;
-								height: 27rem;
-							}
-
-							#momentDisplay2 {
-						
-								#prevBtn, #nextBtn {
-									font-size: 3.5rem;
-									width: 15rem;
+							#moments {
+		
+								.moment {
+									min-width: 20rem;
+									height: 27rem;
 								}
-			
-								#nextBtn {
-									&:hover {
-										cursor: pointer;
-										background: linear-gradient(to left, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
+	
+								#momentDisplay2 {
+							
+									#prevBtn, #nextBtn {
+										font-size: 3.5rem;
+										width: 15rem;
+									}
+				
+									#nextBtn {
+										&:hover {
+											cursor: pointer;
+											background: linear-gradient(to left, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
+											
+											i {
+												color: #323b8c;
+											}
+										}
+		
+										i {
+											margin-right: 2rem;
+										}
+									}
+				
+									#prevBtn {
 										
-										i {
-											color: rgb(255, 255, 255);
-										}
-									}
+										&:hover {
+											cursor: pointer;
+											background: linear-gradient(to right, rgba(252, 252, 252, 0.6) 0%, transparent 70%);
 	
-									i {
-										margin-right: 2rem;
+											i {
+												color: #323b8c;
+											}
+										}
+		
+										i {
+											margin-left: 2rem;
+										}
 									}
 								}
 			
-								#prevBtn {
-									
-									&:hover {
-										cursor: pointer;
-										background: linear-gradient(to right, rgba(252, 252, 252, 0.6) 0%, transparent 70%);
-
-										i {
-											color: rgb(255, 255, 255);
-										}
-									}
-	
-									i {
-										margin-left: 2rem;
-									}
-								}
 							}
 		
+		
 						}
-	
-	
 					}
+
+					
 				}
 			}
 		}

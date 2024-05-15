@@ -14,12 +14,13 @@
         margin-bottom: 2rem;
 
         > h1 {
-            margin: 1.5rem 0;
+            margin: 1.75rem 0;
         }
 
         > div {
             width: 100%;
             font-size: 0.9rem;
+            
             > div {
                 width: 70%;
                 line-height: 1.6;
@@ -39,6 +40,17 @@
         flex-direction: column;
         margin-bottom: 2rem;
         font-size: 0.9rem;
+
+        img {
+            width: 100%;
+            padding: 1rem;
+        }
+
+        #description {
+            white-space: pre-line;
+            padding: 1rem;
+            width: 90%;
+        }
     }
 
     #event-contacts {
@@ -75,6 +87,19 @@
 
         #event-info {
             font-size: 1.1rem;
+
+            img {
+                width: 70%;
+
+                margin: 2rem 0;
+                padding: 2rem;
+            }
+
+            #description {
+                white-space: pre-line;
+                padding: 2rem;
+                width: 85%;
+            }
         }
 
         #event-contacts {
