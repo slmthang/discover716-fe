@@ -3,8 +3,8 @@
 import axios from 'axios';
 
 // baseURL
-// const baseURL = 'https://discover716-be.onrender.com/api/events';
-const baseURL = '/api/events';
+const baseURL = 'https://discover716-be.onrender.com/api/events';
+// const baseURL = '/api/events';
 
 
 // fetch all events
