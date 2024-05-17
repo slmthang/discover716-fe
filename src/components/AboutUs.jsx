@@ -3,7 +3,7 @@ import "../scss/AboutUs.scss";
 
 function AboutUs() {
     return (
-        <div id="aboutUs-cont">
+        <div id="aboutUs-cont" className="center">
 
             <div id="aboutUs" className="glass">
                 <h1>About us</h1>

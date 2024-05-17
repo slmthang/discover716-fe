@@ -192,6 +192,11 @@ function FooterMenus({isMobile}) {
                     <h3>Resources</h3>
                 </div>
                 <ul className="options">
+                <li className="option">
+                        <Link to="https://ltpm2399.blogspot.com/" className="link">
+                            <p>blogs</p>
+                        </Link>
+                    </li>
                     <li className="option">
                         <p>interns/volunteers</p>
                     </li>

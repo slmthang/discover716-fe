@@ -116,7 +116,9 @@ function Nav() {
                 </div>
                 <div className="nav-bar2-drpdwn">
                     <div className="nav-bar2-drpdwn-menu center">
-                        <h3>Blogs</h3>
+                        <Link to="https://ltpm2399.blogspot.com/" className="link">
+                            <h3>Blogs</h3>
+                        </Link>
                     </div>
                 </div>
             </div>

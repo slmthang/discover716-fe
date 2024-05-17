@@ -5,7 +5,8 @@
 
 
     #aboutUs {
-    
+        padding: 1rem;
+
         > h1 {
             color: var(--color-primary);
             font-weight: 1000;
@@ -31,11 +32,15 @@
 
 
 @media only screen and (min-width: 768px) {
-    #aboutUs {
-        padding: 4rem 1.5rem;
 
-        > p {
-            line-height: 1.6;
+    #aboutUs-cont {
+
+        #aboutUs {
+            padding: 2rem;
+
+            > p {
+                line-height: 1.6;
+            }
         }
     }
 }
@@ -50,5 +55,8 @@
         border-left: 0.5px solid var(--shadow-line-b);
 		border-right: 0.5px solid var(--shadow-line-b);
     
+        #aboutUs {
+            width: 90%;
+        }
     }
 }
