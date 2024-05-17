@@ -1,6 +1,6 @@
 
 // IMPORTS
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import "../scss/Homepage.scss";
 import sportImg from "../assets/sport.jpg";
 import cityImg from "../assets/city.jpg";
@@ -118,6 +118,10 @@ export function HomepageLoader() {
 
 // MAIN
 export default function Homepage({isMobile}) {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
 
     return (
         <section id="homepage">

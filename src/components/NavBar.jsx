@@ -130,7 +130,9 @@ function Nav() {
 function NavMobile({toggleBurg, burg}) {
     return (
         <div id="nav-bar-mobile" className="center">
-            <Logo />
+            <Link to="/">
+                <Logo />
+            </Link>
             <div className="open-close center">
             {burg ? (
                 <div className="close">
@@ -160,8 +162,11 @@ function BurgMenu({toggleBurg}) {
                 <li className="menu">Things To Do</li>
                 <li className="menu">Restaurants</li>
                 <li className="menu">Hotels</li>
-                <li className="menu">Specials</li>
-                <li className="menu">Blogs</li>
+                <li className="menu">
+                    <Link to="https://ltpm2399.blogspot.com/" className="link">
+                        Blogs
+                    </Link>
+                </li>
             </ul>
             <ul className="menus2">
                 <div className="center apps">

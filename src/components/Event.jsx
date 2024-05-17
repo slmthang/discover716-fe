@@ -52,6 +52,10 @@ export default function Event() {
             })
     }, [params.eventId])
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     return (
 
         <div id="Event">

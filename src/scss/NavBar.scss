@@ -23,15 +23,20 @@
 		position: relative;
 		justify-content:  space-between;
 
-		.logo {
-			width: 5rem;
+
+		> a {
 			position: absolute;
 			left: 1rem;
 
-			img {
-				width: 100%;
+			.logo {
+				width: 5rem;
+	
+				img {
+					width: 100%;
+				}
 			}
 		}
+		
 
 		.open-close {
 			position: absolute;

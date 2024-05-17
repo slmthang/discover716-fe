@@ -22,7 +22,7 @@ function DownloadApp({name, fontAwesome, href}) {
 
 function EventElement ({eventObj}) {
     return (
-        <Link to="/about-us" className="link">
+        <Link to={`/event/${eventObj._id}`} className="link">
             <li className="option">
                 <p>{eventObj.title}</p>
             </li>
