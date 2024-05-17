@@ -1,10 +1,9 @@
 
 
 import "../scss/Event.scss";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import eventService from "../services/eventService";
-import { useLoaderData } from "react-router-dom";
 
 
 function formatTime(time) {
@@ -54,27 +53,34 @@ export default function Event() {
     }, [params.eventId])
 
     return (
-        <div id="event-cont" className="center">
-            <div id="event-details" className="center">
-                <h1>{event.title}</h1>
-                <div className="center">
-                    <div>
-                        <span>Date: {event.date}  &nbsp;&nbsp;|&nbsp;&nbsp;  </span>
-                        <span>Time: {formatTime(event.startTime)} - {formatTime(event.endTime)}  &nbsp;&nbsp;|&nbsp;&nbsp;  </span>
-                        <span>Address: {event.address}  &nbsp;&nbsp;|&nbsp;&nbsp;  </span>
-                        <span>Website: <a href={event.website} className="link">Visit Here</a> </span>
+
+        <div id="Event">
+            <div id="display-cont" className="center glass">
+                <div id="display-intro" className="center">
+                    <div id="display-thumbnail" className="center">
+                        <img src={event.thumbnail} alt="thumbnail" />
+                    </div>
+                    <div id="display-details-cont" className="center">
+                        <h1>{event.title}</h1>
+                        <div id="display-details">
+                            <p id="date">Date: {event.date}</p>
+                            <p id="time">Time: {formatTime(event.startTime)} - {formatTime(event.endTime)}</p>
+                            <p id="address">Address: {event.address}</p>
+                            <p id="website">Website: <Link to={event.website} className="link">Visit Here</Link></p>
+                        </div>
+                        <div id="display-contacts">
+                            <p id="phone">Phone: {event.phone}</p>
+                            <p id="email">Email: {event.email}</p>
+                        </div>
                     </div>
                 </div>
+                <div id="display-about-cont" className="center">
+                    <h1>Description: </h1>
+                    <p id="display-about">
+                        {event.description}
+                    </p>
+                </div>
             </div>
-            <div id="event-info" className="center">
-                <img src={event.thumbnail} alt="event thumbnail" />
-                <p id="description">
-                    {event.description}
-                </p>
-            </div>
-            <div id="event-contacts" className="center">
-                Contacts: {event.phone} &nbsp;&nbsp;|&nbsp;&nbsp; {event.email}
-            </div>
-        </div>
+        </div>   
     );
 }

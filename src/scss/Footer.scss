@@ -140,7 +140,7 @@ footer {
 @media only screen and (min-width: 768px) { /* 48rem */ 
 	footer {
 		padding: 2rem;
-
+		
 		#footer-navs {
 			#apps {
 				.download {
@@ -175,16 +175,8 @@ footer {
 @media only screen and (min-width: 1200px) { /* 75rem */
 
 	footer {
-		width: 75rem;
 
 		#footer-navs {
-
-			#apps {
-
-				.download {
-					// 
-				}
-			}
 
 			#socials {
 
@@ -200,16 +192,6 @@ footer {
 		#footer-menus {
 
 			.menu {
-
-				.menu-name {
-
-					h3 {
-
-						&:hover {
-							cursor: pointer;
-						}
-					}
-				}
 
 				.options {
 
@@ -236,7 +218,6 @@ footer {
 				}
 			}
 
-			// #details {}
 		}
 	}
 

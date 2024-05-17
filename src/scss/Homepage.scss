@@ -123,10 +123,11 @@
 							.moment {
 								min-width: 15rem;
 								height: 22rem;
-		
+								
 								img {
 									width: 90%;
 									height: 80%;
+									border-radius: 0.5rem;
 								}
 							}
 	
@@ -187,7 +188,7 @@
 
 				img {
 					width: 100%;
-					height: 700px;
+					height: 900px;
 				}
 			}
 		}
@@ -239,9 +240,7 @@
 @media only screen and (min-width: 1200px) { /* 75rem */
 
 	#homepage {
-		width: 75rem;
-		border-left: 0.5px solid var(--shadow-line-b);
-		border-right: 0.5px solid var(--shadow-line-b);
+
 		#about-us {
 			
 			#about-us-cont {
