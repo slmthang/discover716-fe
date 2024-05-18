@@ -6,7 +6,7 @@ import "../scss/AddEvent.scss";
 
 function AddEvent() {
   const [eventInfo, setEventInfo] = useState({
-    title: "",
+    name: "",
     date: "",
     startTime: "",
     endTime: "",
@@ -57,8 +57,8 @@ function AddEvent() {
         <h1>Upload an Event</h1>
         <section id='inputs' className='center'>
           <p>
-            <label htmlFor="title">Title: </label>
-            <input type="text" id='title' name='title' onChange={eventInfoFormHandler}/>
+            <label htmlFor="name">Name: </label>
+            <input type="text" id='name' name='name' onChange={eventInfoFormHandler}/>
           </p>
           <p>
             <label htmlFor="date">Date: </label> 

@@ -82,8 +82,9 @@ export const moments = [
 
 export const hotels = [
     {
+        _id: "garden_place_hotel",
         name: "Garden Place Hotel",
-        thumbnail: "https://gardenplacehotelbuffalo.com/wp-content/uploads/2019/08/DSC_1311_edit__reduced_.jpg",
+        thumbnail: "https://res.cloudinary.com/dxjfmwr5n/image/upload/v1715972917/hotels/garden-place-hotel_vcifeg.jpg",
         address: "6615 Transit Rd, Buffalo, NY 14221",
         website: "https://gardenplacehotelbuffalo.com",
         phone: "716-635-9000",
@@ -97,8 +98,9 @@ export const hotels = [
         ]
     },
     {
+        _id: "delavan_hotel",
         name: "The Delavan Hotel",
-        thumbnail: "http://thedelavanbuffalo.com/wp-content/uploads/2019/07/DSC_7248__edit-sm.jpg",
+        thumbnail: "https://res.cloudinary.com/dxjfmwr5n/image/upload/v1715972917/hotels/delavan-hotel_nj1fx3.jpg",
         address: "6461 Transit Road, Buffalo, NY 14043",
         website: "https://thedelavanbuffalo.com/",
         phone: "716-635-9000",
@@ -115,6 +117,7 @@ export const hotels = [
 
 export const restaurants = [
     {
+        _id: "vice_restaurant",
         name: "Vice Restaurant",
         thumbnail: "https://popmenucloud.com/cdn-cgi/image/width%3D3840%2Cheight%3D3840%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/bvxhmgar/96b720bc-41cf-497f-ab2c-dfb866f062e6.jpeg",
         address: "500 Pearl Street, Buffalo, NY 14202",
@@ -129,6 +132,7 @@ export const restaurants = [
         ]
     },
     {
+        _id: "toutant",
         name: "Toutant",
         thumbnail: "https://lh3.googleusercontent.com/p/AF1QipOCOSGJRgEx9szcW5yHiXcY-D8eTkrKn7rKuZMQ=s680-w680-h510",
         address: "437 Ellicott St, Buffalo, NY 14203",
@@ -147,6 +151,7 @@ export const restaurants = [
 
 export const placesToVisit = [
     {
+        _id: "niagara_falls",
         name: "Niagara Falls",
         thumbnail: "https://lh3.googleusercontent.com/p/AF1QipN-GhW4hAMHbcvBKtop0XczPh_jeSUDjf1Z4BlI=s1360-w1360-h1020",
         address: "Niagara Falls, NY 14303",
@@ -161,6 +166,7 @@ export const placesToVisit = [
         ]
     },
     {
+        _id: "buffalo_zoo",
         name: "Buffalo Zoo",
         thumbnail: "https://lh3.googleusercontent.com/proxy/dnJ68ZVkJoetIW3YlWL9ESgB92gre-nqYPioGGaZl9-VW9fJt-zMUVVSWid2j6ZdaaFbZIMqXfZXwJ-zB9q_mcKzL9UeLmu1D7MHO0NmJnJwlYMTGTeMcUdM3AmV8ak9FZdedea6xGCxhlwmWwEe9KtPJCXCFeg=s680-w680-h510",
         address: "300 Parkside Ave, Buffalo, NY 14214",

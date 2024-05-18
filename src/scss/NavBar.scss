@@ -8,8 +8,6 @@
 	width: 100vw;
 	padding: 0.25rem;
 	background-color: var(--white);
-	border-left: 0.5px solid var(--shadow-line-b);
-	border-right: 0.5px solid var(--shadow-line-b);
 	border-bottom: 0.5px solid var(--shadow-line-b);
 
 	#nav-bar {
@@ -222,21 +220,20 @@
 					justify-content: space-around;
 					text-decoration: none;
 
-					> li {
-						a {
-							text-decoration: none;
-							color: var(--black);
+					> a {
+						text-decoration: none;
+						color: var(--black);
 
-							&:hover {
-								cursor: pointer;
-								color: var(--color-primary);
-							}
+						&:hover {
+							cursor: pointer;
+							color: var(--color-primary);
+						}
 
-							p {
-								font-size: 0.85rem;
-							}
+						p {
+							font-size: 0.85rem;
 						}
 					}
+					
 				}
 
 				.socials {
@@ -328,7 +325,7 @@
 						width: 14rem;
 						z-index: 1;
 
-						.nav-bar2-drpdwn-menu-option {
+						.nav-element {
 							width: 100%;
 							min-height: 3rem;
 							max-height: fit-content;

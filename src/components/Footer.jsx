@@ -2,10 +2,18 @@
 // IMPORTS
 import "../scss/Footer.scss";
 import { discover716, icons } from "../data.js";
-import { Logo, Icons } from "./mini-components";
+import { Logo, Icons, NavElement } from "./mini-components";
 import { useState, useEffect } from "react";
+
+// services
 import eventService from "../services/eventService";
+import hotelService from "../services/hotelService";
+import placeService from "../services/placeService";
+import restaurantService from "../services/restaurantService";
+
 import { Link } from "react-router-dom";
+
+
 // mini components
 
 function DownloadApp({name, fontAwesome, href}) {
@@ -20,16 +28,6 @@ function DownloadApp({name, fontAwesome, href}) {
     );
 }
 
-function EventElement ({eventObj}) {
-    return (
-        <Link to={`/event/${eventObj._id}`} className="link">
-            <li className="option">
-                <p>{eventObj.title}</p>
-            </li>
-        </Link>
-        
-    )
-}
 
 // components
 
@@ -57,16 +55,31 @@ function FooterNav() {
 
 function FooterMenus({isMobile}) {
 
-    // menus
     const [events, setEvents] = useState([]);
+    const [hotels, setHotels] = useState([]);
+    const [places, setPlaces] = useState([]);
+    const [restaurants, setRestaurants] = useState([]);
 
-
-    // useEffect()
     useEffect(() => {
         eventService.fetchAll()
             .then(eventsData => {
                 setEvents(eventsData);
             });
+        
+        hotelService.fetchAll()
+            .then(hotelsData => {
+                setHotels(hotelsData);
+            })
+
+        placeService.fetchAll()
+            .then(placesData => {
+                setPlaces(placesData);
+            })
+        
+        restaurantService.fetchAll()
+            .then(restaurantData => {
+                setRestaurants(restaurantData);
+            })
     }, [])
 
     // return !isMobile ? (
@@ -81,9 +94,14 @@ function FooterMenus({isMobile}) {
                 <ul className="options">
                     {events.length > 0 ?
                         events.map((event) => {
-                            return <EventElement key={event._id} eventObj={event} />
+                            return <NavElement key={event._id} obj={event} type="events" />
                         }) 
                     : null}
+                    <Link to='' className="link">
+                        <div className="nav-element">
+                            <p>More...</p>
+                        </div>
+                    </Link>
                 </ul>
             </div>
 
@@ -93,24 +111,16 @@ function FooterMenus({isMobile}) {
                     <h3>Things To Dos</h3>
                 </div>
                 <ul className="options">
-                <li className="option">
-                        <p>Niagara Falls</p>
-                    </li>
-                    <li className="option">
-                        <p>Buffalo Zoo</p>
-                    </li>
-                    <li className="option">
-                        <p>Buffalo RiverWorks</p>
-                    </li>
-                    <li className="option">
-                        <p>Ales & Axes</p>
-                    </li>
-                    <li className="option">
-                        <p>Nightmare Hayride</p>
-                    </li>
-                    <li className="option">
-                        <p>More...</p>
-                    </li>
+                    {places.length > 0 ?
+                            places.map((place) => {
+                                return <NavElement key={place._id} obj={place} type="places" />
+                            }) 
+                        : null}
+                    <Link to='' className="link">
+                        <div className="nav-element">
+                            <p>More...</p>
+                        </div>
+                    </Link>
                 </ul>
             </div>
 
@@ -120,27 +130,16 @@ function FooterMenus({isMobile}) {
                     <h3>Restaurants</h3>
                 </div>
                 <ul className="options">
-                    <li className="option">
-                        <p>Vice Restaurant</p>
-                    </li>
-                    <li className="option">
-                        <p>Toutant</p>
-                    </li>
-                    <li className="option">
-                        <p>Mothers Restaurant</p>
-                    </li>
-                    <li className="option">
-                        <p>Osteria 166</p>
-                    </li>
-                    <li className="option">
-                        <p>Tappo Restaurant</p>
-                    </li>
-                    <li className="option">
-                        <p>Sophia's Restaurant</p>
-                    </li>
-                    <li className="option">
-                        <p>More...</p>
-                    </li>
+                    {restaurants.length > 0 ?
+                            restaurants.map((restaurant) => {
+                                return <NavElement key={restaurant._id} obj={restaurant} type="restaurants" />
+                            }) 
+                        : null}
+                    <Link to='' className="link">
+                        <div className="nav-element">
+                            <p>More...</p>
+                        </div>
+                    </Link>
                 </ul>
             </div>
 
@@ -150,24 +149,16 @@ function FooterMenus({isMobile}) {
                     <h3>Hotels</h3>
                 </div>
                 <ul className="options">
-                    <li className="option">
-                        <p>Garden Place Hotel</p>
-                    </li>
-                    <li className="option">
-                        <p>Holiday Inn</p>
-                    </li>
-                    <li className="option">
-                        <p>Embassy Suites</p>
-                    </li>
-                    <li className="option">
-                        <p>The Delavan Hotel</p>
-                    </li>
-                    <li className="option">
-                        <p>Lenox Hotel</p>
-                    </li>
-                    <li className="option">
-                        <p>More...</p>
-                    </li>
+                    {hotels.length > 0 ?
+                            hotels.map((hotel) => {
+                                return <NavElement key={hotel._id} obj={hotel} type="hotels" />
+                            }) 
+                        : null}
+                    <Link to='' className="link">
+                        <div className="nav-element">
+                            <p>More...</p>
+                        </div>
+                    </Link>
                 </ul>
             </div>
 
@@ -177,12 +168,21 @@ function FooterMenus({isMobile}) {
                     <h3>Specials</h3>
                 </div>
                 <ul className="options">
-                    <li className="option">
-                        <p>Tasting Tables</p>
-                    </li>
-                    <li className="option">
-                        <p>12 Businesses of Christmas</p>
-                    </li>
+                    <Link to='https://www.discover716.com/featurings' className="link">
+                        <div className="nav-element">
+                            <p>Tasting Tables</p>
+                        </div>
+                    </Link>
+                    <Link to='https://www.discover716.com/projects-8' className="link">
+                        <div className="nav-element">
+                            <p>12 Businesses of Christmas</p>
+                        </div>
+                    </Link>
+                    <Link to='' className="link">
+                        <div className="nav-element">
+                            <p>More...</p>
+                        </div>
+                    </Link>
                 </ul>
             </div>
             
@@ -192,29 +192,41 @@ function FooterMenus({isMobile}) {
                     <h3>Resources</h3>
                 </div>
                 <ul className="options">
-                <li className="option">
-                        <Link to="https://ltpm2399.blogspot.com/" className="link">
+                    <Link to='https://ltpm2399.blogspot.com/' className="link">
+                        <div className="nav-element">
                             <p>blogs</p>
-                        </Link>
-                    </li>
-                    <li className="option">
-                        <p>interns/volunteers</p>
-                    </li>
-                    <li className="option">
-                        <p>partners</p>
-                    </li>
-                    <li className="option">
-                        <p>sponsors</p>
-                    </li>
-                    <li className="option">
-                        <p>donate</p>
-                    </li>
-                    <li className="option">
-                        <p>contact</p>
-                    </li>
-                    <li className="option">
-                        <p>about us</p>
-                    </li>
+                        </div>
+                    </Link>
+                    <Link to='https://www.discover716.com/services' className="link">
+                        <div className="nav-element">
+                            <p>interns/volunteers</p>
+                        </div>
+                    </Link>
+                    <Link to='https://www.discover716.com/partners' className="link">
+                        <div className="nav-element">
+                            <p>partners</p>
+                        </div>
+                    </Link>
+                    <Link to='https://www.discover716.com/list-your-business' className="link">
+                        <div className="nav-element">
+                            <p>sponsors</p>
+                        </div>
+                    </Link>
+                    <Link to='https://www.paypal.com/donate/?business=JVGA62CCJJANQ&no_recurring=0&item_name=Testing&currency_code=USD' className="link">
+                        <div className="nav-element">
+                            <p>donate</p>
+                        </div>
+                    </Link>
+                    <Link to='/contact-us' className="link">
+                        <div className="nav-element">
+                            <p>contact us</p>
+                        </div>
+                    </Link>
+                    <Link to='/about-us' className="link">
+                        <div className="nav-element">
+                            <p>about us</p>
+                        </div>
+                    </Link>
                 </ul>
             </div>
         </div>

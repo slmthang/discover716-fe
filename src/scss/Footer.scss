@@ -9,9 +9,7 @@ footer {
 	position: relative;
 	z-index: 3;
 	width: 100vw;
-	border-top: 0.5px solid var(--shadow-line-w);
-	border-left: 0.5px solid var(--shadow-line-b);
-	border-right: 0.5px solid var(--shadow-line-b);
+	border-top: 0.5px solid var(--shadow-line-b);
 
 	#footer-navs {
 		width: 100%;
@@ -91,7 +89,7 @@ footer {
 
 			.options {
 
-				.option {
+				.nav-element {
 					margin-bottom: 0.75rem;
 					padding-left: 0.25rem;
 					min-height: fit-content;

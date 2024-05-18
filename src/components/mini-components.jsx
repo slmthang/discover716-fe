@@ -24,40 +24,6 @@ export function Icons({fontAwesome, href}) {
     );
 }
 
-// Resources()
-export function Resources() {
-    return (
-        <ul className="resources center">
-            <li>
-                <a className="center" href="https://www.discover716.com/services">
-                    <p>interns/volunteers</p>
-                </a>
-            </li>
-            <li>
-                <a className="center" href="https://www.discover716.com/partners">
-                    <p>partners</p>
-                </a>
-            </li>
-            <li>
-                <a className="center" href="https://www.discover716.com/list-your-business">
-                    <p>sponsors</p>
-                </a>
-            </li>
-            <li>
-                <a className="center" href="https://www.paypal.com/donate/?business=JVGA62CCJJANQ&no_recurring=0&item_name=Testing&currency_code=USD">
-                    <p>donate</p>
-                </a>
-            </li>
-            <li>
-                <Link to="/contact-us"><p>contact</p></Link>
-            </li>
-            <li>
-                <Link to="/about-us"><p>about us</p></Link>
-            </li>    
-        </ul>
-    );
-}
-
 // Socials
 export function Socials() {
     return (
@@ -85,6 +51,16 @@ export function CloseButton() {
             <i className="fa-solid fa-x"></i>   
         </div>
     );
+}
+
+export function NavElement({obj, type}) {
+    return (
+        <Link to={`/${type}/${obj._id}`} className="link">
+            <div className="nav-element">
+                    <p>{obj.name}</p>
+            </div>
+        </Link>
+    )
 }
 
     

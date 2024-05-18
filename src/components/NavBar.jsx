@@ -4,33 +4,42 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "../scss/NavBar.scss";
-import { Logo, Socials, Resources } from "./mini-components";
+import { Logo, Socials, NavElement } from "./mini-components";
 
+// services
 import eventService from "../services/eventService";
-
-
-function EventElement({eventObj}) {
-    return (
-        <Link to={`/event/${eventObj._id}`} className="link">
-            <div className="nav-bar2-drpdwn-menu-option">
-                    <p>{eventObj.title}</p>
-            </div>
-        </Link>
-    )
-}
-
+import hotelService from "../services/hotelService";
+import placeService from "../services/placeService";
+import restaurantService from "../services/restaurantService";
 
 // components
 function Nav() {
 
     const [events, setEvents] = useState([]);
-
+    const [hotels, setHotels] = useState([]);
+    const [places, setPlaces] = useState([]);
+    const [restaurants, setRestaurants] = useState([]);
 
     useEffect(() => {
         eventService.fetchAll()
             .then(eventsData => {
                 setEvents(eventsData);
             });
+        
+        hotelService.fetchAll()
+            .then(hotelsData => {
+                setHotels(hotelsData);
+            })
+
+        placeService.fetchAll()
+            .then(placesData => {
+                setPlaces(placesData);
+            })
+        
+        restaurantService.fetchAll()
+            .then(restaurantData => {
+                setRestaurants(restaurantData);
+            })
     }, [])
 
 
@@ -40,7 +49,43 @@ function Nav() {
                 <div className="empty"></div>
 
                 <div id="nav-bar1-menu">
-                    <Resources />
+                    <ul className="resources center">
+                        <Link to='https://ltpm2399.blogspot.com/' className="link">
+                            <div className="nav-element">
+                                <p>blogs</p>
+                            </div>
+                        </Link>
+                        <Link to='https://www.discover716.com/services' className="link">
+                            <div className="nav-element">
+                                <p>interns/volunteers</p>
+                            </div>
+                        </Link>
+                        <Link to='https://www.discover716.com/partners' className="link">
+                            <div className="nav-element">
+                                <p>partners</p>
+                            </div>
+                        </Link>
+                        <Link to='https://www.discover716.com/list-your-business' className="link">
+                            <div className="nav-element">
+                                <p>sponsors</p>
+                            </div>
+                        </Link>
+                        <Link to='https://www.paypal.com/donate/?business=JVGA62CCJJANQ&no_recurring=0&item_name=Testing&currency_code=USD' className="link">
+                            <div className="nav-element">
+                                <p>donate</p>
+                            </div>
+                        </Link>
+                        <Link to='/contact-us' className="link">
+                            <div className="nav-element">
+                                <p>contact us</p>
+                            </div>
+                        </Link>
+                        <Link to='/about-us' className="link">
+                            <div className="nav-element">
+                                <p>about us</p>
+                            </div>
+                        </Link>
+                    </ul>
                     <Socials />
                 </div>
             </div>
@@ -57,22 +102,21 @@ function Nav() {
                     <div className="nav-bar2-drpdwn-menu-options">
                         {events.length > 0 ?
                             events.map((event) => {
-                                return <EventElement key={event._id} eventObj={event} />
+                                return <NavElement key={event._id} obj={event} type="events" />
                             }) 
                         : null}
                     </div>
                 </div>
                 <div className="nav-bar2-drpdwn">
                     <div className="nav-bar2-drpdwn-menu center">
-                        <h3>Things To Dos</h3>
+                        <h3>Places to Visit</h3>
                     </div>
                     <div className="nav-bar2-drpdwn-menu-options">
-                        <div className="nav-bar2-drpdwn-menu-option">
-                            <p>Things To Dos</p>
-                        </div>
-                        <div className="nav-bar2-drpdwn-menu-option">
-                            <p>Things To Dos</p>
-                        </div>
+                        {places.length > 0 ?
+                            places.map((place) => {
+                                return <NavElement key={place._id} obj={place} type="places" />
+                            }) 
+                        : null}
                     </div>
                 </div>
                 <div className="nav-bar2-drpdwn">
@@ -80,12 +124,11 @@ function Nav() {
                         <h3>Restaurants</h3>
                     </div>
                     <div className="nav-bar2-drpdwn-menu-options">
-                        <div className="nav-bar2-drpdwn-menu-option">
-                            <p>Restaurants</p>
-                        </div>
-                        <div className="nav-bar2-drpdwn-menu-option">
-                            <p>Restaurants</p>
-                        </div>
+                        {restaurants.length > 0 ?
+                            restaurants.map((restaurant) => {
+                                return <NavElement key={restaurant._id} obj={restaurant} type="restaurants" />
+                            }) 
+                        : null}
                     </div>
                 </div>
                 <div className="nav-bar2-drpdwn">
@@ -93,12 +136,11 @@ function Nav() {
                         <h3>Hotels</h3>
                     </div>
                     <div className="nav-bar2-drpdwn-menu-options">
-                        <div className="nav-bar2-drpdwn-menu-option">
-                            <p>Hotels</p>
-                        </div>
-                        <div className="nav-bar2-drpdwn-menu-option">
-                            <p>Hotels</p>
-                        </div>
+                        {hotels.length > 0 ?
+                            hotels.map((hotel) => {
+                                return <NavElement key={hotel._id} obj={hotel} type="hotels" />
+                            }) 
+                        : null}
                     </div>
                 </div>                   
                 <div className="nav-bar2-drpdwn">
@@ -106,12 +148,16 @@ function Nav() {
                         <h3>Specials</h3>
                     </div>
                     <div className="nav-bar2-drpdwn-menu-options">
-                        <div className="nav-bar2-drpdwn-menu-option">
-                            <p>Specials</p>
-                        </div>
-                        <div className="nav-bar2-drpdwn-menu-option">
-                            <p>Specials</p>
-                        </div>
+                        <Link to='https://www.discover716.com/featurings' className="link">
+                            <div className="nav-element">
+                                <p>Tasting Tables</p>
+                            </div>
+                        </Link>
+                        <Link to='https://www.discover716.com/projects-8' className="link">
+                            <div className="nav-element">
+                                <p>12 Businesses of Christmas</p>
+                            </div>
+                        </Link>
                     </div>
                 </div>
                 <div className="nav-bar2-drpdwn">
@@ -156,7 +202,7 @@ function BurgMenu({toggleBurg}) {
     return (
         <nav id="burg-menu" className="center">
             <ul className="center menus1">
-                <li className="menu">
+                {/* <li className="menu">
                     <Link className="item" to="/event" onClick={toggleBurg}>Events</Link>
                 </li>
                 <li className="menu">Things To Do</li>
@@ -166,7 +212,34 @@ function BurgMenu({toggleBurg}) {
                     <Link to="https://ltpm2399.blogspot.com/" className="link">
                         Blogs
                     </Link>
-                </li>
+                </li> */}
+
+                
+                <Link to='/events' className="link menu">
+                    <div className="nav-element">
+                        <p>Events</p>
+                    </div>
+                </Link>
+                <Link to='/places' className="link menu">
+                    <div className="nav-element">
+                        <p>Things To Do</p>
+                    </div>
+                </Link>
+                <Link to='/restaurants' className="link menu">
+                    <div className="nav-element">
+                        <p>Restaurants</p>
+                    </div>
+                </Link>
+                <Link to='/hotels' className="link menu">
+                    <div className="nav-element">
+                        <p>Hotels</p>
+                    </div>
+                </Link>
+                <Link to='https://ltpm2399.blogspot.com/' className="link menu">
+                    <div className="nav-element">
+                        <p>Blogs</p>
+                    </div>
+                </Link>
             </ul>
             <ul className="menus2">
                 <div className="center apps">
