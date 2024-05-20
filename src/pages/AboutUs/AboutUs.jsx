@@ -1,5 +1,7 @@
 
 import "./AboutUs.scss";
+import {Logo} from "../../components/mini-components";
+import { discover716 } from "../../data";
 
 function AboutUs() {
     return (

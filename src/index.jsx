@@ -11,7 +11,7 @@ import "./index.css";
 import Layout from "./components/Layout/Layout.jsx";
 import Homepage from "./pages/Homepage/Homepage.jsx";
 import DisplayPage from "./pages/DisplayPage/DisplayPage.jsx";
-import AddEvent from "./pages/Add/Add.jsx";
+import Submit from "./pages/Submit/Submit.jsx";
 import AboutUs from "./pages/AboutUs/AboutUs.jsx";
 import ContactUs from "./pages/ContactUs/ContactUs.jsx";
 
@@ -35,8 +35,8 @@ const router = createBrowserRouter([
             },
 
             {
-                path: "add-event",
-                element: <AddEvent />
+                path: "submit",
+                element: <Submit />
             },
 
             {
