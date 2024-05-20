@@ -48,11 +48,6 @@ function Nav() {
 
                 <div id="nav-bar1-menu">
                     <ul className="resources center">
-                        <Link to='https://ltpm2399.blogspot.com/' className="link">
-                            <div className="nav-element">
-                                <p>blogs</p>
-                            </div>
-                        </Link>
                         <Link to='https://www.discover716.com/services' className="link">
                             <div className="nav-element">
                                 <p>interns/volunteers</p>
@@ -103,6 +98,11 @@ function Nav() {
                                 return <NavElement key={event._id} obj={event} type="events" />
                             }) 
                         : null}
+                        <Link to='/display/events' className="link">
+                            <div className="nav-element">
+                                <p>More...</p>
+                            </div>
+                        </Link>
                     </div>
                 </div>
                 <div className="nav-bar2-drpdwn">
@@ -115,6 +115,11 @@ function Nav() {
                                 return <NavElement key={place._id} obj={place} type="places" />
                             }) 
                         : null}
+                        <Link to='/display/places' className="link">
+                            <div className="nav-element">
+                                <p>More...</p>
+                            </div>
+                        </Link>
                     </div>
                 </div>
                 <div className="nav-bar2-drpdwn">
@@ -127,6 +132,11 @@ function Nav() {
                                 return <NavElement key={restaurant._id} obj={restaurant} type="restaurants" />
                             }) 
                         : null}
+                        <Link to='/display/restaurants' className="link">
+                            <div className="nav-element">
+                                <p>More...</p>
+                            </div>
+                        </Link>
                     </div>
                 </div>
                 <div className="nav-bar2-drpdwn">
@@ -139,6 +149,11 @@ function Nav() {
                                 return <NavElement key={hotel._id} obj={hotel} type="hotels" />
                             }) 
                         : null}
+                        <Link to='/display/hotels' className="link">
+                            <div className="nav-element">
+                                <p>More...</p>
+                            </div>
+                        </Link>
                     </div>
                 </div>                   
                 <div className="nav-bar2-drpdwn">
@@ -156,12 +171,19 @@ function Nav() {
                                 <p>12 Businesses of Christmas</p>
                             </div>
                         </Link>
+                        <Link to='' className="link">
+                            <div className="nav-element">
+                                <p>More...</p>
+                            </div>
+                        </Link>
                     </div>
                 </div>
                 <div className="nav-bar2-drpdwn">
-                    <div className="nav-bar2-drpdwn-menu center">
+                    <div className="nav-bar2-drpdwn-menu blogs center">
                         <Link to="https://ltpm2399.blogspot.com/" className="link">
-                            <h3>Blogs</h3>
+                            <h3 style={{color: "white"}}>Blogs &nbsp;&nbsp;
+                                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                            </h3>
                         </Link>
                     </div>
                 </div>
@@ -200,40 +222,28 @@ function BurgMenu({toggleBurg}) {
     return (
         <nav id="burg-menu" className="center">
             <ul className="center menus1">
-                {/* <li className="menu">
-                    <Link className="item" to="/event" onClick={toggleBurg}>Events</Link>
-                </li>
-                <li className="menu">Things To Do</li>
-                <li className="menu">Restaurants</li>
-                <li className="menu">Hotels</li>
-                <li className="menu">
-                    <Link to="https://ltpm2399.blogspot.com/" className="link">
-                        Blogs
-                    </Link>
-                </li> */}
-
                 
-                <Link to='/events' className="link menu">
+                <Link to='/display/events' className="link menu" onClick={toggleBurg}>
                     <div className="nav-element">
                         <p>Events</p>
                     </div>
                 </Link>
-                <Link to='/places' className="link menu">
+                <Link to='/display/places' className="link menu" onClick={toggleBurg}>
                     <div className="nav-element">
-                        <p>Things To Do</p>
+                        <p>Places To Visit</p>
                     </div>
                 </Link>
-                <Link to='/restaurants' className="link menu">
+                <Link to='/display/restaurants' className="link menu" onClick={toggleBurg}>
                     <div className="nav-element">
                         <p>Restaurants</p>
                     </div>
                 </Link>
-                <Link to='/hotels' className="link menu">
+                <Link to='/display/hotels' className="link menu" onClick={toggleBurg}>
                     <div className="nav-element">
                         <p>Hotels</p>
                     </div>
                 </Link>
-                <Link to='https://ltpm2399.blogspot.com/' className="link menu">
+                <Link to='https://ltpm2399.blogspot.com/' className="link menu" onClick={toggleBurg}>
                     <div className="nav-element">
                         <p>Blogs</p>
                     </div>

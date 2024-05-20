@@ -10,7 +10,8 @@ import "./index.css";
 // views
 import Layout from "./components/Layout/Layout.jsx";
 import Homepage from "./pages/Homepage/Homepage.jsx";
-import DisplayPage from "./pages/DisplayPage/DisplayPage.jsx";
+import DisplayAll from "./pages/DisplayPage/DisplayAll.jsx";
+import Display from "./pages/DisplayPage/Display.jsx";
 import Submit from "./pages/Submit/Submit.jsx";
 import AboutUs from "./pages/AboutUs/AboutUs.jsx";
 import ContactUs from "./pages/ContactUs/ContactUs.jsx";
@@ -30,8 +31,13 @@ const router = createBrowserRouter([
 
             // views
             {
+                path: "display/:dataType/",
+                element: <DisplayAll />,
+            },
+
+            {
                 path: "display/:dataType/:dataId",
-                element: <DisplayPage />
+                element: <Display />
             },
 
             {

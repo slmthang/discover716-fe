@@ -5,6 +5,7 @@ import { Outlet } from "react-router-dom";
 
 import NavBar from "../NavBar/NavBar.jsx";
 import Footer from "../Footer/Footer.jsx";
+import ScrollToTop from "../ScrollToTop.jsx";
 
 export default function Layout() {
 
@@ -38,6 +39,7 @@ export default function Layout() {
 
     return (
         <div id="main-layout">
+            <ScrollToTop />
             <NavBar isMobile={isMobile} />
             <Outlet isMobile={isMobile}/>
             <Footer isMobile={isMobile} />

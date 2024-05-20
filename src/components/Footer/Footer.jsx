@@ -94,7 +94,7 @@ function FooterMenus({isMobile}) {
                             return <NavElement key={event._id} obj={event} type="events" />
                         }) 
                     : null}
-                    <Link to='' className="link">
+                    <Link to='/display/events' className="link">
                         <div className="nav-element">
                             <p>More...</p>
                         </div>
@@ -113,7 +113,7 @@ function FooterMenus({isMobile}) {
                                 return <NavElement key={place._id} obj={place} type="places" />
                             }) 
                         : null}
-                    <Link to='' className="link">
+                    <Link to='/display/places' className="link">
                         <div className="nav-element">
                             <p>More...</p>
                         </div>
@@ -132,7 +132,7 @@ function FooterMenus({isMobile}) {
                                 return <NavElement key={restaurant._id} obj={restaurant} type="restaurants" />
                             }) 
                         : null}
-                    <Link to='' className="link">
+                    <Link to='/display/restaurants' className="link">
                         <div className="nav-element">
                             <p>More...</p>
                         </div>
@@ -151,7 +151,7 @@ function FooterMenus({isMobile}) {
                                 return <NavElement key={hotel._id} obj={hotel} type="hotels" />
                             }) 
                         : null}
-                    <Link to='' className="link">
+                    <Link to='/display/hotels' className="link">
                         <div className="nav-element">
                             <p>More...</p>
                         </div>

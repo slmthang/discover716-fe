@@ -62,5 +62,3 @@ export function NavElement({obj, type}) {
         </Link>
     )
 }
-
-    

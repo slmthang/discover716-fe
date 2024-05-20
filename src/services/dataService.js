@@ -3,10 +3,9 @@
 import axios from 'axios';
 
 // baseURL
-const baseURL = import.meta.env.VITE_BASE_API_URL;
+// const baseURL = import.meta.env.VITE_BASE_API_URL;
 
-console.log("baseULR: ", baseURL, ": END");
-// const baseURL = '/api';
+const baseURL = '/api';
 
 // fetch all data
 const fetchAll = (path) => {

@@ -22,8 +22,8 @@
     --white-g: #f9f9fa;
     --black: #000;
     --dark-grey-bg: #383838; /* dark grey color */
-    --shadow-line-w: rgba(255, 255, 255, 0.4);
-    --shadow-line-b: rgba(0,0,0,.2);
+    --shadow-line-w: rgba(255, 255, 255, 0.5);
+    --shadow-line-b: rgba(0,0,0,0.5);
     --box-shadow-1: 0 3px 15px rgba(0,0,0,.2);
 }
 
