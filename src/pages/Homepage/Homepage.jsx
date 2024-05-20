@@ -3,21 +3,21 @@
 import {useState} from "react";
 
 // css
-import "../scss/Homepage.scss";
+import "./Homepage.scss";
 
 // images
-import sportImg from "../assets/sport.jpg";
-import cityImg from "../assets/city.jpg";
-import buildingImg from "../assets/building.jpg";
+import sportImg from "../../assets/sport.jpg";
+import cityImg from "../../assets/city.jpg";
+import buildingImg from "../../assets/building.jpg";
 
 // moments
-import {moments} from "../data.js";
+import {moments} from "../../data.js";
 
 // popup
-import WelcomePopUp from "./WelcomePopUp.jsx";
+import WelcomePopUp from "../../components/WelcomePopUp/WelcomePopUp.jsx";
 
 // utils
-import utils from "../services/utils.js";
+import utils from "../../utils/utils.js";
 
 
 

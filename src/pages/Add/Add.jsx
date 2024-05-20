@@ -1,25 +1,9 @@
 
-import { useState } from 'react';
-import "../scss/AddEvent.scss";
-import dataService from '../services/dataService';
+import "./Add.scss";
+import dataService from '../../services/dataService';
 
 
 function AddEvent() {
-
-  const [formType, setFormType] = useState("event");
-
-  // // handle inputs change on the form 
-  // const eventInfoFormHandler = (e) => {
-  //   const name = e.target.name;
-  //   const value = e.target.value;
-
-  //   setEventInfo((eventInfo) => {
-  //     return {
-  //       ...eventInfo,
-  //       [name]: value
-  //     }
-  //   })
-  // }
 
   // upoload Event
   const uploadEvent = (e) => {

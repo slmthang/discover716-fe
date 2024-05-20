@@ -3,9 +3,8 @@
 import axios from 'axios';
 
 // baseURL
-// const baseURL = 'https://discover716-be.onrender.com/api';
-const baseURL = '/api';
-
+const baseURL = import.meta.env.BASE_API_URL || '/api';
+// const baseURL = '/api';
 
 // fetch all data
 const fetchAll = (path) => {

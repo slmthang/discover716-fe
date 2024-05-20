@@ -3,8 +3,8 @@
 import {useState, useEffect} from "react";
 import { Outlet } from "react-router-dom";
 
-import NavBar from "./NavBar.jsx";
-import Footer from "./Footer.jsx";
+import NavBar from "../NavBar/NavBar.jsx";
+import Footer from "../Footer/Footer.jsx";
 
 export default function Layout() {
 

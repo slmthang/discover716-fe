@@ -1,8 +1,9 @@
 
 
+import "./WelcomePopUp.scss";
 import { useState } from "react";
-import {Logo, CloseButton} from "./mini-components.jsx"
-import utils from "../services/utils.js";
+import {Logo, CloseButton} from "../mini-components.jsx"
+import utils from "../../utils/utils.js";
 
 export default function WelcomePopUp() {
 

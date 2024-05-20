@@ -1,20 +1,22 @@
-import ReactDOM from "react-dom/client";
 
-import "./css/default.css";
-import "./scss/styles.scss";
+// IMPORT
+import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-// routes views & loaders
-import Layout from "./components/Layout.jsx";
-import Homepage from "./components/Homepage.jsx";
+
+// css
+import "./index.css";
 
 // views
-import DisplayPage from "./components/DisplayPage.jsx";
+import Layout from "./components/Layout/Layout.jsx";
+import Homepage from "./pages/Homepage/Homepage.jsx";
+import DisplayPage from "./pages/DisplayPage/DisplayPage.jsx";
+import AddEvent from "./pages/Add/Add.jsx";
+import AboutUs from "./pages/AboutUs/AboutUs.jsx";
+import ContactUs from "./pages/ContactUs/ContactUs.jsx";
 
-import AddEvent from "./components/AddEvent";
-import AboutUs from "./components/AboutUs";
-import ContactUs from "./components/ContactUs";
 
+// routers
 const router = createBrowserRouter([
     {
         path: "/",

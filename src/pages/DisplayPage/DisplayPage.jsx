@@ -1,9 +1,9 @@
 
 
-import "../scss/displayPage.scss";
+import "./displayPage.scss";
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import dataService from "../services/dataService";
+import dataService from "../../services/dataService";
 
 
 function formatTime(time) {

@@ -1,12 +1,12 @@
 
 // IMPORTS
-import "../scss/Footer.scss";
-import { discover716, icons } from "../data.js";
-import { Logo, Icons, NavElement } from "./mini-components";
+import "./Footer.scss";
+import { discover716, icons } from "../../data.js";
+import { Logo, Icons, NavElement } from "../mini-components.jsx";
 import { useState, useEffect } from "react";
 
 // services
-import dataService from "../services/dataService.js";
+import dataService from "../../services/dataService.js";
 import { Link } from "react-router-dom";
 
 

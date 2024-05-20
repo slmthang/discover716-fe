@@ -1,7 +1,7 @@
 
-import "../scss/ContactUs.scss";
+import "./ContactForm.scss";
 
-function ContactUs() {
+function ContactForm() {
     return (
 
         <div id="contact-form-cont" className="center">
@@ -32,4 +32,4 @@ function ContactUs() {
 }
 
 
-export default ContactUs;
+export default ContactForm;

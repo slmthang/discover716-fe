@@ -3,11 +3,11 @@
 // IMPORTS
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import "../scss/NavBar.scss";
-import { Logo, Socials, NavElement } from "./mini-components";
+import "./NavBar.scss";
+import { Logo, Socials, NavElement } from "../mini-components";
 
 // service
-import dataService from "../services/dataService";
+import dataService from "../../services/dataService";
 
 // components
 function Nav() {
