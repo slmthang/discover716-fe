@@ -1,92 +1,101 @@
 
 import { useState } from 'react';
-import eventService from '../services/eventService';
 import "../scss/AddEvent.scss";
+import dataService from '../services/dataService';
 
 
 function AddEvent() {
-  const [eventInfo, setEventInfo] = useState({
-    name: "",
-    date: "",
-    startTime: "",
-    endTime: "",
-    address: "",
-    website: "",
-    thumbnail: "",
-    description: "",
-    email: "",
-    phone: "",
-    goingCount: 0
-  })
 
-  // handle inputs change on the form 
-  const eventInfoFormHandler = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
+  const [formType, setFormType] = useState("event");
 
-    setEventInfo((eventInfo) => {
-      return {
-        ...eventInfo,
-        [name]: value
-      }
-    })
-  }
+  // // handle inputs change on the form 
+  // const eventInfoFormHandler = (e) => {
+  //   const name = e.target.name;
+  //   const value = e.target.value;
+
+  //   setEventInfo((eventInfo) => {
+  //     return {
+  //       ...eventInfo,
+  //       [name]: value
+  //     }
+  //   })
+  // }
 
   // upoload Event
-  const uploadEvent = async (e) => {
+  const uploadEvent = (e) => {
 
     // prevent default
     e.preventDefault();
 
     const fd = new FormData(e.target);
 
-    console.log("Form Data: ", fd);
-
+    console.log("Form Data: ", fd.get);
 
     // create a new event
-    eventService
+    dataService
       .create(fd)
       .then(data => {
-        console.log("event added: ", data);
+        console.log(`${fd.get("type")} added to db: `, data);
       })
+  }
+
+  // select handler
+  const selectHandler = (e) => {
+    setFormType(e.target.value);
+    console.log("FormType: ", formType);
   }
 
   return (
     <>
       <form onSubmit={uploadEvent} id='eventInfoForm'>
-        <h1>Upload an Event</h1>
+        <h1>Upload Page</h1>
         <section id='inputs' className='center'>
           <p>
+            <label htmlFor="type">Type: </label>
+            <select name="type" id="type" onChange={selectHandler}>
+              <option value="events">Event</option>
+              <option value="places">Place</option>
+              <option value="restaurants">Restaurant</option>
+              <option value="hotels">Hotel</option>
+            </select>
+          </p>
+          <p>
             <label htmlFor="name">Name: </label>
-            <input type="text" id='name' name='name' onChange={eventInfoFormHandler}/>
+            <input type="text" id='name' name='name'/>
           </p>
-          <p>
-            <label htmlFor="date">Date: </label> 
-            <input type="date" id='date' name='date' onChange={eventInfoFormHandler}/>
-          </p>
-          <p>
-            <label htmlFor="startTime">Start Time: </label>
-            <input type="time" id='startTime' name='startTime' onChange={eventInfoFormHandler}/>
-          </p>
-          <p>
-            <label htmlFor="endTime">End Time: </label>
-            <input type="time" id='endTime' name='endTime' onChange={eventInfoFormHandler}/>
-          </p>
+
+          {formType=="event" ? (
+            <>
+              <p>
+                <label htmlFor="date">Date: </label> 
+                <input type="date" id='date' name='date'/>
+              </p>
+              <p>
+                <label htmlFor="startTime">Start Time: </label>
+                <input type="time" id='startTime' name='startTime'/>
+              </p>
+              <p>
+                <label htmlFor="endTime">End Time: </label>
+                <input type="time" id='endTime' name='endTime'/>
+              </p>
+            </>
+          ) : null}
+            
           <p>
             <label htmlFor="address">Address: </label>
-            <input type="location" id='address' name='address' onChange={eventInfoFormHandler}/>
+            <input type="location" id='address' name='address'/>
           </p>
           <p>
             <label htmlFor="email">Email: </label>
-            <input type="email" id='email' name='email' onChange={eventInfoFormHandler}/>
+            <input type="email" id='email' name='email'/>
           </p>
           <p>
             <label htmlFor="phone">Phone: </label>
-            <input type="tel" id='phone' name='phone' onChange={eventInfoFormHandler}/>
+            <input type="tel" id='phone' name='phone'/>
           </p>
           <p>
             <label htmlFor="website">Website: </label>
-            <input type="url" id='website' name='website' onChange={eventInfoFormHandler}/>
+            <input type="url" id='website' name='website'/>
           </p>
           <p>
             <label htmlFor="thumbnail">Thumbnail: </label>
@@ -94,7 +103,7 @@ function AddEvent() {
           </p>
           <p>
             <label htmlFor="description">Description: </label>
-            <textarea type="textarea" id='description' name='description' onChange={eventInfoFormHandler}/>
+            <textarea type="textarea" id='about' name='about'/>
           </p>
         </section>
         <section id='submit'>

@@ -1,1 +1,1 @@
-# discover716-fe
+# front-end for Disover716 site

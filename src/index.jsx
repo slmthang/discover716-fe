@@ -9,10 +9,7 @@ import Layout from "./components/Layout.jsx";
 import Homepage from "./components/Homepage.jsx";
 
 // views
-import Event from "./components/Event";
-import Hotel from "./components/Hotel.jsx";
-import Restaurant from "./components/Restaurant.jsx";
-import Place from "./components/Place.jsx";
+import DisplayPage from "./components/DisplayPage.jsx";
 
 import AddEvent from "./components/AddEvent";
 import AboutUs from "./components/AboutUs";
@@ -31,20 +28,8 @@ const router = createBrowserRouter([
 
             // views
             {
-                path: "events/:eventId",
-                element: <Event />
-            },
-            {
-                path: "hotels/:hotelId",
-                element: <Hotel />
-            },
-            {
-                path: "places/:placeId",
-                element: <Place />
-            },
-            {
-                path: "restaurants/:restaurantId",
-                element: <Restaurant />
+                path: "display/:dataType/:dataId",
+                element: <DisplayPage />
             },
 
             {

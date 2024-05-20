@@ -1,12 +1,23 @@
 
 // IMPORTS
-import {useState, useEffect} from "react";
+import {useState} from "react";
+
+// css
 import "../scss/Homepage.scss";
+
+// images
 import sportImg from "../assets/sport.jpg";
 import cityImg from "../assets/city.jpg";
 import buildingImg from "../assets/building.jpg";
+
+// moments
 import {moments} from "../data.js";
+
+// popup
 import WelcomePopUp from "./WelcomePopUp.jsx";
+
+// utils
+import utils from "../services/utils.js";
 
 
 
@@ -95,10 +106,14 @@ function AboutUs({isMobile}) {
                                 <Moment id="momentDisplay1" className="center moment" src={moments[checkMomentsBound(isMoment - 1)]["src"]} alt="alt"/>
                                 <Moment id="momentDisplay2" className="center moment" src={moments[checkMomentsBound(isMoment)]["src"]} alt="alt">
                                     <div id="prevBtn" className="center" onClick={prevPic}>
-                                        <i className="fa-solid fa-chevron-left"></i>
+                                        <div className="center glass">
+                                            <i className="fa-solid fa-chevron-left"></i>
+                                        </div>
                                     </div>
                                     <div id="nextBtn" className="center" onClick={nextPic}>
-                                        <i className="fa-solid fa-chevron-right"></i>
+                                        <div className="center glass">
+                                            <i className="fa-solid fa-chevron-right"></i>
+                                        </div>
                                     </div> 
                                 </ Moment>
                                 <Moment id="momentDisplay3" className="center moment" src={moments[checkMomentsBound(isMoment + 1)]["src"]} alt="alt"/>
@@ -119,13 +134,9 @@ export function HomepageLoader() {
 // MAIN
 export default function Homepage({isMobile}) {
 
-    useEffect(() => {
-        window.scrollTo(0, 0)
-      }, [])
-
     return (
         <section id="homepage">
-            <WelcomePopUp />
+            {!Boolean(utils.getCookie('visited')) ? <WelcomePopUp /> : null}
             <Intro />  
             <AboutUs isMobile={isMobile} />
         </section>

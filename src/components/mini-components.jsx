@@ -55,7 +55,7 @@ export function CloseButton() {
 
 export function NavElement({obj, type}) {
     return (
-        <Link to={`/${type}/${obj._id}`} className="link">
+        <Link to={`/display/${type}/${obj._id}`} className="link">
             <div className="nav-element">
                     <p>{obj.name}</p>
             </div>

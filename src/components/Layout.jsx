@@ -6,7 +6,6 @@ import { Outlet } from "react-router-dom";
 import NavBar from "./NavBar.jsx";
 import Footer from "./Footer.jsx";
 
-
 export default function Layout() {
 
     /* Checks If the Device is Mobile or Not */

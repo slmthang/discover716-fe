@@ -7,6 +7,7 @@
     #display-cont {
         flex-direction: column;
         padding: 1rem;
+        line-height: 1.4;
 
         #display-intro {
             width: 100%;
@@ -83,7 +84,8 @@
     #display-cont-parent {
 
         #display-cont {
-
+            line-height: 1.6;
+            
             #display-intro {
                 width: 100%;
                 flex-direction: row;
@@ -99,7 +101,6 @@
 
                 #display-details-cont {
                     flex: 1;
-
                     border-top: none;
                     flex-direction: column;
                     align-items: flex-start;
@@ -112,6 +113,7 @@
 
                     #display-details {
                         margin-bottom: 2rem;
+                        
                     }
                 }
             }

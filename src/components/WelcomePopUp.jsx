@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import {Logo, CloseButton} from "./mini-components.jsx"
-
+import utils from "../services/utils.js";
 
 export default function WelcomePopUp() {
 
@@ -10,6 +10,8 @@ export default function WelcomePopUp() {
 
     function hidePopUp() {
         setPopUp(false);
+
+        utils.setCookie("visited", "true", 360);
     }
 
     return popUp ? (

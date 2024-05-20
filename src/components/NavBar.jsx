@@ -6,11 +6,8 @@ import { useState, useEffect } from "react";
 import "../scss/NavBar.scss";
 import { Logo, Socials, NavElement } from "./mini-components";
 
-// services
-import eventService from "../services/eventService";
-import hotelService from "../services/hotelService";
-import placeService from "../services/placeService";
-import restaurantService from "../services/restaurantService";
+// service
+import dataService from "../services/dataService";
 
 // components
 function Nav() {
@@ -21,27 +18,28 @@ function Nav() {
     const [restaurants, setRestaurants] = useState([]);
 
     useEffect(() => {
-        eventService.fetchAll()
+
+        // fetch data for events, hotels, places and restaurants
+        dataService.fetchAll("events")
             .then(eventsData => {
                 setEvents(eventsData);
             });
         
-        hotelService.fetchAll()
+        dataService.fetchAll("hotels")
             .then(hotelsData => {
                 setHotels(hotelsData);
             })
 
-        placeService.fetchAll()
+        dataService.fetchAll("places")
             .then(placesData => {
                 setPlaces(placesData);
             })
         
-        restaurantService.fetchAll()
+        dataService.fetchAll("restaurants")
             .then(restaurantData => {
                 setRestaurants(restaurantData);
             })
     }, [])
-
 
     return (
         <div id="nav-bar">

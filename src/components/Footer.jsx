@@ -6,16 +6,11 @@ import { Logo, Icons, NavElement } from "./mini-components";
 import { useState, useEffect } from "react";
 
 // services
-import eventService from "../services/eventService";
-import hotelService from "../services/hotelService";
-import placeService from "../services/placeService";
-import restaurantService from "../services/restaurantService";
-
+import dataService from "../services/dataService.js";
 import { Link } from "react-router-dom";
 
 
 // mini components
-
 function DownloadApp({name, fontAwesome, href}) {
     return (
         <a className="center download" href={href}>
@@ -61,22 +56,24 @@ function FooterMenus({isMobile}) {
     const [restaurants, setRestaurants] = useState([]);
 
     useEffect(() => {
-        eventService.fetchAll()
+        
+        // fetch data for events, hotels, places and restaurants
+        dataService.fetchAll("events")
             .then(eventsData => {
                 setEvents(eventsData);
             });
         
-        hotelService.fetchAll()
+        dataService.fetchAll("hotels")
             .then(hotelsData => {
                 setHotels(hotelsData);
             })
 
-        placeService.fetchAll()
+        dataService.fetchAll("places")
             .then(placesData => {
                 setPlaces(placesData);
             })
         
-        restaurantService.fetchAll()
+        dataService.fetchAll("restaurants")
             .then(restaurantData => {
                 setRestaurants(restaurantData);
             })
