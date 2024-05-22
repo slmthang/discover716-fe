@@ -330,7 +330,7 @@
 						position: absolute;
 						z-index: 1;
 						min-width: 14rem;
-						max-height: 12rem;
+						min-height: 12rem;
 						background-color: var(--white);
 
 						> a {
