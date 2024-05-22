@@ -41,7 +41,7 @@ export default function Layout() {
         <div id="main-layout">
             <ScrollToTop />
             <NavBar isMobile={isMobile} />
-            <Outlet isMobile={isMobile}/>
+            <Outlet isMobile={isMobile} />
             <Footer isMobile={isMobile} />
         </div>
     );
