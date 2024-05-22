@@ -57,7 +57,7 @@ function DisplayElement({displayType, displayObj}) {
     return (
         <div id="display-element-cont" className="center glass">
             <div id="thumbnail">
-                <img src={img} alt="element thumbnail" />
+                <img src={displayObj.thumbnail} alt="element thumbnail" />
             </div>
             <div id="details-cont" className="center">
                 <div id="details">

@@ -22,8 +22,6 @@ function Submit() {
 
     const fd = new FormData(e.target);
 
-    console.log("Form Data: ", fd.get);
-
     // create a new event
     dataService
       .create(fd)
@@ -34,7 +32,7 @@ function Submit() {
         })
           .catch(err => {
 
-            alert(`Successful Submission. Try again.`);
+            alert(`Submission Failed. Try again.`);
             console.log("Submission Error Failed: ", err);
             setSubmitted(false);
           })
@@ -66,29 +64,29 @@ function Submit() {
                 </p>
                 <p>
                   <label htmlFor="name">Name: </label>
-                  <input type="text" id='name' name='name'/>
+                  <input type="text" id='name' name='name' required/>
                 </p>
 
                 {formType=="event" ? (
                   <>
                     <p>
                       <label htmlFor="date">Date: </label> 
-                      <input type="date" id='date' name='date'/>
+                      <input type="date" id='date' name='date' required/>
                     </p>
                     <p>
                       <label htmlFor="startTime">Start Time: </label>
-                      <input type="time" id='startTime' name='startTime'/>
+                      <input type="time" id='startTime' name='startTime' required/>
                     </p>
                     <p>
                       <label htmlFor="endTime">End Time: </label>
-                      <input type="time" id='endTime' name='endTime'/>
+                      <input type="time" id='endTime' name='endTime' required/>
                     </p>
                   </>
                 ) : null}
                   
                 <p>
                   <label htmlFor="address">Address: </label>
-                  <input type="location" id='address' name='address'/>
+                  <input type="location" id='address' name='address' required/>
                 </p>
                 <p>
                   <label htmlFor="email">Email: </label>
@@ -104,7 +102,7 @@ function Submit() {
                 </p>
                 <p>
                   <label htmlFor="thumbnail">Thumbnail: </label>
-                  <input type="file" id='thumbnail' name='thumbnail'/>
+                  <input type="file" id='thumbnail' name='thumbnail' required/>
                 </p>
                 <p>
                   <label htmlFor="description">Description: </label>

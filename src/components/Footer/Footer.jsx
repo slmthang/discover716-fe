@@ -8,6 +8,8 @@ import { useState, useEffect } from "react";
 // services
 import dataService from "../../services/dataService.js";
 import { Link } from "react-router-dom";
+// cache
+import { eventsCache, placesCache, hotelsCache, restaurantsCache } from "../../data";
 
 
 // mini components
@@ -50,10 +52,10 @@ function FooterNav() {
 
 function FooterMenus({isMobile}) {
 
-    const [events, setEvents] = useState([]);
-    const [hotels, setHotels] = useState([]);
-    const [places, setPlaces] = useState([]);
-    const [restaurants, setRestaurants] = useState([]);
+    const [events, setEvents] = useState(eventsCache);
+    const [hotels, setHotels] = useState(placesCache);
+    const [places, setPlaces] = useState(restaurantsCache);
+    const [restaurants, setRestaurants] = useState(hotelsCache);
 
     useEffect(() => {
         

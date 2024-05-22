@@ -9,13 +9,16 @@ import { Logo, Socials, NavElement } from "../mini-components";
 // service
 import dataService from "../../services/dataService";
 
+// cache
+import { eventsCache, placesCache, hotelsCache, restaurantsCache } from "../../data";
+
 // components
 function Nav() {
 
-    const [events, setEvents] = useState([]);
-    const [hotels, setHotels] = useState([]);
-    const [places, setPlaces] = useState([]);
-    const [restaurants, setRestaurants] = useState([]);
+    const [events, setEvents] = useState(eventsCache);
+    const [hotels, setHotels] = useState(placesCache);
+    const [places, setPlaces] = useState(restaurantsCache);
+    const [restaurants, setRestaurants] = useState(hotelsCache);
 
     useEffect(() => {
 
@@ -89,77 +92,69 @@ function Nav() {
             
             <div id="nav-bar2-drpdwns" className="center">
                 <div className="nav-bar2-drpdwn">
-                    <div className="nav-bar2-drpdwn-menu center">
-                        <h3>Events</h3>
-                    </div>
-                    <div className="nav-bar2-drpdwn-menu-options">
+                    <Link to="/display/events" className="link">
+                        <div className="nav-bar2-drpdwn-menu center">
+                            <h3>Events</h3>
+                        </div>
+                    </Link>
+                    <div className="nav-bar2-drpdwn-menu-options center">
+
                         {events.length > 0 ?
                             events.map((event) => {
                                 return <NavElement key={event._id} obj={event} type="events" />
-                            }) 
+                        })
                         : null}
-                        <Link to='/display/events' className="link">
-                            <div className="nav-element">
-                                <p>More...</p>
-                            </div>
-                        </Link>
+    
                     </div>
                 </div>
                 <div className="nav-bar2-drpdwn">
-                    <div className="nav-bar2-drpdwn-menu center">
-                        <h3>Places to Visit</h3>
-                    </div>
+                    <Link to="/display/places" className="link">
+                        <div className="nav-bar2-drpdwn-menu center">
+                            <h3>Places to Visit</h3>
+                        </div>
+                    </Link>
                     <div className="nav-bar2-drpdwn-menu-options">
                         {places.length > 0 ?
                             places.map((place) => {
                                 return <NavElement key={place._id} obj={place} type="places" />
                             }) 
                         : null}
-                        <Link to='/display/places' className="link">
-                            <div className="nav-element">
-                                <p>More...</p>
-                            </div>
-                        </Link>
                     </div>
                 </div>
                 <div className="nav-bar2-drpdwn">
-                    <div className="nav-bar2-drpdwn-menu center">
-                        <h3>Restaurants</h3>
-                    </div>
+                    <Link to="/display/restaurants" className="link">
+                        <div className="nav-bar2-drpdwn-menu center">
+                            <h3>Restaurants</h3>
+                        </div>
+                    </Link>
                     <div className="nav-bar2-drpdwn-menu-options">
                         {restaurants.length > 0 ?
                             restaurants.map((restaurant) => {
                                 return <NavElement key={restaurant._id} obj={restaurant} type="restaurants" />
                             }) 
                         : null}
-                        <Link to='/display/restaurants' className="link">
-                            <div className="nav-element">
-                                <p>More...</p>
-                            </div>
-                        </Link>
                     </div>
                 </div>
                 <div className="nav-bar2-drpdwn">
-                    <div className="nav-bar2-drpdwn-menu center">
-                        <h3>Hotels</h3>
-                    </div>
+                    <Link to="/display/hotels" className="link">
+                        <div className="nav-bar2-drpdwn-menu center">
+                            <h3>Hotels</h3>
+                        </div>
+                    </Link>
                     <div className="nav-bar2-drpdwn-menu-options">
                         {hotels.length > 0 ?
                             hotels.map((hotel) => {
                                 return <NavElement key={hotel._id} obj={hotel} type="hotels" />
                             }) 
                         : null}
-                        <Link to='/display/hotels' className="link">
-                            <div className="nav-element">
-                                <p>More...</p>
-                            </div>
-                        </Link>
                     </div>
                 </div>                   
                 <div className="nav-bar2-drpdwn">
-                    <div className="nav-bar2-drpdwn-menu center">
-                        <h3>Specials</h3>
-                    </div>
+                    <Link to="" className="link">
+                        <div className="nav-bar2-drpdwn-menu center">
+                            <h3>Specials</h3>
+                        </div>
+                    </Link>
                     <div className="nav-bar2-drpdwn-menu-options">
                         <Link to='https://www.discover716.com/featurings' className="link">
                             <div className="nav-element">
@@ -171,21 +166,14 @@ function Nav() {
                                 <p>12 Businesses of Christmas</p>
                             </div>
                         </Link>
-                        <Link to='' className="link">
-                            <div className="nav-element">
-                                <p>More...</p>
-                            </div>
-                        </Link>
                     </div>
                 </div>
                 <div className="nav-bar2-drpdwn">
-                    <div className="nav-bar2-drpdwn-menu blogs center">
-                        <Link to="https://ltpm2399.blogspot.com/" className="link">
-                            <h3 style={{color: "white"}}>Blogs &nbsp;&nbsp;
-                                <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                            </h3>
-                        </Link>
-                    </div>
+                    <Link to="https://ltpm2399.blogspot.com/" className="link">
+                        <div className="nav-bar2-drpdwn-menu center">
+                            <h3>Blogs</h3>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </div>

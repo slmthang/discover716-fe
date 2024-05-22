@@ -5,8 +5,6 @@ import axios from 'axios';
 // baseURL
 const baseURL = import.meta.env.VITE_BASE_API_URL;
 
-// const baseURL = '/api';
-
 // fetch all data
 const fetchAll = (path) => {
     const request = axios.get(`${baseURL}/${path}`);

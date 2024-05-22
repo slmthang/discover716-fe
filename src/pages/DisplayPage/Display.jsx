@@ -42,28 +42,51 @@ export default function Display() {
 
     return (
 
-        <div id="display-cont-parent">
+        <div id="display-cont-parent" className="center">
             <div id="display-cont" className="center glass">
                 <div id="display-intro" className="center">
                     <div id="display-thumbnail" className="center">
                         <img src={displayObj.thumbnail} alt="thumbnail" />
                     </div>
                     <div id="display-details-cont" className="center">
-                        <h1>{displayObj.name}</h1>
+                        {displayObj.name ? <h1>{displayObj.name}</h1>:null }
                         <div id="display-details">
                             {displayObj.date ? <p id="date">Date: {displayObj.date}</p> : null }
                             {displayObj.startTime && displayObj.endTime ? <p id="time">Time: {formatTime(displayObj.startTime)} - {formatTime(displayObj.endTime)}</p> : null }
-                            <p id="address">Address: {displayObj.address}</p>
-                            <p id="website">Website: <Link to={displayObj.website} className="link" style={{color: "#323b8c"}}>Visit Here</Link></p>
+                            <p id="address">
+                                {displayObj.address ? 
+                                    <i className="fa-solid fa-location-dot"></i>:null
+                                }
+                                &nbsp;&nbsp;&nbsp;{displayObj.address}
+                            </p>
+                            <p id="website">
+                                {displayObj.website ? 
+                                    <>
+                                        <i className="fa-solid fa-link"></i>&nbsp;&nbsp;&nbsp;
+                                        <Link to={displayObj.website} className="link" style={{color: "#323b8c"}}>Visit Site</Link>
+                                    </> : null
+                            }
+                            </p>
                         </div>
                         <div id="display-contacts">
-                            <p id="phone">Phone: {displayObj.phone}</p>
-                            <p id="email">Email: {displayObj.email}</p>
+                            <p id="phone">
+                                {displayObj.phone ? 
+                                    <i className="fa-solid fa-phone"></i>:null
+                                }
+                                &nbsp;&nbsp;&nbsp;{displayObj.phone}
+                            </p>
+                            <p id="email">
+                                {displayObj.email ? 
+                                    <i className="fa-solid fa-envelope"></i>:null
+                                }
+                                &nbsp;&nbsp;&nbsp;{displayObj.email}
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div id="display-about-cont" className="center">
-                    <h1>Description: </h1>
+                    <h1>About: </h1>
+                    <hr />
                     <p id="display-about">
                         {displayObj.about}
                     </p>

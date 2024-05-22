@@ -9,6 +9,12 @@
         padding: 1rem;
         line-height: 1.4;
 
+        // remove glass
+        background: transparent;
+        --webkit-backdrop-filter: blur(0px);
+        backdrop-filter: blur(0px);
+        border: none;
+
         #display-intro {
             width: 100%;
             flex-direction: column;
@@ -17,8 +23,9 @@
                 width: 100%;
 
                 img {
-                    object-fit: scale-down;
+                    object-fit: contain;
                     max-width: 100%;
+                    max-height: 25rem;
                 }
             }
 
@@ -32,6 +39,7 @@
 
                 > h1 {
                     margin-bottom: 2rem;
+                    color: var(--color-primary);
                 }
 
                 #display-details {
@@ -61,13 +69,15 @@
         #display-about-cont {
             width: 100%;
             flex-direction: column;
-            border-top: 0.5px solid var(--shadow-line-b);
             padding: 1rem;
             margin-top: 2rem;
             align-items: flex-start;
             
             > h1 {
+                width: 100%;
                 margin-bottom: 2rem;
+                color: var(--color-primary);
+                border-bottom: 1px solid black;
             }
 
             #display-about {
@@ -86,17 +96,19 @@
         #display-cont {
             line-height: 1.6;
             
+            background: rgba(239, 239, 239, 0.5);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: .75rem;
+
             #display-intro {
                 width: 100%;
                 flex-direction: row;
                 height: 27rem;
 
                 #display-thumbnail {
-                    flex: 2;
-
-                    img {
-                        max-height: 27rem;
-                    }
+                    flex: 1.5;
                 }
 
                 #display-details-cont {
@@ -105,7 +117,12 @@
                     flex-direction: column;
                     align-items: flex-start;
                     padding: 1rem;
+                    padding-left: 3rem;
                     margin-top: 2rem;
+
+                    > h1, #display-details {
+                        width: fit-content;
+                    }
 
                     > h1 {
                         margin-bottom: 2rem;
@@ -127,5 +144,16 @@
 
 
 @media only screen and (min-width: 1200px) {/* 75rem */ 
+    #display-cont-parent {
 
+        #display-cont {
+
+            width: 75rem;
+
+
+            #display-about-cont {
+                width: 90%;
+            }
+        }
+    }
 }
