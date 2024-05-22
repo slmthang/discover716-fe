@@ -2,6 +2,7 @@
 /******************** footer ********************/
 
 footer {
+	
 	padding: 1rem;
 	min-height: 20rem;
 	background-color: var(--white);
@@ -89,9 +90,9 @@ footer {
 
 			.options {
 
-				.nav-element {
+				a {
 					margin-bottom: 0.75rem;
-					padding-left: 0.25rem;
+					padding-left: 0.5rem;
 					min-height: fit-content;
 
 					p {
@@ -164,21 +165,7 @@ footer {
 				
 				a {
 					color: var(--black);
-				}
-			}
-		}
-	}
-}
 
-@media only screen and (min-width: 1200px) { /* 75rem */
-
-	footer {
-
-		#footer-navs {
-
-			#socials {
-
-				a {
 					&:hover {
 						cursor: pointer;
 						color: var(--color-primary);
@@ -193,13 +180,14 @@ footer {
 
 				.options {
 
-					.option {
+					a {
+						&:hover {
+							cursor: pointer;
+							
 
-						p {
-
-							&:hover {
-								cursor: pointer;
+							p {
 								color: var(--color-primary);
+								font-style: italic;
 							}
 						}
 					}
@@ -218,5 +206,10 @@ footer {
 
 		}
 	}
+}
+
+@media only screen and (min-width: 1200px) { /* 75rem */
+
+	// 
 
 }

@@ -26,6 +26,7 @@
             
             margin-bottom: 0.5rem;
             padding: 0.5rem 0.75rem;
+
             label {
                 display: block;
                 font-size: 1.1rem;
@@ -37,7 +38,7 @@
                 border-radius: 0.5rem;
                 padding-left: 0.5rem;
                 border: none;
-                outline: none;
+                outline: none;background-color: var(--white);
             }
 
             input, select {
