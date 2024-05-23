@@ -12,13 +12,13 @@
     }
 
     #display-element-cont {
-        width: 90%;
+        width: 100%;
         flex-direction: column;
         padding: 1rem;
         margin-bottom: 2rem;
 
         #thumbnail {
-            flex: 1;
+            flex: 1.25;
 
             img {
                 max-width: 100%;
@@ -69,8 +69,18 @@
 
     #displayall-cont {
 
+        width: 75rem;
+
         #display-element-cont {
             flex-direction: row;
+            height: 25rem;
+
+            #thumbnail {
+
+                img {
+                    max-height: 24rem;
+                }
+            }
 
             #details-cont {
 

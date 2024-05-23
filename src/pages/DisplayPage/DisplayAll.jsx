@@ -4,33 +4,6 @@ import "./DisplayAll.scss";
 import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-// const event = {
-//     _id: "664ae8bd87fa9e0d2227f715",
-//     name: "National Day",
-//     date: "2025-01-11",
-//     startTime: "10:00",
-//     endTime: "14:30",
-//     address: "334 Piston St, NY, 14305",
-//     website: "https://www.google.com",
-//     thumbnail: "http://res.cloudinary.com/dxjfmwr5n/image/upload/v1716185278/discover716/pexels-sharefaith-491036-1202723.jpg.jpg",
-//     about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis nunc sed blandit libero. Interdum consectetur libero id faucibus nisl tincidunt eget. Porta lorem mollis aliquam ut porttitor leo a diam sollicitudin. Tincidunt nunc pulvinar sapien et ligula. Enim facilisis gravida neque convallis a cras semper auctor neque. Rhoncus urna neque viverra justo nec ultrices dui sapien eget. Suspendisse faucibus interdum posuere lorem ipsum dolor sit amet consectetur. Purus in massa tempor nec feugiat nisl. Vulputate ut pharetra sit amet aliquam id diam maecenas. In fermentum et sollicitudin ac orci phasellus egestas tellus rutrum. Et leo duis ut diam.\r\n\r\nFusce id velit ut tortor. Quisque egestas diam in arcu cursus euismod quis viverra. Blandit libero volutpat sed cras ornare. Scelerisque in dictum non consectetur a erat nam at. Sit amet consectetur adipiscing elit duis tristique. Sem viverra aliquet eget sit. Orci dapibus ultrices in iaculis nunc sed augue lacus. Proin sagittis nisl rhoncus mattis rhoncus. Sagittis aliquam malesuada bibendum arcu vitae elementum curabitur vitae. Neque viverra justo nec ultrices dui sapien eget.\r\n\r\nAliquet bibendum enim facilisis gravida neque convallis a. At quis risus sed vulputate odio ut enim blandit volutpat. Aliquet risus feugiat in ante metus dictum at tempor commodo. Nulla malesuada pellentesque elit eget gravida cum sociis. Dui ut ornare lectus sit. Consequat nisl vel pretium lectus quam id leo in. Sit amet justo donec enim. Orci nulla pellentesque dignissim enim sit amet venenatis urna cursus. Non blandit massa enim nec dui nunc. Fames ac turpis egestas sed. Id ornare arcu odio ut sem nulla pharetra diam sit. Euismod elementum nisi quis eleifend quam. Nulla at volutpat diam ut venenatis tellus in metus. Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et. Etiam dignissim diam quis enim. Cras sed felis eget velit aliquet sagittis id consectetur.",
-//     email: "nationalday@gmail.com",
-//     phone: "716-334-5784",
-//     goingCount: "0"
-// }
-
-// const place = {
-//     _id: "664ae8ff87fa9e0d2227f717",
-//     name: "Buffalo Zoo",
-//     thumbnail: "http://res.cloudinary.com/dxjfmwr5n/image/upload/v1716185344/discover716/buffalo-zoo.jpg.jpg",
-//     address: "334 Piston St, NY, 14305",
-//     website: "https://www.google.com",
-//     phone: "716-334-5784",
-//     email: "buffalo-zoo@gmail.com",
-//     about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis nunc sed blandit libero. Interdum consectetur libero id faucibus nisl tincidunt eget. Porta lorem mollis aliquam ut porttitor leo a diam sollicitudin. Tincidunt nunc pulvinar sapien et ligula. Enim facilisis gravida neque convallis a cras semper auctor neque. Rhoncus urna neque viverra justo nec ultrices dui sapien eget. Suspendisse faucibus interdum posuere lorem ipsum dolor sit amet consectetur. Purus in massa tempor nec feugiat nisl. Vulputate ut pharetra sit amet aliquam id diam maecenas. In fermentum et sollicitudin ac orci phasellus egestas tellus rutrum. Et leo duis ut diam.\r\n\r\nFusce id velit ut tortor. Quisque egestas diam in arcu cursus euismod quis viverra. Blandit libero volutpat sed cras ornare. Scelerisque in dictum non consectetur a erat nam at. Sit amet consectetur adipiscing elit duis tristique. Sem viverra aliquet eget sit. Orci dapibus ultrices in iaculis nunc sed augue lacus. Proin sagittis nisl rhoncus mattis rhoncus. Sagittis aliquam malesuada bibendum arcu vitae elementum curabitur vitae. Neque viverra justo nec ultrices dui sapien eget.\r\n\r\nAliquet bibendum enim facilisis gravida neque convallis a. At quis risus sed vulputate odio ut enim blandit volutpat. Aliquet risus feugiat in ante metus dictum at tempor commodo. Nulla malesuada pellentesque elit eget gravida cum sociis. Dui ut ornare lectus sit. Consequat nisl vel pretium lectus quam id leo in. Sit amet justo donec enim. Orci nulla pellentesque dignissim enim sit amet venenatis urna cursus. Non blandit massa enim nec dui nunc. Fames ac turpis egestas sed. Id ornare arcu odio ut sem nulla pharetra diam sit. Euismod elementum nisi quis eleifend quam. Nulla at volutpat diam ut venenatis tellus in metus. Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et. Etiam dignissim diam quis enim. Cras sed felis eget velit aliquet sagittis id consectetur",
-//     amenities: []
-//   }
-
 // service
 import dataService from "../../services/dataService";
 
@@ -56,7 +29,7 @@ function DisplayElement({displayType, displayObj}) {
 
     return (
         <div id="display-element-cont" className="center glass">
-            <div id="thumbnail">
+            <div id="thumbnail" className="center">
                 <img src={displayObj.thumbnail} alt="element thumbnail" />
             </div>
             <div id="details-cont" className="center">

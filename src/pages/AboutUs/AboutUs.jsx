@@ -1,16 +1,18 @@
 
 import "./AboutUs.scss";
-import {Logo} from "../../components/mini-components";
-import { discover716 } from "../../data";
+import contactIntroImg from "../../assets/7.jpeg";
 
 function AboutUs() {
     return (
         <div id="aboutUs-cont" className="center">
-
             <div id="aboutUs" className="glass">
-                <h1>About us</h1>
 
-                <h2>Discover716 is <span className="textlight">non-profit organization</span> with a <span className="textlight">two-pronged mission</span>.</h2>
+                <div className="center">
+                    <h1><span style={{color: '#323b8c'}}>Discover</span><span style={{color: '#e5003d'}}>716</span></h1>
+                    <img src={contactIntroImg} alt="picture of some people from discover716" />
+                </div>
+
+                <h2>Discover716 is non-profit organization with a two-pronged mission.</h2>
 
                 <p>First, we want to <span className="textlight">help small businesses</span> and the non-profit community thrive by helping them market themselves and building their brand recognition, knowing that many are resource-constrained, especially due to the pandemic. </p>
                 <br />
