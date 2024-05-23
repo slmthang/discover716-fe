@@ -6,9 +6,9 @@ import {useState} from "react";
 import "./Homepage.scss";
 
 // images
-import sportImg from "../../assets/sport.jpg";
-import cityImg from "../../assets/city.jpg";
-import buildingImg from "../../assets/building.jpg";
+import sportImg from "../../assets/sport.avif";
+import cityImg from "../../assets/city.avif";
+import buildingImg from "../../assets/building.avif";
 
 // moments
 import {moments} from "../../data.js";

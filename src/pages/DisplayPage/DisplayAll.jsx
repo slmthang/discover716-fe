@@ -1,5 +1,4 @@
 
-import img from "../../assets/building.jpg";
 import "./DisplayAll.scss";
 import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
