@@ -7,6 +7,11 @@ import NavBar from "../NavBar/NavBar.jsx";
 import Footer from "../Footer/Footer.jsx";
 import ScrollToTop from "../ScrollToTop.jsx";
 
+// services
+import dataService from "../../services/dataService.js";
+
+
+
 export default function Layout() {
 
     /* Checks If the Device is Mobile or Not */
@@ -37,12 +42,49 @@ export default function Layout() {
         window.addEventListener("resize", screenResizeHandler);
     })
 
+    const [events, setEvents] = useState([]);
+    const [hotels, setHotels] = useState([]);
+    const [places, setPlaces] = useState([]);
+    const [restaurants, setRestaurants] = useState([]);
+
+    useEffect(() => {
+
+        // fetch data for events, hotels, places and restaurants
+        dataService.fetchByInfo("events", 5)
+            .then(eventsData => {
+                setEvents(eventsData);
+            });
+        
+        dataService.fetchByInfo("hotels", 5)
+            .then(hotelsData => {
+                setHotels(hotelsData);
+            })
+
+        dataService.fetchByInfo("places", 5)
+            .then(placesData => {
+                setPlaces(placesData);
+            })
+        
+        dataService.fetchByInfo("restaurants", 5)
+            .then(restaurantData => {
+                setRestaurants(restaurantData);
+            })
+    }, [])
+
+
+    const mainData = {
+        events,
+        hotels,
+        restaurants,
+        places
+    }
+
     return (
         <div id="main-layout">
             <ScrollToTop />
-            <NavBar isMobile={isMobile} />
+            <NavBar isMobile={isMobile} mainData={mainData}/>
             <Outlet isMobile={isMobile} />
-            <Footer isMobile={isMobile} />
+            <Footer isMobile={isMobile} mainData={mainData}/>
         </div>
     );
 }

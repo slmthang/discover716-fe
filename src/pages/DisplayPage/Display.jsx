@@ -33,7 +33,7 @@ export default function Display() {
     useEffect(() => {
 
         dataService
-        .fetch(params.dataType, params.dataId)
+        .fetchById(params.dataType, params.dataId)
             .then(data => {
                 
                 setDisplayObj(data);

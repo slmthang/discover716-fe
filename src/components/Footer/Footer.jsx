@@ -3,14 +3,7 @@
 import "./Footer.scss";
 import { discover716, icons } from "../../data.js";
 import { Logo, Icons, NavElement } from "../mini-components.jsx";
-import { useState, useEffect } from "react";
-
-// services
-import dataService from "../../services/dataService.js";
 import { Link } from "react-router-dom";
-// cache
-import { eventsCache, placesCache, hotelsCache, restaurantsCache } from "../../data";
-
 
 // mini components
 function DownloadApp({name, fontAwesome, href}) {
@@ -50,36 +43,9 @@ function FooterNav() {
     );
 }
 
-function FooterMenus({isMobile}) {
+function FooterMenus({mainData}) {
 
-    const [events, setEvents] = useState(eventsCache);
-    const [hotels, setHotels] = useState(placesCache);
-    const [places, setPlaces] = useState(restaurantsCache);
-    const [restaurants, setRestaurants] = useState(hotelsCache);
-
-    useEffect(() => {
-        
-        // fetch data for events, hotels, places and restaurants
-        dataService.fetchAll("events")
-            .then(eventsData => {
-                setEvents(eventsData);
-            });
-        
-        dataService.fetchAll("hotels")
-            .then(hotelsData => {
-                setHotels(hotelsData);
-            })
-
-        dataService.fetchAll("places")
-            .then(placesData => {
-                setPlaces(placesData);
-            })
-        
-        dataService.fetchAll("restaurants")
-            .then(restaurantData => {
-                setRestaurants(restaurantData);
-            })
-    }, [])
+    const {events, places, hotels, restaurants} = mainData;
 
     // return !isMobile ? (
     return (
@@ -191,7 +157,7 @@ function FooterMenus({isMobile}) {
                     <h3>Resources</h3>
                 </div>
                 <ul className="options">
-                    <Link to='https://ltpm2399.blogspot.com/' className="link">
+                    <Link to='https://discover716-test.blogspot.com/' className="link">
                         <div className="nav-element">
                             <p>blogs</p>
                         </div>
@@ -249,13 +215,13 @@ function FooterInfo() {
 }
 
 // MAIN
-export default function Footer({isMobile}) {
+export default function Footer({mainData}) {
 
     return (
 
         <footer>
-            <FooterNav />
-            <FooterMenus isMobile={isMobile} />
+            <FooterNav/>
+            <FooterMenus mainData={mainData}/>
             <FooterInfo />
         </footer>
 

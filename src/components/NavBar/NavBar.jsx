@@ -2,47 +2,15 @@
 
 // IMPORTS
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./NavBar.scss";
 import { Logo, Socials, NavElement } from "../mini-components";
 
-// service
-import dataService from "../../services/dataService";
-
-// cache
-import { eventsCache, placesCache, hotelsCache, restaurantsCache } from "../../data";
 
 // components
-function Nav() {
+function Nav({mainData}) {
 
-    const [events, setEvents] = useState(eventsCache);
-    const [hotels, setHotels] = useState(placesCache);
-    const [places, setPlaces] = useState(restaurantsCache);
-    const [restaurants, setRestaurants] = useState(hotelsCache);
-
-    useEffect(() => {
-
-        // fetch data for events, hotels, places and restaurants
-        dataService.fetchAll("events")
-            .then(eventsData => {
-                setEvents(eventsData);
-            });
-        
-        dataService.fetchAll("hotels")
-            .then(hotelsData => {
-                setHotels(hotelsData);
-            })
-
-        dataService.fetchAll("places")
-            .then(placesData => {
-                setPlaces(placesData);
-            })
-        
-        dataService.fetchAll("restaurants")
-            .then(restaurantData => {
-                setRestaurants(restaurantData);
-            })
-    }, [])
+    const {events, places, hotels, restaurants} = mainData;
 
     return (
         <div id="nav-bar">
@@ -169,7 +137,7 @@ function Nav() {
                     </div>
                 </div>
                 <div className="nav-bar2-drpdwn">
-                    <Link to="https://ltpm2399.blogspot.com/" className="link">
+                    <Link to="https://discover716-test.blogspot.com/" className="link">
                         <div className="nav-bar2-drpdwn-menu center">
                             <h3>Blogs</h3>
                         </div>
@@ -231,7 +199,7 @@ function BurgMenu({toggleBurg}) {
                         <p>Hotels</p>
                     </div>
                 </Link>
-                <Link to='https://ltpm2399.blogspot.com/' className="link menu" onClick={toggleBurg}>
+                <Link to='https://discover716-test.blogspot.com/' className="link menu" onClick={toggleBurg}>
                     <div className="nav-element">
                         <p>Blogs</p>
                     </div>
@@ -268,7 +236,7 @@ function BurgMenu({toggleBurg}) {
     
 
 // MAIN
-export default function NavBar({isMobile}) {
+export default function NavBar({isMobile, mainData}) {
 
     /* Checks If BurgMenu is Selected */
     // toggle burg menu
@@ -285,7 +253,7 @@ export default function NavBar({isMobile}) {
 
     return (
       <nav id="nav-bar-cont">
-        {isMobile ? <NavMobile toggleBurg={toggleBurg} burg={burg}/> : <Nav />}
+        {isMobile ? <NavMobile toggleBurg={toggleBurg} burg={burg}/> : <Nav mainData={mainData}/>}
         {isMobile && burg ? <BurgMenu toggleBurg={toggleBurg} />: null}
       </nav>
     );

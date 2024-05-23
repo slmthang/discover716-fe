@@ -3,8 +3,11 @@ import "./Submit.scss";
 import dataService from '../../services/dataService';
 import { useState } from "react";
 import ReactLoading from "react-loading";
+import { useNavigate } from "react-router-dom";
 
 function Submit() {
+
+  const navigateTo = useNavigate();
 
   // state
   const [formType, setFormType] = useState('event');
@@ -17,6 +20,8 @@ function Submit() {
 
     // prevent default
     e.preventDefault();
+
+    window.scrollTo(0, 0);
 
     setSubmitted(true);
 
@@ -36,6 +41,9 @@ function Submit() {
             console.log("Submission Error Failed: ", err);
             setSubmitted(false);
           })
+
+    // redirect to display page
+    navigateTo(`/display/${formType}`)
   }
 
   // select handler
@@ -45,7 +53,6 @@ function Submit() {
 
   return (
     <>
-
       <form onSubmit={uploadEvent} id='eventInfoForm'>
 
         {
@@ -106,7 +113,7 @@ function Submit() {
                 </p>
                 <p>
                   <label htmlFor="description">Description: </label>
-                  <textarea type="textarea" id='about' name='about'/>
+                  <textarea type="textarea" id='about' name='about' maxLength='10000'/>
                 </p>
               </section>
               <section id='submit'>
