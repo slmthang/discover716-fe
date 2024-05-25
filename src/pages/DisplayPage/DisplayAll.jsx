@@ -55,24 +55,47 @@ function DisplayElement({displayType, displayObj}) {
     )
 }
 
+
+const fetchBy5 = (dataType, sortBy, sortOrder, setData) => {
+    // fetch data for events, hotels, places and restaurants 
+    dataService.fetchByInfo(dataType, 5, sortBy, sortOrder)
+    .then(data => {
+        setData(data);
+    });
+}
+
 export default function DisplayAll() {
 
+    // states
     const [data, setData] = useState([]);
-
+    const [sortOrder, setSortOrder] = useState("asc");
+    const [sortBy, setSortBy] = useState("name");
     const params = useParams();
 
     useEffect(() => {
 
-        // fetch data for events, hotels, places and restaurants
-        dataService.fetchAll(params.dataType)
-            .then(data => {
-                setData(data);
-            });
-    }, [[params.dataType, params.dataId]]);
+        fetchBy5(params.dataType, sortBy, sortOrder, setData);
+        
+    }, [sortOrder, sortBy, params.dataType]);
 
     return (
         <div id="displayall-cont" className="center">
-            <h1>{(params.dataType).toUpperCase()}</h1>
+            <div id="display-filter" className="center">
+                <h1>{(params.dataType).toUpperCase()}</h1>  
+                <div id="filter">
+
+                    {params.dataType == "events" ? (
+                        <select name="sortBy" id="sortBy" onChange={ e => setSortBy(e.target.value) }>
+                            <option value="date">Date</option>
+                            <option value="name">Name</option>
+                        </select>
+                    )  : null } 
+                    <select name="sortOrder" id="sortOrder" onChange={(e) => setSortOrder(e.target.value)}>
+                        <option value="asc">Asc</option>
+                        <option value="desc">Desc</option>
+                    </select>
+                </div>    
+            </div>
             {(data.length > 0) ? 
                 (
                     data.map( e => {

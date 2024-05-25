@@ -10,7 +10,7 @@ function Submit() {
   const navigateTo = useNavigate();
 
   // state
-  const [formType, setFormType] = useState('event');
+  const [formType, setFormType] = useState('events');
 
   // submitted
   const [submitted, setSubmitted] = useState(false);
@@ -43,7 +43,7 @@ function Submit() {
           })
 
     // redirect to display page
-    navigateTo(`/display/${formType}`)
+    navigateTo(`/display/${fd.get("type")}`)
   }
 
   // select handler

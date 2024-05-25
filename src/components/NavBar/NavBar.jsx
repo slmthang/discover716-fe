@@ -72,6 +72,10 @@ function Nav({mainData}) {
                                 return <NavElement key={event._id} obj={event} type="events" />
                         })
                         : null}
+
+                        <Link to="/display/events" className="link">
+                            <p>More...</p>
+                        </Link>
     
                     </div>
                 </div>
@@ -87,6 +91,10 @@ function Nav({mainData}) {
                                 return <NavElement key={place._id} obj={place} type="places" />
                             }) 
                         : null}
+
+                        <Link to="/display/places" className="link">
+                            <p>More...</p>
+                        </Link>
                     </div>
                 </div>
                 <div className="nav-bar2-drpdwn">
@@ -101,6 +109,10 @@ function Nav({mainData}) {
                                 return <NavElement key={restaurant._id} obj={restaurant} type="restaurants" />
                             }) 
                         : null}
+
+                        <Link to="/display/restaurants" className="link">
+                            <p>More...</p>
+                        </Link>
                     </div>
                 </div>
                 <div className="nav-bar2-drpdwn">
@@ -115,6 +127,10 @@ function Nav({mainData}) {
                                 return <NavElement key={hotel._id} obj={hotel} type="hotels" />
                             }) 
                         : null}
+
+                        <Link to="/display/hotels" className="link">
+                            <p>More...</p>
+                        </Link>
                     </div>
                 </div>                   
                 <div className="nav-bar2-drpdwn">
@@ -133,6 +149,9 @@ function Nav({mainData}) {
                             <div className="nav-element">
                                 <p>12 Businesses of Christmas</p>
                             </div>
+                        </Link>
+                        <Link to="" className="link">
+                            <p>More...</p>
                         </Link>
                     </div>
                 </div>
