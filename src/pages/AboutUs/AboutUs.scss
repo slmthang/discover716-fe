@@ -30,7 +30,7 @@
         > h2 {
             font-size: 1.15rem;
             font-weight: 700;
-            margin: 1rem 0 2rem 0;
+            margin: 1rem 0 3rem 0;
             height: 4rem;
             font-style: italic;
             color: var(--color-primary);
@@ -39,8 +39,15 @@
         }
     
         > p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             line-height: 1.4;
+            color: var(--light-text);
+
+            > span {
+                font-style: italic;
+                color: var(--color-primary);
+                font-weight: 600;
+            }
         }
     }
 }

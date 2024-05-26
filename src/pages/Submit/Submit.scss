@@ -5,13 +5,15 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: var(--white-y);
-    
+    padding: 2rem 0;
+
     > h1 {
-        margin-top: 2rem;
+        margin: 2rem 0;
+        color: var(--color-primary);
     }
 
     #inputs {
+        color: var(--light-text);
         width: 100%;
         flex-direction: column;
 
@@ -31,6 +33,7 @@
                 display: block;
                 font-size: 1.1rem;
                 align-self: flex-start;
+                margin-bottom: 0.5rem;
             }
 
             input, textarea, select {
@@ -38,7 +41,8 @@
                 border-radius: 0.5rem;
                 padding-left: 0.5rem;
                 border: none;
-                outline: none;background-color: var(--white);
+                outline: 1px solid var(--light-text);
+                background-color: var(--white);
             }
 
             input, select {
@@ -47,6 +51,10 @@
 
             textarea {
                 height: 20rem;
+                padding-top: 0.5rem;
+            }
+
+            input[type="file"] {
                 padding-top: 0.5rem;
             }
 
@@ -62,6 +70,8 @@
             height: 2.5rem;
             border-radius: 0.5rem;
             font-size: 1.1rem;
+            background-color: var(--color-primary);
+            color: var(--white-y);
         }
     }
 }
@@ -87,6 +97,10 @@
 
 @media only screen and (min-width: 1200px) {
     #eventInfoForm {
+        width: 75rem;
+        border-left: 0.1px solid rgba(170, 170, 170, 0.2);
+        border-right: 0.1px solid rgba(170, 170, 170, 0.2);
+
         #inputs {
             >p {
                 width: 70%;

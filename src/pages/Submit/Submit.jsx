@@ -74,7 +74,7 @@ function Submit() {
                   <input type="text" id='name' name='name' required/>
                 </p>
 
-                {formType=="event" ? (
+                {formType=="events" ? (
                   <>
                     <p>
                       <label htmlFor="date">Date: </label> 

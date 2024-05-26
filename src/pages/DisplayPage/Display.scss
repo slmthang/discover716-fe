@@ -5,11 +5,12 @@
     padding: 1rem;
     background-color: var(--white);
     padding: 2rem 0;
-
+    color: var(--light-text);
     #display-cont {
         flex-direction: column;
         padding: 1rem;
         line-height: 1.4;
+        width: 100%;
 
         #display-intro {
             width: 100%;
@@ -20,8 +21,9 @@
 
                 img {
                     object-fit: contain;
-                    max-width: 30rem;
-                    max-height: 25rem;
+                    max-width: 90%;
+                    max-height: 12rem;
+                    border-radius: 1rem;
                 }
             }
 
@@ -39,7 +41,6 @@
                 }
 
                 #display-details {
-                    margin-bottom: 2rem;
 
                     > p {
                         margin-bottom: 0.75rem;
@@ -58,6 +59,8 @@
                     > p {
                         margin-bottom: 0.75rem;
                     }
+
+                    margin-bottom: 1rem;
                 }
             }
         }
@@ -66,7 +69,6 @@
             width: 100%;
             flex-direction: column;
             padding: 1rem;
-            margin-top: 2rem;
             align-items: flex-start;
             
             > h1 {
@@ -102,6 +104,8 @@
 
                     img {
                         border-radius: 1rem;
+                        max-width: 30rem;
+                        max-height: 25rem;
                     }
                 }
 

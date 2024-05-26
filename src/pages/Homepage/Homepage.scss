@@ -106,7 +106,6 @@
 
 			#about-us-more {
 				width: 100%;
-				min-height: 50rem;
 				flex-direction: column;
 
 				> div {
@@ -296,6 +295,8 @@
 
 											&:hover {
 												cursor: pointer;
+
+												background-color: white;
 											}
 										}
 									}
@@ -304,6 +305,7 @@
 										div {
 											margin-right: 1.25rem;
 										}
+
 									}
 				
 									#prevBtn {

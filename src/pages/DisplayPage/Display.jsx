@@ -69,18 +69,16 @@ export default function Display() {
                             </p>
                         </div>
                         <div id="display-contacts">
-                            <p id="phone">
-                                {displayObj.phone ? 
-                                    <i className="fa-solid fa-phone"></i>:null
-                                }
-                                &nbsp;&nbsp;&nbsp;{displayObj.phone}
-                            </p>
-                            <p id="email">
-                                {displayObj.email ? 
-                                    <i className="fa-solid fa-envelope"></i>:null
-                                }
-                                &nbsp;&nbsp;&nbsp;{displayObj.email}
-                            </p>
+                            {displayObj.phone ? 
+                                <p id="phone">
+                                    <i className="fa-solid fa-phone"></i>&nbsp;&nbsp;&nbsp;{displayObj.phone}
+                                </p>
+                            : null}
+                            {displayObj.email ? 
+                                <p id="email">
+                                    <i className="fa-solid fa-envelope"></i>&nbsp;&nbsp;&nbsp;{displayObj.email}
+                                </p>
+                            : null}
                         </div>
                     </div>
                 </div>

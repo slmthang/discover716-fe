@@ -4,7 +4,6 @@
 
 // pop up
 #welcome-pop-up {
-	// display: none;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -15,10 +14,9 @@
 	#pop-up-msg {
 		position: relative;
 		width: 90%;
-		min-height: 35rem;
-		background-color: var(--white-y);
+		background-color: var(--color-primary);
 		flex-direction: column;
-		color: var(--black);
+		color: var(--white-y);
 		padding: 1rem;
 		border: 0.5px solid var(--black);
 		border-radius: 0.5rem;
@@ -31,7 +29,7 @@
 
 			& :hover {
 				cursor: pointer;
-				color: var(--color-primary);
+				color: var(--color-secondary);
 			}
 		}
 
@@ -48,14 +46,15 @@
 
 			h1 {
 				margin-bottom: 1rem;
-				font-size: 1.75rem;
-				color: var(--color-primary);
+				font-size: 1.25rem;
+				color: var(--color-secondary);
 			}
 
 			h2 {
-				margin-bottom: 1rem;
-				font-size: 1.25rem;
-				color: var(--color-primary);
+				font-style: italic;
+				margin-bottom: 1.1rem;
+				font-size: 1rem;
+				color: var(--color-secondary);
 			}
 	
 			p {
@@ -67,16 +66,16 @@
 		}	
 
 		.donate-btn {
-			border: 0.5px solid var(--black);
+			border: 0.5px solid var(--white);
 			padding: 0.2rem 0.7rem;
 			border-radius: 1rem;
 			text-decoration: none;
-			color: var(--black);
+			color: var(--white);
 			
 			&:hover {
 				cursor: pointer;
-				color: var(--color-primary);
-				border: 0.5px solid var(--color-primary);
+				color: var(--color-secondary);
+				border: 0.5px solid var(--color-secondary);
 			}
 
 			> i {
@@ -93,7 +92,8 @@
 
 		#pop-up-msg {
 			width: 45rem;
-
+			min-height: 30rem;
+			
 			#msg-text {
 
 				h1 {
