@@ -77,14 +77,14 @@ footer {
 			margin: 0.5rem;
 			
 			.menu-name {
-				border-bottom: 1px solid var(--light-text);
+				border-bottom: 1px solid var(--dark-text);
 				padding: .5rem;
 				margin-bottom: 1rem;
 				width: 100%;
 				
 				h3 {
 					font-size: 0.9rem;
-					color: var(--black);
+					color: var(--light-text);
 				}
 			}
 
@@ -96,7 +96,8 @@ footer {
 					min-height: fit-content;
 
 					p {
-						font-size: 0.9rem;				
+						font-size: 0.9rem;	
+						color: var(--light-text);			
 					}
 				}
 			}
@@ -144,10 +145,11 @@ footer {
 			#apps {
 				.download {
 
-					border: 0.5px solid var(--light-text);
+					border: 0.5px solid var(--dark-text);
 					border-radius: 1rem;
 					padding: 0.5rem 0.75rem;
 					color: var(--black);
+
 					&:hover {
 						cursor: pointer;
 						color: var(--color-primary);

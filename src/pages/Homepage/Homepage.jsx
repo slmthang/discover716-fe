@@ -87,7 +87,7 @@ function AboutUs({isMobile}) {
             <div id="about-us-cont">
                 <div id="about-us-intro" className="center">
                         <div className="center description">
-                            <div className="center description-cont glass">
+                            <div className="center description-cont">
                                 <h1 >About Us</h1>
                                 <h3 className="textlight">We are Local Supporting Local!</h3>
                                 <p>Discover716 is <span className="textlight">non-profit organization</span> with a two-pronged mission. First, we want to help small businesses and the non-profit community thrive by helping them market themselves and building their brand recognition, knowing that many are resource-constrained, especially due to the pandemic. Second, we are creating internships for college students in a collaborative work environment to help these small businesses and non-profits.</p>
@@ -97,7 +97,7 @@ function AboutUs({isMobile}) {
                         </div>
                 </div>
                 <div id="about-us-more" className="center">
-                    <div className="glass">
+                    <div >
                         <h3 >We are here for the people and the community.</h3>
 
                         <div id="moments-cont">
@@ -135,7 +135,7 @@ export function HomepageLoader() {
 export default function Homepage({isMobile}) {
 
     return (
-        <section id="homepage">
+        <section id="homepage" className="center">
             {!Boolean(utils.getCookie('visited')) ? <WelcomePopUp /> : null}
             <Intro />  
             <AboutUs isMobile={isMobile} />

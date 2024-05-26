@@ -43,7 +43,7 @@ export default function Display() {
     return (
 
         <div id="display-cont-parent" className="center">
-            <div id="display-cont" className="center glass">
+            <div id="display-cont" className="center">
                 <div id="display-intro" className="center">
                     <div id="display-thumbnail" className="center">
                         <img src={displayObj.thumbnail} alt="thumbnail" />

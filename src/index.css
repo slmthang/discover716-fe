@@ -16,7 +16,8 @@
     --color-primary: #323b8c; /* blue color */
     --color-primary-dark: #0a0b1b;
     --color-secondary: #e5003d; /* red color */
-    --light-text: #a2a6cf; /* light text color */
+    --light-text: #555555; /* light text color */
+    --dark-text: #121418;
     --white: #fff;
     --white-y: #efefef;
     --white-g: #f9f9fa;
@@ -39,7 +40,7 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--white);
+    background-color: #f6f9fc;
 }
 
 
@@ -51,24 +52,35 @@ html {
     justify-content: center;
 }
 
-.textlight {
+.colorText1 {
     color: var(--color-primary);
+}
+
+.colorText2 {
+    color: var(--color-secondary);
+}
+
+.greyText {
+    color: #828f9b;
+}
+
+.blackText {
+    color: black;
+}
+
+.whiteText {
+    color: white;
+}
+
+.hightlight {
     font-weight: bolder;
     font-style: italic;
 }
 
 .link {
     text-decoration: none;
-    color: var(--black);
 }
 
-.glass {
-    background: rgba(239, 239, 239, 0.5);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.25);
-    border-radius: .75rem;
+.box-shadow {
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
-
-
-

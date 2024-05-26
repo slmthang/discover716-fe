@@ -2,6 +2,7 @@
 #aboutUs-cont {
     width: 100vw;
     padding: 0.5rem;
+    margin: 2rem 0;
 
     #aboutUs {
         padding: 1rem;
@@ -67,4 +68,9 @@
 @media only screen and (min-width: 1200px) {
 
     // 
+    #aboutUs-cont {
+        border-left: 0.1px solid rgba(170, 170, 170, 0.2);
+        	border-right: 0.1px solid rgba(170, 170, 170, 0.2);
+        width: 75rem;
+    }
 }

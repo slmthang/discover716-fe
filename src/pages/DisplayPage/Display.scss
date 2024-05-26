@@ -3,17 +3,13 @@
 #display-cont-parent {
     width: 100vw;
     padding: 1rem;
+    background-color: var(--white);
+    padding: 2rem 0;
 
     #display-cont {
         flex-direction: column;
         padding: 1rem;
         line-height: 1.4;
-
-        // remove glass
-        background: transparent;
-        --webkit-backdrop-filter: blur(0px);
-        backdrop-filter: blur(0px);
-        border: none;
 
         #display-intro {
             width: 100%;
@@ -24,7 +20,7 @@
 
                 img {
                     object-fit: contain;
-                    max-width: 100%;
+                    max-width: 30rem;
                     max-height: 25rem;
                 }
             }
@@ -95,12 +91,6 @@
 
         #display-cont {
             line-height: 1.6;
-            
-            background: rgba(239, 239, 239, 0.5);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.25);
-            border-radius: .75rem;
 
             #display-intro {
                 width: 100%;
@@ -109,6 +99,10 @@
 
                 #display-thumbnail {
                     flex: 1.5;
+
+                    img {
+                        border-radius: 1rem;
+                    }
                 }
 
                 #display-details-cont {
@@ -145,12 +139,12 @@
 
 @media only screen and (min-width: 1200px) {/* 75rem */ 
     #display-cont-parent {
-
+        border-left: 0.1px solid rgba(170, 170, 170, 0.2);
+        border-right: 0.1px solid rgba(170, 170, 170, 0.2);
+        width: 75rem;
+        
         #display-cont {
-
-            width: 75rem;
-
-
+            
             #display-about-cont {
                 width: 90%;
             }

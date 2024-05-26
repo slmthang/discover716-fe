@@ -27,7 +27,7 @@ import dataService from "../../services/dataService";
 function DisplayElement({displayType, displayObj}) {
 
     return (
-        <div id="display-element-cont" className="center glass">
+        <div id="display-element-cont" className="center box-shadow">
             <div id="thumbnail" className="center">
                 <img src={displayObj.thumbnail} alt="element thumbnail" />
             </div>
@@ -38,10 +38,26 @@ function DisplayElement({displayType, displayObj}) {
                             {displayObj.name}
                         </Link>    
                     </h1>
-                    {displayObj.date ? <p id="date">Date: {displayObj.date}</p> : null }
-                    {displayObj.startTime && displayObj.endTime ? <p id="time">Time: {formatTime(displayObj.startTime)} - {formatTime(displayObj.endTime)}</p> : null }
-                    <p id="address">Address: {displayObj.address}</p>
-                    <p id="website">Website: <Link to={displayObj.website} className="link" style={{color: "#323b8c"}}>Visit Here</Link></p>
+
+                    {displayObj.date ? <a id="date">
+                        <i className="fa-solid fa-calendar-days"></i>
+                        {displayObj.date}
+                    </a> : null }
+
+                    {displayObj.startTime && displayObj.endTime ? <a id="time">
+                        <i className="fa-regular fa-clock"></i>
+                        {formatTime(displayObj.startTime)} - {formatTime(displayObj.endTime)}
+                    </a> : null }
+
+                    <a id="address">
+                        <i className="fa-solid fa-location-dot"></i>
+                        {displayObj.address}
+                    </a>
+
+                    <Link id="website" to={displayObj.website} className="link">
+                        <i className="fa-solid fa-earth-americas"></i>
+                        Visit Here
+                    </Link>
                 </div>
                 <div id="description" className="center">
                     <p>{displayObj.about}</p>
