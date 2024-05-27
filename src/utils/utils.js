@@ -9,6 +9,8 @@ const getCookie = (cookie) => {
                     ?.split("=")[1];
 }
 
+
+// timer ( in secs )
 const setCookie = (cookieName, cookieValue, timer, path = '/') => {
     document.cookie = `${cookieName}=${cookieValue}; max-age=${timer}; path=${path}`;
 }
