@@ -47,7 +47,7 @@ export default function Display() {
 
         <div id="display-cont-parent" className="center">
             <div id="display-cont" className="center box-shadow ">
-                { loggedIn ? <DeleteButton path={displayType} objectId={displayObj._id} /> : null }
+                { loggedIn ? <DeleteButton path={params.dataType} objectId={displayObj._id} /> : null }
                 <div id="display-intro" className="center">
                     <div id="display-thumbnail" className="center">
                         <img src={displayObj.thumbnail} alt="thumbnail" />
