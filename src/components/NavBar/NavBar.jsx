@@ -66,7 +66,8 @@ function Nav({mainData}) {
                         </div>
                     </Link>
                     <div className="nav-bar2-drpdwn-menu-options center">
-
+                        {console.log("Events: ", events)}
+                        {console.log("Length: ", events.length)}
                         {events.length > 0 ?
                             events.map((event) => {
                                 return <NavElement key={event._id} obj={event} type="events" />
