@@ -27,22 +27,50 @@ const fetchByInfo = (path, count, sortBy = "name", sortOrder="asc") => {
 
 // post an event
 const create = (object) => {
-    const request = axios.post(`${baseURL}/${object.get("type")}`, object);
+
+    // get token from sessionStorage
+    const token = `Bearer ${sessionStorage.getItem('token')}`;
+
+    // config to attach jwt to req
+    const config = {
+        headers: { Authorization: token }
+    }
+
+    const request = axios.post(`${baseURL}/${object.get("type")}`, object, config);
     return request.then(response => response.data);
 }
 
 // delete all
 const deleteAll = (path) => {
-    const request = axios.delete(`${baseURL}/${path}/all`);
+
+
+    // get token from sessionStorage
+    const token = `Bearer ${sessionStorage.getItem('token')}`;
+
+    // config to attach jwt to req
+    const config = {
+        headers: { Authorization: token }
+    }
+
+    const request = axios.delete(`${baseURL}/${path}/all`, config);
     return request.then(response => response.data);
 }
 
 // fetch a object by id
 const deleteById = (path, objectId) => {
 
-    const request = axios.delete(`${baseURL}/${path}/${objectId}`);
+    // get token from sessionStorage
+    const token = `Bearer ${sessionStorage.getItem('token')}`;
+
+    // config to attach jwt to req
+    const config = {
+        headers: { Authorization: token }
+    }
+
+    const request = axios.delete(`${baseURL}/${path}/${objectId}`, config);
     return request.then(response => response.data);
 }
+
 
 // exports
 export default {

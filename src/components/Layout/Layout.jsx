@@ -9,7 +9,7 @@ import ScrollToTop from "../ScrollToTop.jsx";
 
 // services
 import dataService from "../../services/dataService.js";
-
+import utils from '../../utils/utils.js'
 
 
 export default function Layout() {
@@ -83,7 +83,7 @@ export default function Layout() {
         <div id="main-layout">
             <ScrollToTop />
             <NavBar isMobile={isMobile} mainData={mainData}/>
-            <Outlet isMobile={isMobile} />
+            <Outlet isMobile={isMobile}/>
             <Footer isMobile={isMobile} mainData={mainData}/>
         </div>
     );

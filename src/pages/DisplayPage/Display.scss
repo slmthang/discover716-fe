@@ -3,14 +3,22 @@
 #display-cont-parent {
     width: 100vw;
     padding: 1rem;
-    background-color: var(--white);
     padding: 2rem 0;
     color: var(--light-text);
+
     #display-cont {
+        position: relative;
         flex-direction: column;
-        padding: 1rem;
+        padding: 2rem;
         line-height: 1.4;
         width: 100%;
+
+        #delete-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.75rem;
+            font-size: 1.25rem;
+        }
 
         #display-intro {
             width: 100%;
@@ -94,6 +102,12 @@
         #display-cont {
             line-height: 1.6;
 
+            #delete-btn {
+                top: 0.75rem;
+                right: 1rem;
+                font-size: 2rem;
+            }
+
             #display-intro {
                 width: 100%;
                 flex-direction: row;
@@ -143,11 +157,13 @@
 
 @media only screen and (min-width: 1200px) {/* 75rem */ 
     #display-cont-parent {
-        border-left: 0.1px solid rgba(170, 170, 170, 0.2);
-        border-right: 0.1px solid rgba(170, 170, 170, 0.2);
         width: 75rem;
         
         #display-cont {
+
+            #delete-btn {
+                top: 1rem;
+            }
             
             #display-about-cont {
                 width: 90%;

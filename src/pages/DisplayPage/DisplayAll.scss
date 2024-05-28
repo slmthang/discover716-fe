@@ -40,6 +40,14 @@
         margin-bottom: 2rem;
         background-color: var(--white);
         border-radius: 1rem;
+        position: relative;
+
+        #delete-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.75rem;
+            font-size: 1.25rem;
+        }
 
         #thumbnail {
             
@@ -138,6 +146,12 @@
             height: 28rem;
             padding: 2rem;
 
+            #delete-btn {
+                top: 0.75rem;
+                right: 1rem;
+                font-size: 2rem;
+            }
+
             #thumbnail {
                 flex: 1.25;
                 img {
@@ -170,6 +184,13 @@
         border-right: 0.1px solid rgba(170, 170, 170, 0.2);
         width: 75rem;
         padding: 2rem;
+
+
+        #display-element-cont {
+            #delete-btn {
+                top: 1rem;
+            }
+        }
 
     }
 }

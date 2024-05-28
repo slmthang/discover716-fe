@@ -2,6 +2,7 @@
 import "./DisplayAll.scss";
 import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { DeleteButton } from "../../components/mini-components";
 
 // service
 import dataService from "../../services/dataService";
@@ -26,8 +27,12 @@ import dataService from "../../services/dataService";
 
 function DisplayElement({displayType, displayObj}) {
 
+    // check userlogged in status
+    const loggedIn = sessionStorage.getItem('loggedIn') ? true : false;
+
     return (
         <div id="display-element-cont" className="center box-shadow">
+            { loggedIn ? <DeleteButton path={displayType} objectId={displayObj._id} /> : null }
             <div id="thumbnail" className="center">
                 <img src={displayObj.thumbnail} alt="element thumbnail" />
             </div>

@@ -1,7 +1,6 @@
 
 // IMPORTS
 import {useState} from "react";
-
 // css
 import "./Homepage.scss";
 
@@ -132,13 +131,13 @@ export function HomepageLoader() {
 }
 
 // MAIN
-export default function Homepage({isMobile}) {
+export default function Homepage() {
 
     return (
         <section id="homepage" className="center">
             {!Boolean(utils.getCookie('visited')) ? <WelcomePopUp /> : null}
             <Intro />  
-            <AboutUs isMobile={isMobile} />
+            <AboutUs/>
         </section>
     );
 }

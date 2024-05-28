@@ -4,7 +4,7 @@ import "./Display.scss";
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import dataService from "../../services/dataService";
-
+import { DeleteButton } from "../../components/mini-components";
 
 function formatTime(time) {
     let meridiem = "";
@@ -25,6 +25,9 @@ function formatTime(time) {
 
 export default function Display() {
 
+    // check userlogged in status
+    const loggedIn = sessionStorage.getItem('loggedIn') ? true : false;
+
     const params = useParams();
 
     const [displayObj, setDisplayObj] = useState({});
@@ -43,7 +46,8 @@ export default function Display() {
     return (
 
         <div id="display-cont-parent" className="center">
-            <div id="display-cont" className="center">
+            <div id="display-cont" className="center box-shadow ">
+                { loggedIn ? <DeleteButton path={displayType} objectId={displayObj._id} /> : null }
                 <div id="display-intro" className="center">
                     <div id="display-thumbnail" className="center">
                         <img src={displayObj.thumbnail} alt="thumbnail" />

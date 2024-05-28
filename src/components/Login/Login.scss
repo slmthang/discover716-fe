@@ -1,0 +1,118 @@
+
+#logInForm {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 0;
+
+    > h1 {
+        margin: 2rem 0;
+        color: var(--color-primary);
+    }
+
+    #inputs {
+        color: var(--light-text);
+        width: 100%;
+        flex-direction: column;
+
+        > p {
+            width: 90%;
+            flex-direction: column;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            
+            margin-bottom: 0.5rem;
+            padding: 0.5rem 0.75rem;
+
+            label {
+                display: block;
+                font-size: 1.1rem;
+                align-self: flex-start;
+                margin-bottom: 0.5rem;
+            }
+
+            input, textarea, select {
+                width: 100%;
+                border-radius: 0.5rem;
+                padding-left: 0.5rem;
+                border: none;
+                outline: 1px solid var(--light-text);
+                background-color: var(--white);
+            }
+
+            input, select {
+                height: 2.5rem;
+            }
+
+        }
+    }
+
+    #submit {
+
+        margin-bottom: 2rem;
+
+        button {
+            width: 10rem;
+            height: 2.5rem;
+            border-radius: 0.5rem;
+            font-size: 1.1rem;
+            background-color: var(--color-primary);
+            color: var(--white-y);
+        }
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+    #logInForm {
+        #inputs {
+            >p {
+                width: 70%;
+            }
+        }
+
+        #submit {
+            button {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #logInForm {
+        width: 75rem;
+        border-left: 0.1px solid rgba(170, 170, 170, 0.2);
+        border-right: 0.1px solid rgba(170, 170, 170, 0.2);
+        min-height: 45rem;
+
+        #inputs {
+            >p {
+                width: 70%;
+
+                label {
+                    font-size: 1.3rem;
+                }
+
+                input {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+
+        #submit {
+            button {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

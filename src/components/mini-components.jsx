@@ -3,6 +3,8 @@
 import { Link } from "react-router-dom";
 import logo716 from "../assets/logo-716.png";
 import {icons} from "../data.js";
+import dataService from "../services/dataService.js";
+import { useNavigate} from "react-router-dom";
 
 // MINI-COMPONENTS
 
@@ -58,5 +60,33 @@ export function NavElement({obj, type}) {
         <Link to={`/display/${type}/${obj._id}`} className="link">
             <p>{obj.name}</p>
         </Link>
+    )
+}
+
+
+export function DeleteButton({path, objectId}) {
+
+    const navigateTo = useNavigate();
+
+    const deleteHandler = (pathName, objId) => {
+
+        dataService
+            .deleteById(pathName, objId)
+                .then(data => {
+                    alert("Deletion Successful.");
+                    // redirect to display page
+                    navigateTo(`/display/${path}`)
+                })
+
+                .catch(err => {
+                    alert("Deletion failed.");
+                    console.log("Deletion Failed: ", err);
+                })
+    } 
+
+    return (
+        <div id="delete-btn" onClick={() => deleteHandler(path, objectId)}>
+            <i className="fa-solid fa-trash"></i>
+        </div>
     )
 }
