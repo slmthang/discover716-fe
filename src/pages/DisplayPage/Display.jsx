@@ -67,7 +67,7 @@ export default function Display() {
                                 {displayObj.website ? 
                                     <>
                                         <i className="fa-solid fa-link"></i>&nbsp;&nbsp;&nbsp;
-                                        <Link to={displayObj.website} className="link" style={{color: "#323b8c"}}>Visit Site</Link>
+                                        <Link to={displayObj.website} className="link">Visit Site</Link>
                                     </> : null
                             }
                             </p>

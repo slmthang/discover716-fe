@@ -4,20 +4,21 @@
     width: 100vw;
     padding: 1rem;
     padding: 2rem 0;
-    color: var(--light-text);
 
     #display-cont {
         position: relative;
         flex-direction: column;
         padding: 2rem;
         line-height: 1.4;
-        width: 100%;
+        width: 95%;
+        border-radius: 0.5rem;
 
         #delete-btn {
             position: absolute;
             top: 0.5rem;
             right: 0.75rem;
             font-size: 1.25rem;
+            color: var(--color-primary);
         }
 
         #display-intro {
@@ -49,21 +50,23 @@
                 }
 
                 #display-details {
-
+                    color: var(--textColor2);
+                    
                     > p {
                         margin-bottom: 0.75rem;
+                        
                     }
 
                     #website {
 
                         a {
-                            text-decoration: underline;
+                            color: var(--textColor2);
                         }
                     }
                 }
 
                 #display-contacts {
-                    
+                    color: var(--textColor2);
                     > p {
                         margin-bottom: 0.75rem;
                     }
@@ -83,12 +86,13 @@
                 width: 100%;
                 margin-bottom: 2rem;
                 color: var(--color-primary);
-                border-bottom: 1px solid black;
+                border-top: 1px solid var(--textColor2);
             }
 
             #display-about {
                 width: 100%;
                 white-space: pre-line;
+                color: var(--textColor2);
             }
         }
     }
@@ -106,6 +110,10 @@
                 top: 0.75rem;
                 right: 1rem;
                 font-size: 2rem;
+
+                &:hover {
+                    cursor: pointer;
+                }
             }
 
             #display-intro {
@@ -142,13 +150,25 @@
 
                     #display-details {
                         margin-bottom: 2rem;
-                        
+                        font-size: 1.1rem;
+
+                        #website {
+
+                            > a {
+
+                                &:hover {
+                                    cursor: pointer;
+                                    color: var(--color-primary);
+                                }
+                            }
+                        }
                     }
                 }
             }
 
             #display-about-cont {
                 align-items: center;
+                font-size: 1.1rem;
             }
         }
     }

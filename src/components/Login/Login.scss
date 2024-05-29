@@ -1,11 +1,13 @@
 
 #logInForm {
-    width: 100vw;
+    width: 95%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 2rem 0;
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+    background-color: var(--bgColor2);
 
     > h1 {
         margin: 2rem 0;
@@ -13,7 +15,7 @@
     }
 
     #inputs {
-        color: var(--light-text);
+        color: var(--textColor2);
         width: 100%;
         flex-direction: column;
 
@@ -41,7 +43,7 @@
                 border-radius: 0.5rem;
                 padding-left: 0.5rem;
                 border: none;
-                outline: 1px solid var(--light-text);
+                outline: 1px solid var(--textColor2);
                 background-color: var(--white);
             }
 
@@ -57,7 +59,7 @@
         margin-bottom: 2rem;
 
         button {
-            width: 10rem;
+            width: 9rem;
             height: 2.5rem;
             border-radius: 0.5rem;
             font-size: 1.1rem;

@@ -64,16 +64,13 @@ function Login() {
       sessionStorage.setItem('loggedIn', user.loggedIn);
     }
 
-    // set token for request headers
-    // dataService.setToken(sessionStorage.getItem('token'));
-
     navigateTo(`/submit`);
   }
 
 
   return (
     <>
-      <form onSubmit={loginHandler} id='logInForm'>
+      <form onSubmit={loginHandler} id='logInForm' className="box-shadow">
 
         {
           !submitted ?

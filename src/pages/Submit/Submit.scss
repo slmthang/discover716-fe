@@ -1,11 +1,12 @@
 
 #eventInfoForm {
-    width: 100vw;
+    width: 95%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 2rem 0;
+    margin: 2rem 0;
+    border-radius: 0.5rem;
 
     > h1 {
         margin: 2rem 0;
@@ -13,7 +14,7 @@
     }
 
     #inputs {
-        color: var(--light-text);
+        color: var(--textColor2);
         width: 100%;
         flex-direction: column;
 
@@ -41,7 +42,7 @@
                 border-radius: 0.5rem;
                 padding-left: 0.5rem;
                 border: none;
-                outline: 1px solid var(--light-text);
+                outline: 1px solid var(--textColor2);
                 background-color: var(--white);
             }
 

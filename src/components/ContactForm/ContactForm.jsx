@@ -4,7 +4,7 @@ import "./ContactForm.scss";
 function ContactForm() {
     return (
 
-        <div id="contact-form-cont" className="center">
+        <div id="contact-form-cont" className="center box-shadow">
             <form action="https://formspree.io/f/xleqponl" className="contact-form center glass" method="POST">
 
                 <h1>Contact Us by filling the form below.</h1>

@@ -10,7 +10,7 @@ import ScrollToTop from "../ScrollToTop.jsx";
 // services
 import dataService from "../../services/dataService.js";
 import utils from '../../utils/utils.js'
-
+import Theme from '../../components/Theme.jsx';
 
 export default function Layout() {
 
@@ -47,29 +47,38 @@ export default function Layout() {
     const [places, setPlaces] = useState([]);
     const [restaurants, setRestaurants] = useState([]);
 
-    useEffect(async () => {
+    useEffect(() => {
 
-        // fetch data for events, hotels, places and restaurants
-        await dataService.fetchByInfo("events", 5)
-            .then(eventsData => {
-                setEvents(eventsData);
-            });
-        
-        await dataService.fetchByInfo("hotels", 5)
-            .then(hotelsData => {
-                setHotels(hotelsData);
-            })
+        async function fetchData() {
+                // fetch data for events, hotels, places and restaurants
+            await dataService.fetchByInfo("events", 5)
+                .then(eventsData => {
+                    setEvents(eventsData);
+                });
+            
+            await dataService.fetchByInfo("hotels", 5)
+                .then(hotelsData => {
+                    setHotels(hotelsData);
+                })
 
-        await dataService.fetchByInfo("places", 5)
-            .then(placesData => {
-                setPlaces(placesData);
-            })
-        
-        await dataService.fetchByInfo("restaurants", 5)
-            .then(restaurantData => {
-                setRestaurants(restaurantData);
-            })
+            await dataService.fetchByInfo("places", 5)
+                .then(placesData => {
+                    setPlaces(placesData);
+                })
+            
+            await dataService.fetchByInfo("restaurants", 5)
+                .then(restaurantData => {
+                    setRestaurants(restaurantData);
+                })
+        }
+
+        fetchData();
+
     }, [])
+
+
+    // open-close mobile-burger-menu
+    let [darkMode, setDarkMode] = useState(false);
 
 
     const mainData = {
@@ -80,7 +89,8 @@ export default function Layout() {
     }
 
     return (
-        <div id="main-layout">
+        <div id="main-layout" app-theme={darkMode ? "dark" : ""}>
+            <Theme darkMode={darkMode} setDarkMode={setDarkMode}/>
             <ScrollToTop />
             <NavBar isMobile={isMobile} mainData={mainData}/>
             <Outlet isMobile={isMobile}/>
@@ -88,3 +98,5 @@ export default function Layout() {
         </div>
     );
 }
+
+

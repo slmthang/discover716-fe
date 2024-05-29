@@ -1,12 +1,15 @@
 
 #aboutUs-cont {
-    width: 100vw;
+    width: 95%;
     padding: 0.5rem;
     margin: 2rem 0;
+    border-radius: 0.5rem;
+    background-color: var(--bgColor2);
 
     #aboutUs {
         padding: 1rem;
         margin-bottom: 1rem;
+        
 
         > div {
 
@@ -17,6 +20,7 @@
                 text-align: center;
                 font-size: 2rem;
                 margin-bottom: 2rem;
+                color: var(--color-primary);
             }
 
             img {
@@ -41,7 +45,7 @@
         > p {
             font-size: 1rem;
             line-height: 1.4;
-            color: var(--light-text);
+            color: var(--textColor1);
 
             > span {
                 font-style: italic;
@@ -64,8 +68,21 @@
         #aboutUs {
             padding: 2rem;
             width: 90%;
+
+            > div {
+
+                h1 {
+                    font-size: 2.25rem;
+                }
+            }
+
+            > h2 {
+                font-size: 1.5rem;
+            }
+
             > p {
                 line-height: 1.6;
+                font-size: 1.1rem;
             }
         }
     }
@@ -76,8 +93,8 @@
 
     // 
     #aboutUs-cont {
-        border-left: 0.1px solid rgba(170, 170, 170, 0.2);
-        	border-right: 0.1px solid rgba(170, 170, 170, 0.2);
+        // border-left: 0.1px solid rgba(170, 170, 170, 0.2);
+        // border-right: 0.1px solid rgba(170, 170, 170, 0.2);
         width: 75rem;
     }
 }

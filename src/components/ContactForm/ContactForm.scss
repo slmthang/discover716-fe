@@ -2,8 +2,10 @@
 
 #contact-form-cont {
     margin: 2rem 0;
-    width: 100vw;
+    width: 95%;
     padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--bgColor2);
 
     form {
         flex-direction: column;
@@ -60,7 +62,7 @@
 
     #contact-form-cont {
         form {
-
+            
             >div {
                 width: 80%;
     

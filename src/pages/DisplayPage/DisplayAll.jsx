@@ -39,7 +39,7 @@ function DisplayElement({displayType, displayObj}) {
             <div id="details-cont" className="center">
                 <div id="details">
                     <h1>
-                        <Link to={`/display/${displayType}/${displayObj._id}`} className="link"  style={{color: "#323b8c"}}>
+                        <Link to={`/display/${displayType}/${displayObj._id}`} className="link" >
                             {displayObj.name}
                         </Link>    
                     </h1>
@@ -76,15 +76,6 @@ function DisplayElement({displayType, displayObj}) {
     )
 }
 
-
-const fetchBy5 = (dataType, sortBy, sortOrder, setData) => {
-    // fetch data for events, hotels, places and restaurants 
-    dataService.fetchByInfo(dataType, 5, sortBy, sortOrder)
-    .then(data => {
-        setData(data);
-    });
-}
-
 export default function DisplayAll() {
 
     // states
@@ -95,13 +86,20 @@ export default function DisplayAll() {
 
     useEffect(() => {
 
+        const fetchBy5 = async (path, by, order, set) => {
+            // fetch data for events, hotels, places and restaurants 
+            const data = await dataService.fetchByInfo(path, 5, by, order);
+
+            set(data);
+        }
+
         fetchBy5(params.dataType, sortBy, sortOrder, setData);
         
     }, [sortOrder, sortBy, params.dataType]);
 
     return (
         <div id="displayall-cont" className="center">
-            <div id="display-filter" className="center">
+            <div id="display-filter" className="center box-shadow">
                 <h1>{(params.dataType).toUpperCase()}</h1>  
                 <div id="filter">
 

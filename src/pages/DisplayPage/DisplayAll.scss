@@ -9,23 +9,25 @@
     
     #display-filter {
         width: 100%;
-        background-color: var(--color-primary);
+        background-color: var(--bgColor2);
         padding: 1rem;
         margin-bottom: 1rem;
-        color: var(--white);
+        color: var(--color-primary);
         flex-direction: column;
         align-items: flex-start;
+        border-radius: 0.5rem;
 
         h1 {
             font-weight: 1000;
             margin-left: 0.25rem;
             margin-bottom: 1rem;
+            
         }
 
         #filter {
             > select {
                 margin-left: 0.25rem;
-                background-color: var(--white);
+                color: var(--color-primary);
                 padding: 0.25rem 0.5rem;
             }
         }
@@ -38,8 +40,8 @@
         flex-direction: column;
         padding: 0.75rem;
         margin-bottom: 2rem;
-        background-color: var(--white);
-        border-radius: 1rem;
+        background-color: var(--bgColor2);
+        border-radius: 0.5rem;
         position: relative;
 
         #delete-btn {
@@ -47,11 +49,12 @@
             top: 0.5rem;
             right: 0.75rem;
             font-size: 1.25rem;
+            color: var(--color-primary);
         }
 
         #thumbnail {
             
-            width: 100%;
+            width: 80%;
             img {
                 max-width: 100%;
                 max-height: 15rem;
@@ -67,18 +70,22 @@
             flex-direction: column;
 
             #details {
-                color: var(--light-text);
 
                h1 {
                 margin-bottom: 2rem;
+                
+                > a {
+                    color: var(--color-primary);
+                }
                }
 
                > a {
                     display: block;
-                    color: var(--light-text);
+                    color: var(--textColor1);
                     
                     &:hover {
-                        color: var(--dark-text);
+                        cursor: pointer;
+                        color: var(--color-primary);
                     }
 
                     > i {
@@ -100,7 +107,7 @@
                 width: 90%;
                 flex-direction: column;
                 align-items: flex-start;
-                color: var(--light-text);
+                color: var(--textColor1);
 
                 p {
                     max-height: 13rem;
@@ -163,12 +170,14 @@
                 flex: 2;
                 #details {
                     border: none;
+                    font-size: 1.1rem;
                 }
 
                 #description {
 
                     p {
                         max-height: 6.4rem;
+                        font-size: 1.1rem;
                     }
                 }
             }
@@ -180,8 +189,6 @@
 @media only screen and (min-width: 1200px ) {
 
     #displayall-cont {
-        border-left: 0.1px solid rgba(170, 170, 170, 0.2);
-        border-right: 0.1px solid rgba(170, 170, 170, 0.2);
         width: 75rem;
         padding: 2rem;
 

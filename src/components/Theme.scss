@@ -1,0 +1,26 @@
+
+
+#theme-btn {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 5;
+    font-size: 2rem;
+    color: var(--color-primary);
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+
+
+@media only screen and (min-width: 50rem) {
+    #theme-btn {
+        bottom: 2rem;
+        right: 2rem;
+        font-size: 3rem;
+        width: 70px;
+        height: 70px;
+    }
+}

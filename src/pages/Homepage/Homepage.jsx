@@ -83,8 +83,8 @@ function AboutUs({isMobile}) {
 
     return (
         <section id="about-us">
-            <div id="about-us-cont">
-                <div id="about-us-intro" className="center">
+            <div id="about-us-cont" className="center">
+                <div id="about-us-intro" className="center box-shadow">
                         <div className="center description">
                             <div className="center description-cont">
                                 <h1 >About Us</h1>
@@ -95,7 +95,7 @@ function AboutUs({isMobile}) {
                             </div>
                         </div>
                 </div>
-                <div id="about-us-more" className="center">
+                <div id="about-us-more" className="center box-shadow">
                     <div >
                         <h3 >We are here for the people and the community.</h3>
 

@@ -5,12 +5,12 @@ footer {
 	
 	padding: 1rem;
 	min-height: 20rem;
-	background-color: var(--white);
+	background-color: var(--bgColor1);
 	color: var(--black);
 	position: relative;
 	z-index: 3;
 	width: 100vw;
-	border-top: 0.5px solid var(--shadow-line-b);
+	border-top: var(--borderColor);
 
 	#footer-navs {
 		width: 100%;
@@ -77,14 +77,14 @@ footer {
 			margin: 0.5rem;
 			
 			.menu-name {
-				border-bottom: 1px solid var(--dark-text);
+				border-bottom: 1px solid var(--textColor2);
 				padding: .5rem;
 				margin-bottom: 1rem;
 				width: 100%;
 				
 				h3 {
 					font-size: 0.9rem;
-					color: var(--light-text);
+					color: var(--textColor2);
 				}
 			}
 
@@ -97,7 +97,7 @@ footer {
 
 					p {
 						font-size: 0.9rem;	
-						color: var(--light-text);			
+						color: var(--textColor2);			
 					}
 				}
 			}
@@ -110,6 +110,7 @@ footer {
 		padding: 1rem;
 		text-decoration: none;
 		flex-direction: column;
+		color: var(--textColor2);
 
 		// logo
 		.logo {
@@ -145,10 +146,10 @@ footer {
 			#apps {
 				.download {
 
-					border: 0.5px solid var(--dark-text);
+					border: 0.5px solid var(--textColor2);
 					border-radius: 1rem;
 					padding: 0.5rem 0.75rem;
-					color: var(--black);
+					color: var(--textColor2);
 
 					&:hover {
 						cursor: pointer;
@@ -166,7 +167,7 @@ footer {
 				column-gap: 2rem;
 				
 				a {
-					color: var(--black);
+					color: var(--textColor2);
 
 					&:hover {
 						cursor: pointer;

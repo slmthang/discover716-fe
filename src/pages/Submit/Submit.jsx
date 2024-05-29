@@ -58,7 +58,7 @@ function Submit() {
   return (
     <>
       { loggedIn ?
-        <form onSubmit={loginHandler} id='eventInfoForm'>
+        <form onSubmit={loginHandler} id='eventInfoForm' className="box-shadow">
 
           {
             !submitted ?

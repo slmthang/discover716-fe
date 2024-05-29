@@ -9,11 +9,11 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://discover716-be.onrender.com/',
+        target: 'http://localhost:3001',
         changeOrigin: true
       },
       '/auth': {
-        target: 'https://discover716-be.onrender.com/',
+        target: 'http://localhost:3001',
         changeOrigin: true
       }
     }

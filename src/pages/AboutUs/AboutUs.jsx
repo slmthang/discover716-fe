@@ -4,11 +4,11 @@ import contactIntroImg from "../../assets/7.jpeg";
 
 function AboutUs() {
     return (
-        <div id="aboutUs-cont" className="center">
-            <div id="aboutUs" className="glass">
+        <div id="aboutUs-cont" className="center box-shadow ">
+            <div id="aboutUs">
 
                 <div className="center">
-                    <h1><span style={{color: '#323b8c'}}>Discover</span><span style={{color: '#e5003d'}}>716</span></h1>
+                    <h1>Discover716</h1>
                     <img src={contactIntroImg} alt="picture of some people from discover716" />
                 </div>
 

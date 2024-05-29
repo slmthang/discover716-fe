@@ -13,8 +13,14 @@
   
 
 :root {
+    --bgColor1: #fff;
+    --bgColor2: #f2f3f4;
     --color-primary: #323b8c; /* blue color */
-    --color-primary-dark: #0a0b1b;
+    --textColor1: rgba(0, 0, 0, 0.76);
+    --textColor2: rgba(0, 0, 0, 0.56);
+    --borderColor: 0.1px solid rgba(0,0,0,0.1);
+
+
     --color-secondary: #e5003d; /* red color */
     --light-text: #555555; /* light text color */
     --dark-text: #121418;
@@ -23,11 +29,19 @@
     --white-g: #f9f9fa;
     --black: #000;
     --dark-grey-bg: #383838; /* dark grey color */
-    --shadow-line-w: rgba(255, 255, 255, 0.5);
-    --shadow-line-b: rgba(0,0,0,0.5);
+    --shadow-line-w: rgba(231, 231, 231, 0.1);
+    --shadow-line-b: rgba(0,0,0,0.1);
     --box-shadow-1: 0 3px 15px rgba(0,0,0,.2);
 }
 
+[app-theme='dark'] {
+    --bgColor1: #323b8c;
+    --bgColor2: #323b8c;
+    --color-primary: #e5003d; /* blue color */
+    --textColor1: rgba(255, 255, 255, 0.55);
+    --textColor2: rgba(255, 255, 255, 0.35);
+    --borderColor: 0.1px solid rgba(255, 255, 255, 0.26);
+}
 
 html {
     font-family: "Roboto", sans-serif, serif;
@@ -40,7 +54,8 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #f6f9fc;
+    background-color: var(--bgColor1);
+    position: relative;
 }
 
 
@@ -82,5 +97,5 @@ html {
 }
 
 .box-shadow {
-    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
