@@ -47,25 +47,25 @@ export default function Layout() {
     const [places, setPlaces] = useState([]);
     const [restaurants, setRestaurants] = useState([]);
 
-    useEffect(() => {
+    useEffect(async () => {
 
         // fetch data for events, hotels, places and restaurants
-        dataService.fetchByInfo("events", 5)
+        await dataService.fetchByInfo("events", 5)
             .then(eventsData => {
                 setEvents(eventsData);
             });
         
-        dataService.fetchByInfo("hotels", 5)
+        await dataService.fetchByInfo("hotels", 5)
             .then(hotelsData => {
                 setHotels(hotelsData);
             })
 
-        dataService.fetchByInfo("places", 5)
+        await dataService.fetchByInfo("places", 5)
             .then(placesData => {
                 setPlaces(placesData);
             })
         
-        dataService.fetchByInfo("restaurants", 5)
+        await dataService.fetchByInfo("restaurants", 5)
             .then(restaurantData => {
                 setRestaurants(restaurantData);
             })
@@ -78,6 +78,8 @@ export default function Layout() {
         restaurants,
         places
     }
+
+    console.log("Layout | maindata: ", mainData);
 
     return (
         <div id="main-layout">
