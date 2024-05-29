@@ -79,8 +79,6 @@ export default function Layout() {
         places
     }
 
-    console.log("Layout | maindata: ", mainData);
-
     return (
         <div id="main-layout">
             <ScrollToTop />

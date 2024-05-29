@@ -57,9 +57,12 @@ function Login() {
                         setSubmitted(false);
                       })
 
-    // store logged in status in sessionStorage
-    sessionStorage.setItem('token', user.token);
-    sessionStorage.setItem('loggedIn', user.loggedIn);
+
+    if (user) {
+      // store logged in status in sessionStorage
+      sessionStorage.setItem('token', user.token);
+      sessionStorage.setItem('loggedIn', user.loggedIn);
+    }
 
     // set token for request headers
     // dataService.setToken(sessionStorage.getItem('token'));
