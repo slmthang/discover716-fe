@@ -46,7 +46,7 @@ export default function Display() {
     return (
 
         <div id="display-cont-parent" className="center">
-            <div id="display-cont" className="center box-shadow ">
+            <div id="display-cont" className="center ">
                 { loggedIn ? <DeleteButton path={params.dataType} objectId={displayObj._id} /> : null }
                 <div id="display-intro" className="center">
                     <div id="display-thumbnail" className="center">
@@ -55,18 +55,17 @@ export default function Display() {
                     <div id="display-details-cont" className="center">
                         {displayObj.name ? <h1>{displayObj.name}</h1>:null }
                         <div id="display-details">
-                            {displayObj.date ? <p id="date">Date: {displayObj.date}</p> : null }
-                            {displayObj.startTime && displayObj.endTime ? <p id="time">Time: {formatTime(displayObj.startTime)} - {formatTime(displayObj.endTime)}</p> : null }
+                            {displayObj.date ? <p id="date"><i className="fa-solid fa-calendar-days"></i>{displayObj.date}</p> : null }
+                            {displayObj.startTime && displayObj.endTime ? <p id="time"><i className="fa-regular fa-clock"></i>{formatTime(displayObj.startTime)} - {formatTime(displayObj.endTime)}</p> : null }
                             <p id="address">
                                 {displayObj.address ? 
                                     <i className="fa-solid fa-location-dot"></i>:null
-                                }
-                                &nbsp;&nbsp;&nbsp;{displayObj.address}
+                                }{displayObj.address}
                             </p>
                             <p id="website">
                                 {displayObj.website ? 
                                     <>
-                                        <i className="fa-solid fa-link"></i>&nbsp;&nbsp;&nbsp;
+                                        <i className="fa-solid fa-link"></i>
                                         <Link to={displayObj.website} className="link">Visit Site</Link>
                                     </> : null
                             }
@@ -75,12 +74,12 @@ export default function Display() {
                         <div id="display-contacts">
                             {displayObj.phone ? 
                                 <p id="phone">
-                                    <i className="fa-solid fa-phone"></i>&nbsp;&nbsp;&nbsp;{displayObj.phone}
+                                    <i className="fa-solid fa-phone"></i>{displayObj.phone}
                                 </p>
                             : null}
                             {displayObj.email ? 
                                 <p id="email">
-                                    <i className="fa-solid fa-envelope"></i>&nbsp;&nbsp;&nbsp;{displayObj.email}
+                                    <i className="fa-solid fa-envelope"></i>{displayObj.email}
                                 </p>
                             : null}
                         </div>

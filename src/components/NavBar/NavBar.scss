@@ -337,10 +337,7 @@
 
 							border-left: var(--borderColor);
 							border-right: var(--borderColor);
-
-							&:first-child {
-								border-top: 1rem solid var(--color-primary);
-							}
+							
 							&:last-child {
 								border-bottom: var(--borderColor);
 							}

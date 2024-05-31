@@ -1,10 +1,8 @@
 
 
 #contact-form-cont {
-    margin: 2rem 0;
+    padding: 2rem 0;
     width: 95%;
-    padding: 1rem;
-    border-radius: 0.5rem;
     background-color: var(--bgColor2);
 
     form {
@@ -29,7 +27,7 @@
                 text-decoration: none;
                 outline: none;
                 padding-left: 0.5rem;
-                border: none;
+                border: 0.1px solid var(--textColor1);
             }
     
             input {
@@ -83,8 +81,10 @@
 
 
     #contact-form-cont {
+        border-left: 0.1px solid rgba(170, 170, 170, 0.103);
+        border-right: 0.1px solid rgba(170, 170, 170, 0.103);
         width: 75rem;
-        
+
         form {
             >div {
                 width: 70%;

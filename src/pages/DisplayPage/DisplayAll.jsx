@@ -31,7 +31,7 @@ function DisplayElement({displayType, displayObj}) {
     const loggedIn = sessionStorage.getItem('loggedIn') ? true : false;
 
     return (
-        <div id="display-element-cont" className="center box-shadow">
+        <div id="display-element-cont" className="center box-shadow-card">
             { loggedIn ? <DeleteButton path={displayType} objectId={displayObj._id} /> : null }
             <div id="thumbnail" className="center">
                 <img src={displayObj.thumbnail} alt="element thumbnail" />
@@ -99,7 +99,7 @@ export default function DisplayAll() {
 
     return (
         <div id="displayall-cont" className="center">
-            <div id="display-filter" className="center box-shadow">
+            <div id="display-filter" className="center box-shadow-card">
                 <h1>{(params.dataType).toUpperCase()}</h1>  
                 <div id="filter">
 

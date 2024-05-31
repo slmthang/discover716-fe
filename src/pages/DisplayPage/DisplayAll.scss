@@ -191,7 +191,9 @@
     #displayall-cont {
         width: 75rem;
         padding: 2rem;
-
+        border-left: 0.1px solid rgba(170, 170, 170, 0.103);
+        border-right: 0.1px solid rgba(170, 170, 170, 0.103);
+        width: 75rem;
 
         #display-element-cont {
             #delete-btn {
