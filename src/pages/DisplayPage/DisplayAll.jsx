@@ -142,8 +142,8 @@ export default function DisplayAll() {
 
                     {params.dataType == "events" ? (
                         <select name="sortBy" id="sortBy" onChange={ e => setSortBy(e.target.value) }>
-                            <option value="date">Date</option>
                             <option value="name">Name</option>
+                            <option value="date">Date</option>
                         </select>
                     )  : null } 
                     <select name="sortOrder" id="sortOrder" onChange={(e) => setSortOrder(e.target.value)}>
