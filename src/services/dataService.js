@@ -11,6 +11,13 @@ const fetchAll = (path) => {
     return request.then(response => response.data);
 }
 
+const fetchTotalCount = (path) => {
+
+    const request = axios.get(`${baseURL}/${path}/count`);
+
+    return request.then(response => response.data);
+}
+
 // fetch a object by id
 const fetchById = (path, objectId) => {
 
@@ -19,9 +26,9 @@ const fetchById = (path, objectId) => {
 }
 
 // fetch objects by info
-const fetchByInfo = (path, count, sortBy = "name", sortOrder="asc") => {
+const fetchByInfo = (path, count, sortBy = "name", sortOrder="asc", interval) => {
 
-    const request = axios.get(`${baseURL}/${path}/info/${count}/${sortBy}/${sortOrder}`);
+    const request = axios.get(`${baseURL}/${path}/info/${count}/${sortBy}/${sortOrder}/${interval}`);
     return request.then(response => response.data);
 }
 
@@ -79,5 +86,6 @@ export default {
     fetchByInfo,
     create,
     deleteAll,
-    deleteById
+    deleteById,
+    fetchTotalCount
 }

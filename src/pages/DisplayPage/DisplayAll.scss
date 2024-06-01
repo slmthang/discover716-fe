@@ -121,6 +121,20 @@
                 }
             }
         }
+
+    }
+
+    #pager {
+
+        column-gap: 0.5rem;
+
+        button {
+            padding: 0.15rem 0.25rem;
+        }
+
+        .prev, .next {
+            padding: 0.15rem 0.5rem;
+        }
     }
 }
 
@@ -179,6 +193,16 @@
                         max-height: 6.4rem;
                         font-size: 1.1rem;
                     }
+                }
+            }
+        }
+
+        #pager {
+    
+            .prev, .next {
+                
+                &:hover {
+                    cursor: pointer;
                 }
             }
         }

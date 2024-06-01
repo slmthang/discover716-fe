@@ -82,20 +82,57 @@ export default function DisplayAll() {
     const [data, setData] = useState([]);
     const [sortOrder, setSortOrder] = useState("asc");
     const [sortBy, setSortBy] = useState("name");
+    const [totalCount, setTotalCount] = useState(0);
     const params = useParams();
+    const [skipCount, setSkipCount] = useState(0);
+    const perPage = 1;
+
+
+    useEffect(() => {
+        const fetchTotalCount = async (path, set) => {
+
+            const {count} = await dataService.fetchTotalCount(path);
+
+            setTotalCount(Math.floor(count/perPage));
+        }
+
+        fetchTotalCount(params.dataType, setTotalCount);
+
+        setSkipCount(0);
+    
+    }, [params.dataType])
 
     useEffect(() => {
 
-        const fetchBy5 = async (path, by, order, set) => {
+        const fetchBy5 = async (path, by, order, set, interval) => {
             // fetch data for events, hotels, places and restaurants 
-            const data = await dataService.fetchByInfo(path, 5, by, order);
+            const data = await dataService.fetchByInfo(path, perPage, by, order, interval);
 
+            // setData
             set(data);
+
         }
 
-        fetchBy5(params.dataType, sortBy, sortOrder, setData);
+        fetchBy5(params.dataType, sortBy, sortOrder, setData, skipCount);
         
-    }, [sortOrder, sortBy, params.dataType]);
+    }, [sortOrder, sortBy, skipCount, params.dataType]);
+
+
+    const prevHandler = () => {
+
+        if (skipCount >= 1) {
+
+            setSkipCount(prev => prev -= 1);
+        }
+    }
+
+    const nextHandler = () => {
+
+        if (skipCount + 1 < totalCount) {
+            setSkipCount(prev => prev += 1);
+        }
+        
+    }
 
     return (
         <div id="displayall-cont" className="center">
@@ -124,7 +161,14 @@ export default function DisplayAll() {
 
                 : null
             }
-        </div>
 
+            {(data.length > 0) ? 
+                <div id="pager" className="center">
+                    <button onClick={prevHandler} className="prev">prev</button>
+                    <button>{skipCount + 1}</button>
+                    <button onClick={nextHandler} className="next">next</button>
+                </div>
+                : null}
+        </div>
     )
 }
