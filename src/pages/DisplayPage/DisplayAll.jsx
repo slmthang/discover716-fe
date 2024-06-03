@@ -104,16 +104,16 @@ export default function DisplayAll() {
 
     useEffect(() => {
 
-        const fetchBy5 = async (path, by, order, set, interval) => {
+        const fetchBy5 = async (path, interval, by, order, set) => {
             // fetch data for events, hotels, places and restaurants 
-            const data = await dataService.fetchByInfo(path, perPage, by, order, interval);
+            const data = await dataService.fetchByInfo(path, perPage, interval, by, order);
 
             // setData
             set(data);
 
         }
 
-        fetchBy5(params.dataType, sortBy, sortOrder, setData, skipCount);
+        fetchBy5(params.dataType, skipCount, sortBy, sortOrder, setData);
         
     }, [sortOrder, sortBy, skipCount, params.dataType]);
 

@@ -26,7 +26,7 @@ const fetchById = (path, objectId) => {
 }
 
 // fetch objects by info
-const fetchByInfo = (path, count, sortBy = "name", sortOrder="asc", interval) => {
+const fetchByInfo = (path, count, interval = "0", sortBy = "name", sortOrder="asc") => {
 
     const request = axios.get(`${baseURL}/${path}/info/${count}/${sortBy}/${sortOrder}/${interval}`);
     return request.then(response => response.data);
