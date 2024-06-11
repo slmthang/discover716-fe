@@ -203,13 +203,19 @@ function FooterInfo() {
     return (
         <div id="footer-info" className="center">
             <Logo />
-            <div id="details" className="center">
+            <address id="details" className="center">
                 <ul className="center">
-                    <li id="address">{discover716.address}</li>
-                    <li id="phone">{discover716.phone}</li>
-                    <li id="email">{discover716.email}</li>
+                    <li id="address">
+                        {discover716.address}
+                    </li>
+                    <li id="phone">
+                        <a href={`tel:${discover716.phone}`}>{discover716.phone}</a>
+                    </li>
+                    <li id="email">
+                        <a href={`mailto:${discover716.email}`}>{discover716.email}</a>
+                    </li>
                 </ul>
-            </div>
+            </address>
         </div>
     );
 }

@@ -1,54 +1,53 @@
 
 
-#contact-form-cont {
-    padding: 2rem 0;
+
+
+form {
+    flex-direction: column;
     width: 95%;
+    padding: 2rem 1rem;
     background-color: var(--bgColor2);
+    border-radius: 0.5rem;
 
-    form {
-        flex-direction: column;
-        width: 95%;
-        padding: 2rem 1rem;
+    > h1 {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        color: var(--color-primary);
+        font-weight: 1000;
+    }
 
-        > h1 {
-            font-size: 1.75rem;
-            margin-bottom: 2rem;
-            color: var(--color-primary);
-            font-weight: 1000;
-        }
-    
-        > div {
+    > div {
+        width: 100%;
+        font-size: 0.9rem;
+
+        input, textarea {
             width: 100%;
-    
-            input, textarea {
-                width: 100%;
-                border-radius: 0.5rem;
-                margin-bottom: 0.25rem;
-                text-decoration: none;
-                outline: none;
-                padding-left: 0.5rem;
-                border: 0.1px solid var(--textColor1);
-            }
-    
-            input {
+            border-radius: 0.5rem;
+            margin-bottom: 0.25rem;
+            text-decoration: none;
+            outline: none;
+            padding-left: 0.5rem;
+            border: 0.1px solid var(--textColor1);
+        }
+
+        input {
+            height: 2rem;
+        }
+
+        textarea {
+            padding-top: 0.5rem;
+        }
+
+        .submit-btn {
+
+            button {
+                font-size: 0.9rem;
+                width: 5rem;
                 height: 2rem;
-            }
-    
-            textarea {
-                padding-top: 0.5rem;
-            }
-    
-            .submit-btn {
-    
-                button {
-                    font-size: 0.8rem;
-                    width: 5rem;
-                    height: 2rem;
-                    border-radius: 0.5rem;
-                    background-color: var(--color-primary);
-                    color: var(--white);
-                    margin-top: 1rem;
-                }
+                border-radius: 0.5rem;
+                background-color: var(--color-primary);
+                color: var(--white);
+                margin-top: 1rem;
             }
         }
     }
@@ -58,12 +57,16 @@
 
 @media only screen and (min-width: 768px) {
 
-    #contact-form-cont {
         form {
             
+            > h1 {
+                font-size: 2rem;
+            }
+
             >div {
                 width: 80%;
-    
+                font-size: 1.1rem;
+                
                 .submit-btn {
                     button {
                         &:hover {
@@ -73,17 +76,10 @@
                 }
             }
         }
-    }
     
 }
 
 @media only screen and (min-width: 1200px) {
-
-
-    #contact-form-cont {
-        border-left: 0.1px solid rgba(170, 170, 170, 0.103);
-        border-right: 0.1px solid rgba(170, 170, 170, 0.103);
-        width: 75rem;
 
         form {
             >div {
@@ -103,6 +99,5 @@
                 }
             }
         }
-    }   
+}   
     
-}

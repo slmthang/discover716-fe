@@ -2,16 +2,15 @@
 
 #display-cont-parent {
     width: 100vw;
-    padding: 1rem;
-    padding: 2rem 0;
+    padding: 0.5rem;
 
     #display-cont {
         position: relative;
         flex-direction: column;
-        padding: 2rem;
-        line-height: 1.4;
+        padding: 1rem 0.5rem;
         width: 95%;
         border-radius: 0.5rem;
+        background-color: var(--bgColor2);
 
         #delete-btn {
             position: absolute;
@@ -47,6 +46,7 @@
                 > h1 {
                     margin-bottom: 2rem;
                     color: var(--color-primary);
+                    font-size: 1.25rem;
                 }
 
                 #display-details {
@@ -54,6 +54,7 @@
                     
                     > p {
                         margin-bottom: 0.75rem;
+                        font-size: 0.9rem;
 
                         > i {
                             margin-right: 1.25rem;
@@ -76,6 +77,7 @@
 
                     > p {
                         margin-bottom: 0.75rem;
+                        font-size: 0.9rem;
 
                         > i {
                             margin-right: 1.25rem;
@@ -99,9 +101,12 @@
                 margin-bottom: 2rem;
                 color: var(--color-primary);
                 border-top: 1px solid var(--textColor1);
+                font-size: 1.25rem;
+                padding-top: 1rem;
             }
 
             #display-about {
+                font-size: 0.9rem;
                 width: 100%;
                 white-space: pre-line;
                 color: var(--textColor1);
@@ -114,8 +119,10 @@
 @media only screen and (min-width: 760px ) {
 
     #display-cont-parent {
+        padding: 2rem;
 
         #display-cont {
+            padding: 1.5rem;
             line-height: 1.6;
 
             #delete-btn {
@@ -158,11 +165,16 @@
 
                     > h1 {
                         margin-bottom: 2rem;
+                        font-size: 2rem;
                     }
 
                     #display-details {
                         margin-bottom: 2rem;
                         font-size: 1.1rem;
+
+                        > p {
+                            font-size: 1.1rem;
+                        }
 
                         #website {
 
@@ -175,12 +187,26 @@
                             }
                         }
                     }
+
+                    #display-contacts {
+    
+                        > p {
+                            font-size: 1.1rem;
+                        }
+                    }
                 }
             }
 
             #display-about-cont {
                 align-items: center;
-                font-size: 1.1rem;
+                
+                > h1 {
+                    font-size: 2rem;
+                }
+
+                #display-about {
+                    font-size: 1.1rem;
+                }
             }
         }
     }

@@ -14,11 +14,13 @@
 
 :root {
     --bgColor1: #fff;
-    --bgColor2: rgba(255, 255, 255, 0.55);
+    --bgColor2: rgba(207, 207, 207, 0.096);
     --color-primary: #323b8c; /* blue color */
     --textColor1: rgba(0, 0, 0, 0.76);
     --textColor2: rgba(0, 0, 0, 0.56);
     --borderColor: 0.1px solid rgba(0,0,0,0.1);
+    --boxShadowColor: rgba(50, 59, 140, 0.3);
+    --boxShadowColor2: rgba(50, 59, 140, 1);
 
 
     --color-secondary: #c53e36; /* red color */
@@ -36,11 +38,13 @@
 
 [app-theme='dark'] {
     --bgColor1: #323b8c;
-    --bgColor2: #323b8c;
+    --bgColor2: #2e367c96;
     --color-primary: #c53e36; /* blue color */
     --textColor1: rgba(255, 255, 255, 0.55);
     --textColor2: rgba(255, 255, 255, 0.35);
     --borderColor: 0.1px solid rgba(255, 255, 255, 0.26);
+    --boxShadowColor: rgba(197, 62, 54, 0.5);
+    --boxShadowColor2: rgba(197, 62, 54, 1);
 }
 
 html {
@@ -97,9 +101,9 @@ html {
 }
 
 .box-shadow {
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    box-shadow: var(--boxShadowColor) 0px 0px 0px 1px;
 }
 
 .box-shadow-card {
-    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    box-shadow: var(--boxShadowColor) 0px 0px 0px 2px, var(--boxShadowColor) 0px 4px 6px -1px, var(--boxShadowColor) 0px 1px 0px inset;
 }

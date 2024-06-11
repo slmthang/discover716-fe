@@ -1,9 +1,12 @@
 
 import ContactForm from "../../components/ContactForm/ContactForm";
+import './ContactUs.scss';
 
 function ContactUs() {
     return (
-        <ContactForm />
+        <div id="contact-form-cont">
+            <ContactForm />
+        </div>
     );
 }
 

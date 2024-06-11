@@ -46,7 +46,7 @@ export default function Display() {
     return (
 
         <div id="display-cont-parent" className="center">
-            <div id="display-cont" className="center ">
+            <div id="display-cont" className="center box-shadow-card">
                 { loggedIn ? <DeleteButton path={params.dataType} objectId={displayObj._id} /> : null }
                 <div id="display-intro" className="center">
                     <div id="display-thumbnail" className="center">

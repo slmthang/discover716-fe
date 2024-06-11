@@ -21,7 +21,7 @@
             font-weight: 1000;
             margin-left: 0.25rem;
             margin-bottom: 1rem;
-            
+            font-size: 1.25rem;
         }
 
         #filter {
@@ -73,6 +73,7 @@
 
                h1 {
                 margin-bottom: 2rem;
+                font-size: 1.25rem;
                 
                 > a {
                     color: var(--color-primary);
@@ -82,6 +83,7 @@
                > a {
                     display: block;
                     color: var(--textColor1);
+                    font-size: 0.9rem;
                     
                     &:hover {
                         cursor: pointer;
@@ -110,6 +112,7 @@
                 color: var(--textColor1);
 
                 p {
+                    font-size: 0.9rem;
                     max-height: 13rem;
                     overflow: hidden;
                     text-overflow: ellipsis;
@@ -152,6 +155,7 @@
 
             h1 {
                 margin-left: 1rem;
+                font-size: 2rem;
             }
     
             #filter {
@@ -184,7 +188,14 @@
                 flex: 2;
                 #details {
                     border: none;
-                    font-size: 1.1rem;
+                    
+                    h1 {
+                        font-size: 2rem;
+                    }
+
+                    > a {
+                        font-size: 1.1rem;
+                    }
                 }
 
                 #description {

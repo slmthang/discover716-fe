@@ -1,18 +1,21 @@
 
 #aboutUs-cont {
-    width: 95%;
-    padding: 3rem 1rem;
-    background-color: var(--bgColor2);
+    width: 100%;
     line-height: 1.6;
+    padding: 0.5rem;
 
     #aboutUs {
+        width: 100%;
+        background-color: var(--bgColor2);
         flex-direction: column;
         align-items: flex-start;
+        border-radius: 0.5rem;
+        padding: 0.75rem;
 
         > h1 {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 2rem;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
             color: var(--color-primary);
 
             > span {
@@ -21,14 +24,10 @@
         }
         
         > h2 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin: 1rem 0 3rem 0;
-            height: 4rem;
+            font-size: 0.9rem;
+            margin: 1rem 0 2rem 0;
             font-style: italic;
             color: var(--color-primary);
-            text-align: center;
-            
         }
     
         > div {
@@ -43,7 +42,7 @@
             }
 
             > p {
-                font-size: 1rem;
+                font-size: 0.9rem;
                 color: var(--textColor1);
 
                 > span {
@@ -62,15 +61,13 @@
 
     #aboutUs-cont {
 
-        padding: 5rem 2rem;
+        padding: 2rem;
 
         #aboutUs {
+            padding: 1rem;
 
-            > div {
-
-                h1 {
-                    font-size: 2.25rem;
-                }
+            h1 {
+                font-size: 2rem;
             }
 
             > h2 {
