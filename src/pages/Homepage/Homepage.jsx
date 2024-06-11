@@ -105,16 +105,10 @@ function AboutUs({isMobile}) {
                                 <Moment id="momentDisplay1" className="center moment" src={moments[checkMomentsBound(isMoment - 1)]["src"]} alt="alt"/>
                                 <Moment id="momentDisplay2" className="center moment" src={moments[checkMomentsBound(isMoment)]["src"]} alt="alt">
                                     <div id="prevBtn" className="center" onClick={prevPic}>
-                                        <div className="center glass">
                                             <p>&#10094;</p>
-                                            {/* <i className="fa-solid fa-chevron-left"></i> */}
-                                        </div>
                                     </div>
                                     <div id="nextBtn" className="center" onClick={nextPic}>
-                                        <div className="center glass">
                                             <p>&#10095;</p>
-                                            {/* <i className="fa-solid fa-chevron-right"></i> */}
-                                        </div>
                                     </div> 
                                 </ Moment>
                                 <Moment id="momentDisplay3" className="center moment" src={moments[checkMomentsBound(isMoment + 1)]["src"]} alt="alt"/>

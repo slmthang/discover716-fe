@@ -222,6 +222,16 @@ function BurgMenu({toggleBurg}) {
                         <p>Blogs</p>
                     </div>
                 </Link>
+                <Link to='https://discover716-test.blogspot.com/' className="link menu" onClick={toggleBurg}>
+                    <div className="nav-element">
+                        <p>Contact Us</p>
+                    </div>
+                </Link>
+                <Link to='https://discover716-test.blogspot.com/' className="link menu" onClick={toggleBurg}>
+                    <div className="nav-element">
+                        <p>About Us</p>
+                    </div>
+                </Link>
             </ul>
             <ul className="menus2">
                 <div className="center apps">
